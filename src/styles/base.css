@@ -1174,7 +1174,13 @@ section.slide:has(> .section-head) {
 @media (max-width: 900px) {
   .offline-vehicles-split { grid-template-columns: 1fr; }
 }
-.offline-vehicles-insight { margin-top: 0; height: 100%; }
+.offline-vehicles-insight {
+  margin-top: 0;
+  max-height: calc(34vh + 54px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
 .offline-vehicles { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .offline-vehicles-head {
   display: flex;
@@ -1216,7 +1222,7 @@ section.slide:has(> .section-head) {
 .offline-vehicles-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   max-height: 34vh;
   overflow-y: auto;
   padding-right: 10px;
@@ -1230,19 +1236,19 @@ section.slide:has(> .section-head) {
   border-radius: 999px;
 }
 .offline-vehicles-list::-webkit-scrollbar-thumb:hover { background: var(--blue-accent); }
-.offline-vehicle-track { height: 6px !important; }
+.offline-vehicle-track { height: 4px !important; }
 .offline-vehicle-row {
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 10px 16px;
+  padding: 6px 11px;
   box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex-shrink: 0;
 }
-.offline-vehicle-row-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.offline-vehicle-row-head { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
 .offline-vehicle-icon {
   display: inline-flex;
   align-items: center;
@@ -1256,7 +1262,7 @@ section.slide:has(> .section-head) {
 }
 .offline-vehicle-row-head h3 {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-1);
@@ -1266,7 +1272,7 @@ section.slide:has(> .section-head) {
 .offline-vehicle-value {
   margin-left: auto;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--blue-700);
   font-variant-numeric: tabular-nums;
