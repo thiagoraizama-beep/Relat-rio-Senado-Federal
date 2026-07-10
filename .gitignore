@@ -1,0 +1,12 @@
+node_modules
+dist
+.DS_Store
+*.local
+
+# Vídeos de criativos acima do limite do GitHub (100MB) — hospedar externamente
+# e apontar via mediaUrl em vez de deixar o arquivo local em public/creatives/.
+public/creatives/kwai/gas-do-povo.mp4
+public/creatives/kwai/renovacao-automatica-da-cnh.mp4
+public/creatives/kwai/tornozeleira-para-agressores.mp4
+public/creatives/meta/institucional-60s.mp4
+public/creatives/tik-tok/tornozeleira-eletronica-para-agressores.mp4

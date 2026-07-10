@@ -1,0 +1,50 @@
+:root {
+  --blue-900: #0a1a3c;
+  --blue-800: #0b2f6e;
+  --blue-700: #0e3f96;
+  --blue-600: #1565c2;
+  --blue-accent: #2f8fe8;
+  --blue-light: #8ecbf5;
+  --ink: #0a1628;
+  --paper: #f6f9fd;
+  --paper-2: #eef3fa;
+  --line: rgba(10, 26, 60, 0.12);
+  --good: #2fa84f;
+  --warn: #d68a1e;
+  --text-1: #0b1c33;
+  --text-2: #46587a;
+  --text-3: #8393b3;
+  --card-bg: #ffffff;
+  --card-shadow: 0 1px 2px rgba(10, 26, 60, 0.04), 0 8px 24px -12px rgba(10, 26, 60, 0.12);
+  --radius: 14px;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+:root[data-theme='dark'] {
+  --ink: #eef3fb;
+  --paper: #08132a;
+  --paper-2: #0c1c3a;
+  --line: rgba(160, 190, 240, 0.14);
+  --text-1: #eef3fb;
+  --text-2: #a9b9d9;
+  --text-3: #6f80a3;
+  --card-bg: #0e1f3f;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -14px rgba(0, 0, 0, 0.55);
+  --blue-light: #6fb4ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ink: #eef3fb;
+    --paper: #08132a;
+    --paper-2: #0c1c3a;
+    --line: rgba(160, 190, 240, 0.14);
+    --text-1: #eef3fb;
+    --text-2: #a9b9d9;
+    --text-3: #6f80a3;
+    --card-bg: #0e1f3f;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -14px rgba(0, 0, 0, 0.55);
+    --blue-light: #6fb4ec;
+  }
+}
