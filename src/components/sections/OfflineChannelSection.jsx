@@ -49,7 +49,7 @@ export default function OfflineChannelSection() {
       </div>
 
       <div className="panel reveal" data-delay="1" ref={chartRef}>
-        <h3>Visualizado por categoria</h3>
+        <h3>Visão por categoria</h3>
         <OfflineCategoryBarChart breakdown={offlineChannelBreakdown} colorMap={colorMap} />
       </div>
 
@@ -57,12 +57,14 @@ export default function OfflineChannelSection() {
         <div className="offline-vehicles">
           <div className="offline-vehicles-head">
             <h3 className="panel-title-sm">Top veículos por investimento</h3>
-            <div className="offline-category-tabs">
+            <div className="metric-switch offline-category-tabs">
               {CATEGORY_TABS.map((tab) => (
                 <button
                   type="button"
                   key={tab.categoria}
-                  className={`offline-category-tab ${activeCategory === tab.categoria ? 'active' : ''}`}
+                  role="tab"
+                  aria-selected={activeCategory === tab.categoria}
+                  className={`metric-switch-btn offline-category-tab ${activeCategory === tab.categoria ? 'active' : ''}`}
                   onClick={() => setActiveCategory(tab.categoria)}
                 >
                   {tab.categoria !== 'Todos' && (

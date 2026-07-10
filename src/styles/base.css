@@ -1188,35 +1188,16 @@ section.slide:has(> .section-head) {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+  padding-right: 10px;
 }
 .offline-category-tabs {
-  display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  margin-bottom: 0;
 }
 .offline-category-tab {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--card-bg);
-  color: var(--text-2);
-  font-size: 0.76rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.offline-category-tab:hover { border-color: var(--blue-accent); color: var(--text-1); }
-.offline-category-tab.active {
-  background: var(--blue-700);
-  border-color: var(--blue-700);
-  color: #fff;
-}
-:root[data-theme='dark'] .offline-category-tab.active { background: var(--blue-accent); border-color: var(--blue-accent); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .offline-category-tab.active { background: var(--blue-accent); border-color: var(--blue-accent); }
 }
 .offline-category-tab-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .offline-vehicles-list {
