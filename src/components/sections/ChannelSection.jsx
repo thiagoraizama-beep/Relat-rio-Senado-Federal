@@ -65,7 +65,7 @@ export default function ChannelSection() {
               colorMap={colorMap}
               centerValue={metric.centerValue}
               centerLabel={metric.centerLabel}
-              height={340}
+              height={220}
             />
           </div>
         ))}
