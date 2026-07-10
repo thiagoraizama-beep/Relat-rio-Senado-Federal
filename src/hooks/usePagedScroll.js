@@ -5,9 +5,20 @@ import { useEffect, useRef } from 'react';
 // Scrollable inner content (e.g. the creatives grid) is respected: if it
 // still has room to scroll in the gesture's direction, the gesture scrolls
 // that element instead of paging the whole report.
+// Depois que uma área rolável interna atinge o fim, o navegador continua
+// disparando eventos de wheel do mesmo gesto físico (dedo no trackpad,
+// inércia do mouse). Sem essa trava, o primeiro desses eventos residuais
+// já teria alvo fora do elemento interno e paginaria a seção sem o usuário
+// ter soltado o gesto — sensação de "pular sozinho". A trava exige um
+// intervalo sem eventos de wheel (fim do gesto) antes de voltar a permitir
+// a paginação por overscroll.
+const GESTURE_END_MS = 220;
+
 export function usePagedScroll(sectionIds) {
   const busyRef = useRef(false);
   const touchYRef = useRef(null);
+  const overscrollLockRef = useRef(false);
+  const gestureTimerRef = useRef(null);
 
   useEffect(() => {
     const getSections = () => sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
@@ -40,7 +51,7 @@ export function usePagedScroll(sectionIds) {
         const canScroll = /(auto|scroll)/.test(style.overflowY) && el.scrollHeight > el.clientHeight;
         if (canScroll) {
           const atTop = el.scrollTop <= 0;
-          const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+          const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 4;
           if ((dir < 0 && !atTop) || (dir > 0 && !atBottom)) return el;
         }
         el = el.parentElement;
@@ -50,7 +61,21 @@ export function usePagedScroll(sectionIds) {
 
     const onWheel = (e) => {
       const dir = e.deltaY > 0 ? 1 : -1;
-      if (scrollableAncestor(e.target, dir)) return; // let inner content scroll natively
+      const inner = scrollableAncestor(e.target, dir);
+      window.clearTimeout(gestureTimerRef.current);
+      gestureTimerRef.current = window.setTimeout(() => {
+        overscrollLockRef.current = false;
+      }, GESTURE_END_MS);
+      if (inner) return; // let inner content scroll natively
+      // O alvo não tem mais espaço pra rolar internamente na direção do
+      // gesto — só pagina se isso já era esperado no início do gesto atual
+      // (não é o momento em que a lista acabou de bater no limite).
+      const insideScrollable = e.target.closest?.('[data-scroll-guard]');
+      if (insideScrollable && !overscrollLockRef.current) {
+        overscrollLockRef.current = true;
+        e.preventDefault();
+        return;
+      }
       e.preventDefault();
       if (busyRef.current) return;
       jumpTo(currentIndex() + dir);

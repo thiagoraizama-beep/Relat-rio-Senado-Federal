@@ -77,14 +77,14 @@ export default function OfflineChannelSection() {
               ))}
             </div>
           </div>
-          <div className="offline-vehicles-list">
+          <div className="offline-vehicles-list" data-scroll-guard>
             {activeTab.vehicles.map((item, i) => (
               <VehicleRow item={item} delay={Math.min(i + 1, 5)} key={item.veiculo} />
             ))}
           </div>
         </div>
 
-        <div className="insight-card offline-vehicles-insight">
+        <div className="insight-card offline-vehicles-insight" data-scroll-guard>
           <span className="insight-icon">💡</span>
           <div className="insight-editable">
             <span className="insight-editable-label">Análise</span>
