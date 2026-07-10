@@ -47,7 +47,30 @@ export const socialNetworks = sheetData.socialNetworks;
 // compra da rede. Coloque os arquivos em public/creatives/<networkSlug>/<mediaSlug>.mp4|.jpg
 // (uma pasta por veículo: meta, youtube, tik-tok, kwai) e o mediaUrl é
 // resolvido automaticamente por getCreativeMediaUrl().
-export const topCreativesByNetwork = sheetData.topCreativesByNetwork;
+//
+// Vídeos institucionais dos criativos são hospedados como "não listados" no
+// YouTube em vez de ficar em public/creatives/ (evita repositório pesado). O
+// mapa abaixo (chave "networkSlug/mediaSlug") sobrepõe o ID do vídeo no
+// YouTube a esses itens específicos; sobrevive a um novo `npm run sync-data`
+// porque fica fora do sheetData.json gerado.
+const YOUTUBE_EMBED_OVERRIDES = {
+  'kwai/renovacao-automatica-da-cnh': 'fztR_WPec0E',
+  'kwai/tornozeleira-para-agressores': 'fKxnPzWOQ5M',
+  'kwai/gas-do-povo': 'dVQ4Jv7OHt0',
+  'meta/institucional-60s': 'mLHR_BU5Zho',
+  'meta/institucional-30s': '_3KLVGzLkWc',
+  'tik-tok/tornozeleira-eletronica-para-agressores': 'fKxnPzWOQ5M',
+  'youtube/institucional-30s': 'NPk5SgLmi80',
+};
+
+export const topCreativesByNetwork = sheetData.topCreativesByNetwork.map((group) => ({
+  ...group,
+  items: group.items.map((item) => {
+    const key = `${item.networkSlug}/${item.mediaSlug}`;
+    const youtubeEmbedId = YOUTUBE_EMBED_OVERRIDES[key] || null;
+    return youtubeEmbedId ? { ...item, youtubeEmbedId } : item;
+  }),
+}));
 
 export function getCreativeMediaUrl(item) {
   if (item.mediaUrl) return item.mediaUrl;

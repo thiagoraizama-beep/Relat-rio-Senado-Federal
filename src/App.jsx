@@ -3,6 +3,7 @@ import { EditableProvider, useEditable } from './hooks/useEditableContent.jsx';
 import { useSectionSpy } from './hooks/useSectionSpy.js';
 import { usePagedScroll } from './hooks/usePagedScroll.js';
 import { useEditShortcut } from './hooks/useEditShortcut.js';
+import LoadingScreen from './components/LoadingScreen.jsx';
 import NavDots from './components/NavDots.jsx';
 import EditPanel from './components/EditPanel.jsx';
 import SelectionToolbar from './components/SelectionToolbar.jsx';
@@ -117,6 +118,7 @@ function Report() {
 export default function App() {
   return (
     <EditableProvider>
+      <LoadingScreen />
       <Report />
     </EditableProvider>
   );

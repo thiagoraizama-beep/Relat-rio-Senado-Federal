@@ -69,6 +69,19 @@ export default function CreativeMedia({ item, className = '', showMuteToggle = f
     });
   };
 
+  if (item.youtubeEmbedId) {
+    return (
+      <iframe
+        className={`creative-media creative-media-youtube ${className}`}
+        src={`https://www.youtube.com/embed/${item.youtubeEmbedId}?rel=0&modestbranding=1`}
+        title={item.name}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        frameBorder="0"
+      />
+    );
+  }
+
   if (failed || !url) {
     return (
       <div className={`creative-media creative-media-placeholder ${className}`}>
