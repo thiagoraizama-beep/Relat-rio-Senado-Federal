@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Cell, LabelList } from 'recharts';
+import MetricSwitch from '../MetricSwitch.jsx';
 
 const METRICS = [
   { key: 'investment', label: 'Investimento', prefix: 'R$ ' },
@@ -31,19 +32,12 @@ export default function OfflineCategoryBarChart({ breakdown, colorMap }) {
 
   return (
     <div>
-      <div className="metric-switch" role="tablist" aria-label="Selecionar métrica">
-        {METRICS.map((m) => (
-          <button
-            key={m.key}
-            role="tab"
-            aria-selected={m.key === metricKey}
-            className={`metric-switch-btn ${m.key === metricKey ? 'active' : ''}`}
-            onClick={() => setMetricKey(m.key)}
-          >
-            {m.label}
-          </button>
-        ))}
-      </div>
+      <MetricSwitch
+        options={METRICS.map((m) => ({ key: m.key, label: m.label }))}
+        activeKey={metricKey}
+        onChange={setMetricKey}
+        ariaLabel="Selecionar métrica"
+      />
       <div className="rechart-wrap">
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={data} layout="vertical" margin={{ top: 8, right: 24, left: 8, bottom: 0 }}>

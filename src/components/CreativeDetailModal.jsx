@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import CreativeMedia from './CreativeMedia.jsx';
+import MetricSwitch from './MetricSwitch.jsx';
 
 const ALL_METRICS = [
   { key: 'impressions', label: 'Impressões' },
@@ -131,17 +132,13 @@ export default function CreativeDetailModal({ item, onClose }) {
             <div className="creative-modal-chart">
               <div className="creative-modal-chart-head">
                 <span className="panel-title-sm">Desempenho diário</span>
-                <div className="metric-switch metric-switch-sm">
-                  {metrics.map((m) => (
-                    <button
-                      key={m.key}
-                      className={`metric-switch-btn ${m.key === metricKey ? 'active' : ''}`}
-                      onClick={() => setMetricKey(m.key)}
-                    >
-                      {m.label}
-                    </button>
-                  ))}
-                </div>
+                <MetricSwitch
+                  options={metrics.map((m) => ({ key: m.key, label: m.label }))}
+                  activeKey={metricKey}
+                  onChange={setMetricKey}
+                  className="metric-switch-sm"
+                  ariaLabel="Selecionar métrica"
+                />
               </div>
               <DetailChart series={item.dailySeries} metricKey={metricKey} />
             </div>

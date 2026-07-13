@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Dot } from 'recharts';
+import MetricSwitch from '../MetricSwitch.jsx';
 
 const METRICS = [
   { key: 'impressions', label: 'Impressões', suffix: 'M', divisor: 1_000_000 },
@@ -42,19 +43,12 @@ export default function DailyMetricsChart({ series }) {
 
   return (
     <div>
-      <div className="metric-switch" role="tablist" aria-label="Selecionar métrica">
-        {METRICS.map((m) => (
-          <button
-            key={m.key}
-            role="tab"
-            aria-selected={m.key === metricKey}
-            className={`metric-switch-btn ${m.key === metricKey ? 'active' : ''}`}
-            onClick={() => setMetricKey(m.key)}
-          >
-            {m.label}
-          </button>
-        ))}
-      </div>
+      <MetricSwitch
+        options={METRICS.map((m) => ({ key: m.key, label: m.label }))}
+        activeKey={metricKey}
+        onChange={setMetricKey}
+        ariaLabel="Selecionar métrica"
+      />
       <div className="rechart-wrap">
         <ResponsiveContainer width="100%" height={210}>
           <LineChart data={series} margin={{ top: 20, right: 12, left: 4, bottom: 0 }}>
