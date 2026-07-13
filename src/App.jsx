@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { EditableProvider, useEditable } from './hooks/useEditableContent.jsx';
 import { useSectionSpy } from './hooks/useSectionSpy.js';
-import { usePagedScroll } from './hooks/usePagedScroll.js';
 import { useEditShortcut } from './hooks/useEditShortcut.js';
 import LoadingScreen from './components/LoadingScreen.jsx';
 import NavDots from './components/NavDots.jsx';
@@ -75,7 +74,6 @@ const SECTION_IDS = SECTIONS.map((s) => s.id);
 
 function Report() {
   const active = useSectionSpy(SECTION_IDS);
-  usePagedScroll(SECTION_IDS);
   const { editMode, setEditMode } = useEditable();
   useEditShortcut(editMode, setEditMode);
 

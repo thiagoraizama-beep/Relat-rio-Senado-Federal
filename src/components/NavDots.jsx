@@ -1,6 +1,6 @@
 export default function NavDots({ sections, active }) {
   const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'auto' });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const activeSection = sections.find((s) => s.id === active);
