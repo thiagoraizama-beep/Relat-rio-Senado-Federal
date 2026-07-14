@@ -28,7 +28,7 @@ export default function ConceptSection() {
         <span className="concept-rule" aria-hidden="true" />
         <p className="concept-text">{campaignConcept.body}</p>
         <div className="concept-signature">
-          <span>Uma campanha da Agência <strong>Cálix</strong>, para o Senado Federal</span>
+          <span>Uma campanha da <strong>Agência Cálix</strong>, para o <strong>Senado Federal</strong></span>
         </div>
       </div>
     </section>

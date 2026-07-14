@@ -19,7 +19,7 @@ export default function ThankYouSection() {
           <img className="thanks-logo thanks-logo-calix" src="/CALIX_branco.png" alt="Logo Agência Cálix" />
         </div>
         <div className="concept-signature thanks-signature">
-          <span>Uma campanha da Agência <strong>Cálix</strong>, para o Senado Federal</span>
+          <span>Uma campanha da <strong>Agência Cálix</strong>, para o <strong>Senado Federal</strong></span>
         </div>
       </div>
     </section>

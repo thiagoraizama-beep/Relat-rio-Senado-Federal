@@ -74,7 +74,7 @@ export const topCreativesByNetwork = sheetData.topCreativesByNetwork.map((group)
 
 export function getCreativeMediaUrl(item) {
   if (item.mediaUrl) return item.mediaUrl;
-  const ext = item.isVideo ? 'mp4' : 'jpg';
+  const ext = item.isVideo ? 'mp4' : 'png';
   const folder = item.networkSlug ? `${item.networkSlug}/` : '';
   return `/creatives/${folder}${item.mediaSlug}.${ext}`;
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { getCreativeMediaUrl } from '../data/campaignData.js';
 
-const IMAGE_FALLBACK_EXTS = ['png', 'jpeg', 'webp'];
+const IMAGE_FALLBACK_EXTS = ['jpg', 'jpeg', 'webp'];
 
 const iconProps = {
   width: 16,
@@ -36,8 +36,8 @@ function UnmuteIcon() {
 
 // Mostra o vídeo/imagem do criativo quando o arquivo existir em
 // public/creatives/; até lá, cai num placeholder com o tipo de mídia.
-// Para imagens, tenta .jpg primeiro e, se não existir, tenta outras
-// extensões comuns (.png, .jpeg, .webp) antes de desistir.
+// Para imagens, tenta .png primeiro e, se não existir, tenta outras
+// extensões comuns (.jpg, .jpeg, .webp) antes de desistir.
 export default function CreativeMedia({ item, className = '', showMuteToggle = false }) {
   const baseUrl = getCreativeMediaUrl(item);
   const [attempt, setAttempt] = useState(0);
@@ -51,7 +51,7 @@ export default function CreativeMedia({ item, className = '', showMuteToggle = f
     setMuted(true);
   }, [baseUrl]);
 
-  const url = attempt === 0 ? baseUrl : baseUrl.replace(/\.jpg$/, `.${IMAGE_FALLBACK_EXTS[attempt - 1]}`);
+  const url = attempt === 0 ? baseUrl : baseUrl.replace(/\.png$/, `.${IMAGE_FALLBACK_EXTS[attempt - 1]}`);
 
   const handleError = () => {
     if (!item.isVideo && attempt < IMAGE_FALLBACK_EXTS.length) {
