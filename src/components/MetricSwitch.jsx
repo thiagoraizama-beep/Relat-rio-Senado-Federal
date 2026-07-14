@@ -54,7 +54,7 @@ export default function MetricSwitch({ options, activeKey, onChange, className =
           }}
           onClick={() => onChange(o.key)}
         >
-          {o.label}
+          {o.render ? o.render(o) : o.label}
         </button>
       ))}
     </div>

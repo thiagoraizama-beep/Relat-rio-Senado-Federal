@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Editable from '../Editable.jsx';
+import MetricSwitch from '../MetricSwitch.jsx';
 import OfflineCategoryBarChart from '../charts/OfflineCategoryBarChart.jsx';
 import { useDonutPalette, buildColorMap } from '../charts/donutPalette.js';
 import OfflineCategoryIcon from '../icons/OfflineCategoryIcons.jsx';
@@ -9,6 +10,21 @@ import { offlineChannelBreakdown, offlineTopVehicles, offlineVehiclesByCategory 
 const canonicalCategories = [...offlineChannelBreakdown].sort((a, b) => b.investment - a.investment).map((c) => c.categoria);
 
 const CATEGORY_TABS = [{ categoria: 'Todos', vehicles: offlineTopVehicles }, ...offlineVehiclesByCategory];
+
+const CATEGORY_OPTIONS = CATEGORY_TABS.map((tab) => ({
+  key: tab.categoria,
+  label: tab.categoria,
+  render: () => (
+    <>
+      {tab.categoria !== 'Todos' && (
+        <span className="offline-category-tab-icon">
+          <OfflineCategoryIcon categoria={tab.categoria} />
+        </span>
+      )}
+      {tab.categoria}
+    </>
+  ),
+}));
 
 function VehicleRow({ item, delay }) {
   const ref = useReveal();
@@ -57,25 +73,13 @@ export default function OfflineChannelSection() {
         <div className="offline-vehicles">
           <div className="offline-vehicles-head">
             <h3 className="panel-title-sm">Top veículos por investimento</h3>
-            <div className="metric-switch offline-category-tabs">
-              {CATEGORY_TABS.map((tab) => (
-                <button
-                  type="button"
-                  key={tab.categoria}
-                  role="tab"
-                  aria-selected={activeCategory === tab.categoria}
-                  className={`metric-switch-btn offline-category-tab ${activeCategory === tab.categoria ? 'active' : ''}`}
-                  onClick={() => setActiveCategory(tab.categoria)}
-                >
-                  {tab.categoria !== 'Todos' && (
-                    <span className="offline-category-tab-icon">
-                      <OfflineCategoryIcon categoria={tab.categoria} />
-                    </span>
-                  )}
-                  {tab.categoria}
-                </button>
-              ))}
-            </div>
+            <MetricSwitch
+              options={CATEGORY_OPTIONS}
+              activeKey={activeCategory}
+              onChange={setActiveCategory}
+              className="offline-category-tabs"
+              ariaLabel="Filtrar veículos por categoria"
+            />
           </div>
           <div className="offline-vehicles-list" data-scroll-guard>
             {activeTab.vehicles.map((item, i) => (

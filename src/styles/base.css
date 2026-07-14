@@ -1287,7 +1287,7 @@ section.slide:has(> .section-head) {
   flex-wrap: wrap;
   margin-bottom: 0;
 }
-.offline-category-tab {
+.offline-category-tabs .metric-switch-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
