@@ -3,16 +3,18 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContai
 import MetricSwitch from '../MetricSwitch.jsx';
 
 const METRICS = [
-  { key: 'impressions', label: 'Impressões', suffix: 'M', divisor: 1_000_000 },
-  { key: 'clicks', label: 'Cliques', suffix: 'K', divisor: 1_000 },
-  { key: 'views', label: 'Views', suffix: 'M', divisor: 1_000_000 },
-  { key: 'cost', label: 'Investimento', suffix: '', divisor: 1, prefix: 'R$ ' },
+  { key: 'impressions', label: 'Impressões' },
+  { key: 'clicks', label: 'Cliques' },
+  { key: 'views', label: 'Views' },
+  { key: 'cost', label: 'Investimento', prefix: 'R$ ', isCurrency: true },
 ];
 
 function formatValue(raw, metric) {
-  const scaled = raw / metric.divisor;
-  const fmt = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: metric.divisor === 1 ? 0 : 1 });
-  return `${metric.prefix || ''}${fmt.format(scaled)}${metric.suffix}`;
+  const fmt = new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: metric.isCurrency ? 2 : 0,
+    maximumFractionDigits: metric.isCurrency ? 2 : 0,
+  });
+  return `${metric.prefix || ''}${fmt.format(raw)}`;
 }
 
 function ChartTooltip({ active, payload, label, metric }) {
