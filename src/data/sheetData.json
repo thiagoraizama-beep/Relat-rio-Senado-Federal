@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:06:17.131Z",
+  "generatedAt": "2026-07-15T14:12:15.691Z",
   "rowCount": 1175,
   "bigNumbers": [
     {
@@ -1942,7 +1942,7 @@
   "offlineBigNumbers": [
     {
       "label": "Investimento offline",
-      "value": "R$ 15.104.211,22",
+      "value": "R$ 15.103.333,61",
       "accent": "blue"
     },
     {
@@ -1973,11 +1973,11 @@
     },
     {
       "categoria": "Rádio",
-      "investment": 1986794.87,
-      "investmentFmt": "R$ 1.986.794,87",
+      "investment": 1985917.26,
+      "investmentFmt": "R$ 1.985.917,26",
       "insercoes": 14100,
       "insercoesFmt": "14.100",
-      "investmentPct": 13.2,
+      "investmentPct": 13.1,
       "insercoesPct": 0
     },
     {
@@ -2487,7 +2487,7 @@
     "bigNumbers": [
       {
         "label": "Investimento total (on + off)",
-        "value": "R$ 18.310.459,75",
+        "value": "R$ 18.309.582,14",
         "accent": "blue"
       },
       {
