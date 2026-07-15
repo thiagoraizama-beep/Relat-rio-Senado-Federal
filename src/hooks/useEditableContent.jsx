@@ -88,7 +88,7 @@ export const defaultTexts = {
   'offline-channel-sub':
     'Investimento e inserções comparados entre rádio, TV e mídia exterior da campanha.',
   'offline-channel-insight':
-    'TV Aberta concentra o maior investimento entre as categorias offline (R$ 8,6 milhões, 56,8% do total), seguida por Rádio (R$ 2 milhões, 13,2%) e Minidoor + MUB (R$ 1,8 milhão, 12,1%). Entre os veículos individuais, a GLOBO lidera o investimento em TV Aberta com R$ 3,8 milhões em apenas 9 inserções, refletindo o valor de espaços em rede nacional, enquanto a JCDecaux se destaca em mídia exterior com mais de 1 milhão de inserções, evidenciando a escala de frequência característica desse formato.',
+    'TV Aberta concentra o maior investimento entre as categorias offline (R$ 8,6 milhões, 56,8% do total), seguida por Rádio (R$ 2 milhões, 13,1%) e Minidoor + MUB (R$ 1,8 milhão, 12,1%). Entre os veículos individuais, a GLOBO lidera o investimento em TV Aberta com R$ 3,8 milhões em apenas 9 inserções, refletindo o valor de espaços em rede nacional, enquanto a JCDecaux se destaca em mídia exterior com mais de 1 milhão de inserções, evidenciando a escala de frequência característica desse formato.',
   'impact-intro-title-1': 'Duas frentes,',
   'impact-intro-title-2': 'um só resultado.',
   'impact-intro-body':
