@@ -10,6 +10,16 @@ html, body, #root {
   overflow-x: hidden;
 }
 
+/* Modo apresentação: esconde a barra de rolagem do navegador (a navegação
+   por dots/setas já cobre a função dela), mantendo o scroll funcional. */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legado */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome/Edge/Safari */
+}
+
 body {
   background: var(--paper);
   color: var(--text-1);
@@ -224,6 +234,40 @@ h1, h2, h3 {
 @media (max-width: 640px) {
   .navdots { display: none; }
   .navmenu-toggle { display: flex; }
+}
+
+/* ---------- fullscreen toggle ---------- */
+.fullscreen-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 60;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.fullscreen-toggle:hover { background: color-mix(in srgb, currentColor 20%, transparent); transform: scale(1.05); }
+.fullscreen-toggle-dark { color: #fff; }
+.fullscreen-toggle-light { color: var(--blue-700); }
+
+@media (max-width: 640px) {
+  .fullscreen-toggle { right: 62px; }
+}
+
+/* Modo apresentação (Fullscreen API ativa): some com toda a navegação
+   flutuante pra não ocupar espaço da tela. */
+body.fullscreen-mode .navdots,
+body.fullscreen-mode .navmenu-toggle,
+body.fullscreen-mode .fullscreen-toggle {
+  display: none;
 }
 
 /* ================= HERO ================= */

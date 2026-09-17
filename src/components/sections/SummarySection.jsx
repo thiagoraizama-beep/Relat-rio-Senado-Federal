@@ -5,6 +5,7 @@ const SECTIONS_INDEX = [
   'Portais e mídia programática',
   'Redes sociais e criativos',
   'Vídeos e imagens em destaque',
+  'Tráfego no site institucional (GA4)',
   'Mídia offline (rádio, TV e mídia exterior)',
   'Compilado geral do impacto',
   'Aprendizados e próximos passos',
@@ -40,7 +41,8 @@ export default function SummarySection() {
             O relatório abre com os resultados consolidados de toda a campanha, para dar uma visão rápida do
             todo antes de entrar nos detalhes. Em seguida, mostra o desempenho em portais de notícia e mídia
             programática, seguido de cada rede social separadamente, com seus criativos em destaque e um
-            ranking geral dos vídeos e imagens que melhor performaram. Depois, o relatório muda de frente e
+            ranking geral dos vídeos e imagens que melhor performaram. Na sequência, apresenta o tráfego gerado
+            no site institucional, medido via Google Analytics 4. Depois, o relatório muda de frente e
             apresenta a mídia offline (rádio, TV e mídia exterior), fechando com um compilado geral que une
             online e offline em uma única leitura de impacto, e uma página final de aprendizados e
             recomendações para os próximos ciclos.

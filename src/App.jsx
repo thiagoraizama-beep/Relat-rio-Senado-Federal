@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { EditableProvider, useEditable } from './hooks/useEditableContent.jsx';
 import { useSectionSpy } from './hooks/useSectionSpy.js';
+import { usePagedScroll } from './hooks/usePagedScroll.js';
 import { useEditShortcut } from './hooks/useEditShortcut.js';
 import LoadingScreen from './components/LoadingScreen.jsx';
 import NavDots from './components/NavDots.jsx';
@@ -23,6 +24,7 @@ import KwaiSection from './components/sections/KwaiSection.jsx';
 import KwaiCreativesSection from './components/sections/KwaiCreativesSection.jsx';
 import FormatSection from './components/sections/FormatSection.jsx';
 import StaticSection from './components/sections/StaticSection.jsx';
+import GA4Section from './components/sections/GA4Section.jsx';
 import PortalsIntroSection from './components/sections/PortalsIntroSection.jsx';
 import SocialIntroSection from './components/sections/SocialIntroSection.jsx';
 import InsightsSection from './components/sections/InsightsSection.jsx';
@@ -53,6 +55,7 @@ const SECTIONS = [
   { id: 'slide-kwai-creatives', label: 'Kwai · Criativos', tone: 'light' },
   { id: 'slide-format', label: 'Vídeos', tone: 'light' },
   { id: 'slide-static', label: 'Imagens', tone: 'light' },
+  { id: 'slide-ga4', label: 'GA4 · Site', tone: 'light' },
   { id: 'slide-offline-intro', label: 'Mídia Offline', tone: 'dark' },
   { id: 'slide-offline-kpi', label: 'Offline · Resultados', tone: 'light' },
   { id: 'slide-offline-channel', label: 'Offline · Canais', tone: 'light' },
@@ -74,6 +77,7 @@ const SECTION_IDS = SECTIONS.map((s) => s.id);
 
 function Report() {
   const active = useSectionSpy(SECTION_IDS);
+  usePagedScroll(SECTION_IDS);
   const { editMode, setEditMode } = useEditable();
   useEditShortcut(editMode, setEditMode);
 
@@ -102,6 +106,7 @@ function Report() {
       <KwaiCreativesSection />
       <FormatSection />
       <StaticSection />
+      <GA4Section />
       <OfflineIntroSection />
       <OfflineKpiSection />
       <OfflineChannelSection />

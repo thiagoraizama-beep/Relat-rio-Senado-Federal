@@ -87,6 +87,12 @@ export const offlineChannelBreakdown = sheetData.offlineChannelBreakdown;
 export const offlineTopVehicles = sheetData.offlineTopVehicles;
 export const offlineVehiclesByCategory = sheetData.offlineVehiclesByCategory;
 
+// Tráfego do site institucional por origem/veículo (Google Analytics 4) —
+// vem do export manual "Origem da campanha manual da sessão". Origens do
+// mesmo veículo em domínios diferentes (ex. ig/l.instagram.com -> Instagram)
+// já chegam somadas do sync-data, sem contar o mesmo veículo duas vezes.
+export const ga4Report = sheetData.ga4Report;
+
 // Impacto geral — compila online + offline num único conjunto de números
 // para a página de fechamento (Sessões/Tempo médio/Custo por sessão vêm do
 // GA4 e são preenchidos manualmente via edição, não têm origem na planilha).

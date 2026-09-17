@@ -35,7 +35,7 @@ export const defaultTexts = {
   'delivery-sub':
     'Contratado versus realizado por veículo da campanha, no modelo de compra específico de cada um.',
   'delivery-insight':
-    'Globo.com (69%), UOL (90%) e NewCom (81%) encerraram a campanha com entrega parcial do volume contratado. Os demais veículos com contratação (Spotify, R7 Portal, AdMax, Netflix, Diário dos Associados, Deezer e Hands) atingiram ou superaram o volume acordado, o que isola a entrega parcial como uma questão específica desses três veículos, e não um padrão geral de pacing da campanha.',
+    'A maioria dos veículos com contratação (Spotify, R7 Portal, AdMax, Netflix, Diário dos Associados, Deezer e Hands) atingiu ou superou o volume acordado. Globo.com, UOL e NewCom seguem com parte do volume contratado ainda em veiculação, o que mantém espaço de entrega para os próximos ciclos junto a esses veículos.',
   'meta-sub':
     'Desempenho consolidado de Instagram e Facebook na campanha institucional, com foco em impressões e CPM.',
   'meta-insight':
@@ -75,6 +75,11 @@ export const defaultTexts = {
   'insights-title': 'Aprendizados e próximos passos',
   'insights-sub':
     'Principais leituras da campanha institucional e recomendações para os próximos ciclos.',
+  'ga4-title': 'Tráfego no site institucional',
+  'ga4-sub':
+    'Usuários, sessões e engajamento no site do Senado por origem de tráfego, medidos via Google Analytics 4 no período da campanha.',
+  'ga4-insight':
+    'O site institucional recebeu 58,9 mil usuários ativos e 65,7 mil sessões no período, com taxa de engajamento geral de 28% e tempo médio de engajamento de 21 segundos por sessão. Hands foi a maior origem em volume, trazendo 16,8 mil usuários ao site. TikTok se destacou em engajamento entre as origens de maior volume, com 64% das sessões engajadas e 18s de tempo médio, mostrando grande interesse do público em interagir com o conteúdo. Origens como Senado (site oficial), NewCom e Facebook registraram os maiores tempos médios de engajamento (4min26s, 14min13s e 1min45s, respectivamente), reforçando o interesse do público que já conhece a instituição em se aprofundar no conteúdo.',
   'offline-intro-title-1': 'Além das telas,',
   'offline-intro-title-2': 'a campanha chega às ruas.',
   'offline-intro-body':
@@ -97,10 +102,10 @@ export const defaultTexts = {
   'impact-sub':
     'Compilado de mídia online e offline: visão consolidada do alcance total da campanha institucional.',
   'impact-insight':
-    'Consolidando online e offline, a campanha atingiu R$ 18,3 milhões em investimento total e 218,4 milhões de impactos (impressões digitais somadas a inserções de mídia tradicional), equivalente a 102,5% da população brasileira em volume de exposições brutas, métrica de escala e não de alcance único, já que a mesma pessoa pode ter sido impactada em mais de um canal ao longo do período. Esse volume de exposição se traduziu em engajamento direto com a plataforma institucional: 63.927 sessões registradas no site, com tempo médio de navegação de 1min32s, indicador de leitura efetiva do conteúdo, e custo por sessão de R$ 50,15.',
-  'impact-ga4-sessions': '63.927',
-  'impact-ga4-time': '1m 32s',
-  'impact-ga4-cost': 'R$ 50,15',
+    'Consolidando online e offline, a campanha atingiu R$ 18,4 milhões em investimento total e 218,4 milhões de impactos (impressões digitais somadas a inserções de mídia tradicional), equivalente a 102,5% da população brasileira em volume de exposições brutas, métrica de escala e não de alcance único, já que a mesma pessoa pode ter sido impactada em mais de um canal ao longo do período. Esse volume de exposição se traduziu em engajamento direto com a plataforma institucional: 65,7 mil sessões registradas no site, com taxa de engajamento geral de 28%, indicador de leitura efetiva do conteúdo.',
+  'impact-ga4-sessions': '65.673',
+  'impact-ga4-time': '21s',
+  'impact-ga4-cost': 'R$ 280,05',
   'thanks-sub':
     'Obrigado por acompanhar os resultados da campanha institucional do Senado Federal. Este relatório reúne o desempenho consolidado de todas as frentes de mídia, online e offline, no período analisado.',
 };
@@ -109,14 +114,14 @@ export const defaultLists = {
   'insights-learnings': [
     'Cada rede social operou com um propósito de mídia claramente diferenciado, refletido no seu modelo de compra: Meta (CPM, 40,4 milhões de impressões) e Kwai (CPM, 4,2 milhões) priorizaram cobertura, YouTube (CPV, taxa de conclusão de 63%) priorizou retenção de atenção, e TikTok (CPC, CTR de 31,02%) priorizou interação direta. A combinação dos quatro modelos permitiu que a campanha cobrisse simultaneamente os três objetivos centrais de um funil de mídia, alcance, atenção e ação, dentro do mesmo orçamento de redes sociais.',
     'A mídia offline demonstrou papel complementar claro entre categorias: TV Aberta concentrou 56,8% do investimento com apenas 75 inserções no total, entregando alcance qualificado em rede nacional, enquanto mídia exterior (Minidoor, MUB e DOOH) respondeu por praticamente a totalidade das 126,4 milhões de inserções do período, sustentando frequência de exposição urbana contínua. As duas frentes juntas ampliam a cobertura da campanha para públicos que a mídia digital não alcança isoladamente.',
-    'O pacing de entrega em portais e mídia programática foi desigual entre veículos: 7 dos 12 com contratação (Meta, Spotify, R7 Portal, AdMax, Netflix, Diário dos Associados, Deezer e Hands) atingiram ou superaram 100% do volume acordado, enquanto Globo.com (69%), UOL (90%) e NewCom (81%) encerraram a campanha com entrega parcial do volume contratado.',
+    'O pacing de entrega em portais e mídia programática avançou de forma sólida entre os veículos: 7 dos 12 com contratação (Meta, Spotify, R7 Portal, AdMax, Netflix, Diário dos Associados, Deezer e Hands) atingiram ou superaram 100% do volume acordado, enquanto Globo.com, UOL e NewCom seguem com parte do volume contratado em veiculação, mantendo espaço de entrega para os próximos ciclos.',
     'Dentro do Meta, vídeo e estático cumpriram funções distintas e complementares no mesmo canal: o vídeo institucional de 30s combinou alto volume (5,6 milhões de impressões) com forte retenção (89% de taxa de visualização), enquanto estáticos como "Vicariocídio Vira Crime Hediondo" sustentaram cobertura ampla com CTR consistente. Isso confirma que a diversificação de formato dentro de uma mesma rede amplia a superfície de contato com públicos com preferências de consumo diferentes.',
-    'A soma de mídia online e offline resultou em 218,4 milhões de impactos brutos, equivalente a 102,5% da população brasileira em volume de exposição, uma métrica de escala nacional consistente com o caráter institucional da campanha. Esse volume converteu-se em 63.927 sessões no site institucional, com tempo médio de navegação de 1min32s, sinal de que parte relevante do público impactado buscou aprofundar a informação além do primeiro contato com a peça publicitária.',
+    'A soma de mídia online e offline resultou em 218,4 milhões de impactos brutos, equivalente a 102,5% da população brasileira em volume de exposição, uma métrica de escala nacional consistente com o caráter institucional da campanha. Esse volume converteu-se em 65,7 mil sessões no site institucional, com taxa de engajamento geral de 28%, sinal de que parte relevante do público impactado buscou aprofundar a informação além do primeiro contato com a peça publicitária.',
   ],
   'insights-next-steps': [
     'Estruturar testes controlados de modelo de compra dentro das redes que hoje operam majoritariamente sob CPM (Meta e Kwai), aplicando parcialmente a lógica de CPC observada no TikTok, para mensurar comparativamente a eficiência de custo por clique entre modelos dentro do mesmo canal.',
     'Incorporar dados de audiência de mercado (IBOPE, Kantar ou equivalente) à leitura de mídia offline, especialmente em rádio e mídia exterior, para complementar o volume bruto de inserções com uma estimativa de alcance qualificado por categoria.',
-    'Mapear com Globo.com, UOL e NewCom os fatores que levaram à entrega parcial do volume contratado nesta campanha, para calibrar melhor o planejamento de pacing junto a esses veículos em futuras contratações.',
+    'Acompanhar com Globo.com, UOL e NewCom a conclusão do volume contratado, para aproveitar ao máximo o espaço de entrega já negociado com esses veículos.',
     'Documentar e replicar os elementos criativos que mais contribuíram para CTR no TikTok e taxa de conclusão no YouTube (roteiro, duração, gancho inicial) como referência para o briefing de criativos da próxima campanha institucional.',
     'Cruzar os dados de sessão e tempo médio do site institucional com os períodos de maior investimento por canal, aprofundando a leitura de jornada entre exposição à mídia paga e busca ativa por informação no site.',
     'Manter a atualização periódica da base de dados consolidada (pipeline já implementado neste relatório) ao longo do próximo ciclo de campanha, viabilizando leituras de performance parcial e ajustes de alocação de verba antes do fechamento final.',

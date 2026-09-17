@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-15T14:12:15.691Z",
-  "rowCount": 1175,
+  "generatedAt": "2026-09-17T19:13:47.087Z",
+  "rowCount": 1167,
   "bigNumbers": [
     {
       "label": "Investimento",
@@ -176,27 +176,6 @@
       "clicks": 8854,
       "views": 0,
       "cost": 90198.11
-    },
-    {
-      "label": "06/07",
-      "impressions": 0,
-      "clicks": 0,
-      "views": 0,
-      "cost": 0
-    },
-    {
-      "label": "07/07",
-      "impressions": 0,
-      "clicks": 0,
-      "views": 0,
-      "cost": 0
-    },
-    {
-      "label": "09/07",
-      "impressions": 0,
-      "clicks": 0,
-      "views": 0,
-      "cost": 0
     }
   ],
   "channelSpend": [
@@ -1717,54 +1696,6 @@
               "impressions": 3039,
               "clicks": 969,
               "views": 3023
-            },
-            {
-              "label": "26/06",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "27/06",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "29/06",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "30/06",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "03/07",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "06/07",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "07/07",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
-            },
-            {
-              "label": "09/07",
-              "impressions": 0,
-              "clicks": 0,
-              "views": 0
             }
           ]
         }
@@ -1939,15 +1870,335 @@
       ]
     }
   ],
+  "ga4Report": {
+    "bigNumbers": [
+      {
+        "label": "Usuários ativos",
+        "value": "58.900",
+        "accent": "blue"
+      },
+      {
+        "label": "Sessões",
+        "value": "65.673",
+        "accent": "orange"
+      },
+      {
+        "label": "Taxa de engajamento",
+        "value": "28%",
+        "accent": "lightblue"
+      },
+      {
+        "label": "Tempo médio de engajamento",
+        "value": "21s",
+        "accent": "green"
+      },
+      {
+        "label": "Eventos",
+        "value": "304.762",
+        "accent": "blue"
+      }
+    ],
+    "vehicles": [
+      {
+        "veiculo": "Hands",
+        "activeUsers": 16846,
+        "activeUsersFmt": "16.846",
+        "sessions": 17398,
+        "sessionsFmt": "17.398",
+        "engagedSessions": 529,
+        "engagedSessionsFmt": "529",
+        "avgEngagementTimeSec": 8,
+        "avgEngagementTimeFmt": "8s",
+        "engagementRate": "3%",
+        "eventCount": 62929,
+        "eventCountFmt": "62.929",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 100
+      },
+      {
+        "veiculo": "TikTok",
+        "activeUsers": 9941,
+        "activeUsersFmt": "9.941",
+        "sessions": 13582,
+        "sessionsFmt": "13.582",
+        "engagedSessions": 8709,
+        "engagedSessionsFmt": "8.709",
+        "avgEngagementTimeSec": 18,
+        "avgEngagementTimeFmt": "18s",
+        "engagementRate": "64%",
+        "eventCount": 97863,
+        "eventCountFmt": "97.863",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 59
+      },
+      {
+        "veiculo": "Portal R7",
+        "activeUsers": 8092,
+        "activeUsersFmt": "8.092",
+        "sessions": 8655,
+        "sessionsFmt": "8.655",
+        "engagedSessions": 2674,
+        "engagedSessionsFmt": "2.674",
+        "avgEngagementTimeSec": 17,
+        "avgEngagementTimeFmt": "17s",
+        "engagementRate": "31%",
+        "eventCount": 37828,
+        "eventCountFmt": "37.828",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 48
+      },
+      {
+        "veiculo": "Spotify",
+        "activeUsers": 6776,
+        "activeUsersFmt": "6.776",
+        "sessions": 6718,
+        "sessionsFmt": "6.718",
+        "engagedSessions": 2425,
+        "engagedSessionsFmt": "2.425",
+        "avgEngagementTimeSec": 3,
+        "avgEngagementTimeFmt": "3s",
+        "engagementRate": "36%",
+        "eventCount": 29402,
+        "eventCountFmt": "29.402",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 40
+      },
+      {
+        "veiculo": "Instagram",
+        "activeUsers": 5134,
+        "activeUsersFmt": "5.134",
+        "sessions": 5170,
+        "sessionsFmt": "5.170",
+        "engagedSessions": 345,
+        "engagedSessionsFmt": "345",
+        "avgEngagementTimeSec": 17,
+        "avgEngagementTimeFmt": "17s",
+        "engagementRate": "7%",
+        "eventCount": 18783,
+        "eventCountFmt": "18.783",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 30
+      },
+      {
+        "veiculo": "Deezer",
+        "activeUsers": 2952,
+        "activeUsersFmt": "2.952",
+        "sessions": 3688,
+        "sessionsFmt": "3.688",
+        "engagedSessions": 710,
+        "engagedSessionsFmt": "710",
+        "avgEngagementTimeSec": 3,
+        "avgEngagementTimeFmt": "3s",
+        "engagementRate": "19%",
+        "eventCount": 13898,
+        "eventCountFmt": "13.898",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 18
+      },
+      {
+        "veiculo": "UOL",
+        "activeUsers": 2644,
+        "activeUsersFmt": "2.644",
+        "sessions": 3072,
+        "sessionsFmt": "3.072",
+        "engagedSessions": 565,
+        "engagedSessionsFmt": "565",
+        "avgEngagementTimeSec": 6,
+        "avgEngagementTimeFmt": "6s",
+        "engagementRate": "18%",
+        "eventCount": 11813,
+        "eventCountFmt": "11.813",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 16
+      },
+      {
+        "veiculo": "Kwai",
+        "activeUsers": 2042,
+        "activeUsersFmt": "2.042",
+        "sessions": 2327,
+        "sessionsFmt": "2.327",
+        "engagedSessions": 580,
+        "engagedSessionsFmt": "580",
+        "avgEngagementTimeSec": 6,
+        "avgEngagementTimeFmt": "6s",
+        "engagementRate": "25%",
+        "eventCount": 9966,
+        "eventCountFmt": "9.966",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 12
+      },
+      {
+        "veiculo": "Diários Associados",
+        "activeUsers": 1486,
+        "activeUsersFmt": "1.486",
+        "sessions": 1694,
+        "sessionsFmt": "1.694",
+        "engagedSessions": 539,
+        "engagedSessionsFmt": "539",
+        "avgEngagementTimeSec": 16,
+        "avgEngagementTimeFmt": "16s",
+        "engagementRate": "32%",
+        "eventCount": 7349,
+        "eventCountFmt": "7.349",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 9
+      },
+      {
+        "veiculo": "Sem atribuição",
+        "activeUsers": 739,
+        "activeUsersFmt": "739",
+        "sessions": 937,
+        "sessionsFmt": "937",
+        "engagedSessions": 198,
+        "engagedSessionsFmt": "198",
+        "avgEngagementTimeSec": 7,
+        "avgEngagementTimeFmt": "7s",
+        "engagementRate": "21%",
+        "eventCount": 3823,
+        "eventCountFmt": "3.823",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 4
+      },
+      {
+        "veiculo": "NewCom",
+        "activeUsers": 631,
+        "activeUsersFmt": "631",
+        "sessions": 665,
+        "sessionsFmt": "665",
+        "engagedSessions": 203,
+        "engagedSessionsFmt": "203",
+        "avgEngagementTimeSec": 853,
+        "avgEngagementTimeFmt": "14m 13s",
+        "engagementRate": "31%",
+        "eventCount": 2974,
+        "eventCountFmt": "2.974",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 4
+      },
+      {
+        "veiculo": "GLOBO.COM",
+        "activeUsers": 597,
+        "activeUsersFmt": "597",
+        "sessions": 649,
+        "sessionsFmt": "649",
+        "engagedSessions": 350,
+        "engagedSessionsFmt": "350",
+        "avgEngagementTimeSec": 15,
+        "avgEngagementTimeFmt": "15s",
+        "engagementRate": "54%",
+        "eventCount": 3132,
+        "eventCountFmt": "3.132",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 4
+      },
+      {
+        "veiculo": "AdMax",
+        "activeUsers": 490,
+        "activeUsersFmt": "490",
+        "sessions": 519,
+        "sessionsFmt": "519",
+        "engagedSessions": 214,
+        "engagedSessionsFmt": "214",
+        "avgEngagementTimeSec": 7,
+        "avgEngagementTimeFmt": "7s",
+        "engagementRate": "41%",
+        "eventCount": 2293,
+        "eventCountFmt": "2.293",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 3
+      },
+      {
+        "veiculo": "Senado (site oficial)",
+        "activeUsers": 253,
+        "activeUsersFmt": "253",
+        "sessions": 306,
+        "sessionsFmt": "306",
+        "engagedSessions": 177,
+        "engagedSessionsFmt": "177",
+        "avgEngagementTimeSec": 266,
+        "avgEngagementTimeFmt": "4m 26s",
+        "engagementRate": "58%",
+        "eventCount": 1509,
+        "eventCountFmt": "1.509",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 2
+      },
+      {
+        "veiculo": "Facebook",
+        "activeUsers": 187,
+        "activeUsersFmt": "187",
+        "sessions": 188,
+        "sessionsFmt": "188",
+        "engagedSessions": 31,
+        "engagedSessionsFmt": "31",
+        "avgEngagementTimeSec": 105,
+        "avgEngagementTimeFmt": "1m 45s",
+        "engagementRate": "16%",
+        "eventCount": 759,
+        "eventCountFmt": "759",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 1
+      },
+      {
+        "veiculo": "YouTube",
+        "activeUsers": 70,
+        "activeUsersFmt": "70",
+        "sessions": 73,
+        "sessionsFmt": "73",
+        "engagedSessions": 8,
+        "engagedSessionsFmt": "8",
+        "avgEngagementTimeSec": 8,
+        "avgEngagementTimeFmt": "8s",
+        "engagementRate": "11%",
+        "eventCount": 305,
+        "eventCountFmt": "305",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 0
+      },
+      {
+        "veiculo": "Google",
+        "activeUsers": 20,
+        "activeUsersFmt": "20",
+        "sessions": 32,
+        "sessionsFmt": "32",
+        "engagedSessions": 16,
+        "engagedSessionsFmt": "16",
+        "avgEngagementTimeSec": 26,
+        "avgEngagementTimeFmt": "26s",
+        "engagementRate": "50%",
+        "eventCount": 136,
+        "eventCountFmt": "136",
+        "revenue": 0,
+        "revenueFmt": "R$ 0,00",
+        "activeUsersShare": 0
+      }
+    ]
+  },
   "offlineBigNumbers": [
     {
       "label": "Investimento offline",
-      "value": "R$ 15.103.333,61",
+      "value": "R$ 15.183.957,61",
       "accent": "blue"
     },
     {
       "label": "Inserções",
-      "value": "126.405.145",
+      "value": "126.405.040",
       "accent": "orange"
     },
     {
@@ -1964,19 +2215,19 @@
   "offlineChannelBreakdown": [
     {
       "categoria": "TV Aberta",
-      "investment": 8572994.49,
-      "investmentFmt": "R$ 8.572.994,49",
-      "insercoes": 75,
-      "insercoesFmt": "75",
-      "investmentPct": 56.8,
+      "investment": 8653618.49,
+      "investmentFmt": "R$ 8.653.618,49",
+      "insercoes": 73,
+      "insercoesFmt": "73",
+      "investmentPct": 57,
       "insercoesPct": 0
     },
     {
       "categoria": "Rádio",
       "investment": 1985917.26,
       "investmentFmt": "R$ 1.985.917,26",
-      "insercoes": 14100,
-      "insercoesFmt": "14.100",
+      "insercoes": 13997,
+      "insercoesFmt": "13.997",
       "investmentPct": 13.1,
       "insercoesPct": 0
     },
@@ -1986,7 +2237,7 @@
       "investmentFmt": "R$ 1.825.926,30",
       "insercoes": 124884828,
       "insercoesFmt": "124.884.828",
-      "investmentPct": 12.1,
+      "investmentPct": 12,
       "insercoesPct": 98.8
     },
     {
@@ -1995,7 +2246,7 @@
       "investmentFmt": "R$ 1.673.076,66",
       "insercoes": 659657,
       "insercoesFmt": "659.657",
-      "investmentPct": 11.1,
+      "investmentPct": 11,
       "insercoesPct": 0.5
     },
     {
@@ -2032,18 +2283,18 @@
       "categoria": "TV Aberta",
       "investment": 2270401.2,
       "investmentFmt": "R$ 2.270.401,20",
-      "insercoes": 17,
-      "insercoesFmt": "17",
+      "insercoes": 15,
+      "insercoesFmt": "15",
       "investmentShare": 60
     },
     {
       "veiculo": "SBT",
       "categoria": "TV Aberta",
-      "investment": 1531856,
-      "investmentFmt": "R$ 1.531.856,00",
+      "investment": 1612480,
+      "investmentFmt": "R$ 1.612.480,00",
       "insercoes": 20,
       "insercoesFmt": "20",
-      "investmentShare": 41
+      "investmentShare": 43
     },
     {
       "veiculo": "JCDecaux",
@@ -2127,18 +2378,18 @@
           "categoria": "TV Aberta",
           "investment": 2270401.2,
           "investmentFmt": "R$ 2.270.401,20",
-          "insercoes": 17,
-          "insercoesFmt": "17",
+          "insercoes": 15,
+          "insercoesFmt": "15",
           "investmentShare": 60
         },
         {
           "veiculo": "SBT",
           "categoria": "TV Aberta",
-          "investment": 1531856,
-          "investmentFmt": "R$ 1.531.856,00",
+          "investment": 1612480,
+          "investmentFmt": "R$ 1.612.480,00",
           "insercoes": 20,
           "insercoesFmt": "20",
-          "investmentShare": 41
+          "investmentShare": 43
         },
         {
           "veiculo": "BAND",
@@ -2487,7 +2738,7 @@
     "bigNumbers": [
       {
         "label": "Investimento total (on + off)",
-        "value": "R$ 18.309.582,14",
+        "value": "R$ 18.390.206,14",
         "accent": "blue"
       },
       {
@@ -2497,7 +2748,7 @@
       },
       {
         "label": "Inserções offline",
-        "value": "126.405.145",
+        "value": "126.405.040",
         "accent": "lightblue"
       },
       {
@@ -2522,7 +2773,7 @@
       }
     ],
     "populationPct": "102,5%",
-    "populationNote": "218.368.795 impactos (impressões online + inserções offline) ÷ 213.000.000 habitantes (estimativa IBGE)",
-    "frequencyNote": "218.368.795 impactos ÷ 213.000.000 habitantes (população brasileira, estimativa IBGE) — não é um alcance único medido, é a mesma base de cálculo do \"% da população impactada\""
+    "populationNote": "218.368.690 impactos (impressões online + inserções offline) ÷ 213.000.000 habitantes (estimativa IBGE)",
+    "frequencyNote": "218.368.690 impactos ÷ 213.000.000 habitantes (população brasileira, estimativa IBGE) — não é um alcance único medido, é a mesma base de cálculo do \"% da população impactada\""
   }
 }

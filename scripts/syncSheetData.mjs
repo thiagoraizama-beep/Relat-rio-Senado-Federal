@@ -18,6 +18,11 @@ const CONTRACTED_CSV_URL =
 const OFFLINE_CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vRroW7evqUBsumlR2O0flylsSjqjvlIyK2lUJqe2ggw_jhFx1JdpwK_guIs_jieUw58l24radb6lZ7h/pub?output=csv';
 
+// Export manual do GA4 "Origem da campanha manual da sessão" — tráfego do
+// site institucional por origem/veículo, no período da campanha.
+const GA4_CSV_URL =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSuGav-1DJstc2rx_ZYuyAwmWXWAwn8Ql7Ag1eH7N8lBRqmz_aOLa4G40vDY40Ofqf1wJXpj3cPHTm0/pub?output=csv';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'src', 'data', 'sheetData.json');
 
@@ -68,6 +73,22 @@ function toNumberBR(value) {
   // "R$ 2.379,74" -> 2379.74 | "91.811" -> 91811 | "84,00%" -> 84
   const cleaned = value.replace(/R\$\s?/, '').replace('%', '').trim();
   const normalized = cleaned.replace(/\./g, '').replace(',', '.');
+  const num = parseFloat(normalized);
+  return Number.isNaN(num) ? 0 : num;
+}
+
+// O export CSV do GA4 (via Sheets) grava decimais de muitas casas (ex.
+// médias/taxas) truncados em grupos de 3 dígitos separados por "." como se
+// fossem milhar (ex: "8.113.576.273.134.840" é o float 8,113576273134840
+// com o "," trocado por "."). Só o primeiro grupo é a parte inteira; o
+// resto, concatenado, é a casa decimal. Com um único "." (ex: "25.875") o
+// valor já vem correto.
+function toNumberGA4(value) {
+  if (!value) return 0;
+  const cleaned = value.trim();
+  if (!cleaned) return 0;
+  const parts = cleaned.split('.');
+  const normalized = parts.length > 1 ? `${parts[0]}.${parts.slice(1).join('')}` : cleaned;
   const num = parseFloat(normalized);
   return Number.isNaN(num) ? 0 : num;
 }
@@ -630,6 +651,159 @@ async function main() {
     },
   ];
 
+  console.log('Buscando CSV do GA4 (origem da sessão)...');
+  const ga4Rows = await fetchCsvRows(GA4_CSV_URL);
+  // As primeiras linhas são comentários de export do GA4 ("# ..."); o
+  // cabeçalho real é a primeira linha que não começa com "#".
+  const ga4HeaderIdx = ga4Rows.findIndex((r) => r[0] && !r[0].trim().startsWith('#'));
+  const ga4Header = ga4Rows[ga4HeaderIdx];
+  const gCol = (name) => ga4Header.findIndex((h) => h.trim() === name);
+  const gIdx = {
+    origem: gCol('Origem da campanha manual da sessão'),
+    activeUsers: gCol('Usuários ativos'),
+    sessions: gCol('Sessões'),
+    engagedSessions: gCol('Sessões engajadas'),
+    avgEngagementTime: gCol('Tempo médio de engajamento por sessão'),
+    eventCount: gCol('Contagem de eventos'),
+    revenue: gCol('Receita total'),
+  };
+  const ga4DataRows = ga4Rows.slice(ga4HeaderIdx + 1).filter((r) => r.some((c) => c.trim() !== ''));
+
+  // Origens que são a mesma fonte de tráfego espalhada em vários domínios/rótulos
+  // do GA4 — somadas para não contar o mesmo veículo várias vezes.
+  const GA4_VEHICLE_GROUPS = {
+    Instagram: ['ig', 'l.instagram.com', '{{site_source_name}}'],
+    Facebook: ['fb', 'facebook.com', 'm.facebook.com', 'l.facebook.com', 'lm.facebook.com'],
+    'Senado (site oficial)': ['link.senado.leg.br', 'www12.senado.leg.br', 'www12hml.senado.leg.br'],
+    YouTube: ['youtube.com', 'imasdk.googleapis.com'],
+    Spotify: ['spotify', 'open.spotify.com'],
+  };
+  const GA4_ORIGIN_TO_VEHICLE = new Map();
+  Object.entries(GA4_VEHICLE_GROUPS).forEach(([vehicle, origins]) => {
+    origins.forEach((origin) => GA4_ORIGIN_TO_VEHICLE.set(origin, vehicle));
+  });
+
+  // Origens de rótulo único cujo nome de exibição difere do valor bruto da
+  // planilha (grafia interna/técnica -> nome real do veículo).
+  const GA4_LABEL_FIXES = {
+    r7_portal: 'Portal R7',
+    hands: 'Hands',
+    tiktok: 'TikTok',
+    deezer: 'Deezer',
+    uol: 'UOL',
+    kwai: 'Kwai',
+    diario_dos_associados: 'Diários Associados',
+    newcom: 'NewCom',
+    globocom: 'GLOBO.COM',
+    admax: 'AdMax',
+    google: 'Google',
+  };
+
+  // Tráfego irrelevante/técnico para o relatório — fora da agregação.
+  const GA4_EXCLUDED_ORIGINS = new Set([
+    'kap.sgp-adm.corp.kuaishou.com',
+    'paid.outbrain.com',
+    'teams.public.onecdn.static.microsoft',
+    'bing',
+    'statics.teams.cdn.office.net',
+    'app.base44.com',
+  ]);
+
+  const byGa4Vehicle = new Map(); // veiculo -> { activeUsers, sessions, engagedSessions, engagementTimeTotal, eventCount, revenue }
+
+  for (const r of ga4DataRows) {
+    const origin = (r[gIdx.origem] || '').trim();
+    if (!origin || GA4_EXCLUDED_ORIGINS.has(origin)) continue;
+
+    const vehicle =
+      origin === '(not set)'
+        ? 'Sem atribuição'
+        : GA4_ORIGIN_TO_VEHICLE.get(origin) || GA4_LABEL_FIXES[origin] || origin;
+    const activeUsers = toNumberGA4(r[gIdx.activeUsers]);
+    const sessions = toNumberGA4(r[gIdx.sessions]);
+    const engagedSessions = toNumberGA4(r[gIdx.engagedSessions]);
+    const avgEngagementTime = toNumberGA4(r[gIdx.avgEngagementTime]); // segundos, média da linha
+    const eventCount = toNumberGA4(r[gIdx.eventCount]);
+    const revenue = toNumberGA4(r[gIdx.revenue]);
+
+    const prev = byGa4Vehicle.get(vehicle) || {
+      activeUsers: 0,
+      sessions: 0,
+      engagedSessions: 0,
+      engagementTimeTotal: 0, // soma ponderada (segundos * sessões) p/ recalcular a média no agregado
+      eventCount: 0,
+      revenue: 0,
+    };
+    prev.activeUsers += activeUsers;
+    prev.sessions += sessions;
+    prev.engagedSessions += engagedSessions;
+    prev.engagementTimeTotal += avgEngagementTime * sessions;
+    prev.eventCount += eventCount;
+    prev.revenue += revenue;
+    byGa4Vehicle.set(vehicle, prev);
+  }
+
+  const fmtDuration = (totalSeconds) => {
+    const s = Math.round(totalSeconds);
+    const m = Math.floor(s / 60);
+    const rem = s % 60;
+    return m > 0 ? `${m}m ${rem}s` : `${rem}s`;
+  };
+
+  const ga4Vehicles = Array.from(byGa4Vehicle.entries())
+    .map(([veiculo, v]) => ({
+      veiculo,
+      activeUsers: v.activeUsers,
+      activeUsersFmt: fmt.format(v.activeUsers),
+      sessions: v.sessions,
+      sessionsFmt: fmt.format(v.sessions),
+      engagedSessions: v.engagedSessions,
+      engagedSessionsFmt: fmt.format(v.engagedSessions),
+      avgEngagementTimeSec: v.sessions ? Math.round(v.engagementTimeTotal / v.sessions) : 0,
+      avgEngagementTimeFmt: v.sessions ? fmtDuration(v.engagementTimeTotal / v.sessions) : '0s',
+      engagementRate: v.sessions ? fmtPct((v.engagedSessions / v.sessions) * 100, 0) : '0%',
+      eventCount: v.eventCount,
+      eventCountFmt: fmt.format(v.eventCount),
+      revenue: v.revenue,
+      revenueFmt: fmtMoney(v.revenue),
+    }))
+    .sort((a, b) => b.activeUsers - a.activeUsers);
+
+  const ga4Totals = ga4Vehicles.reduce(
+    (acc, v) => {
+      acc.activeUsers += v.activeUsers;
+      acc.sessions += v.sessions;
+      acc.engagedSessions += v.engagedSessions;
+      acc.eventCount += v.eventCount;
+      acc.engagementTimeTotal += v.avgEngagementTimeSec * v.sessions;
+      return acc;
+    },
+    { activeUsers: 0, sessions: 0, engagedSessions: 0, eventCount: 0, engagementTimeTotal: 0 }
+  );
+
+  const ga4BigNumbers = [
+    { label: 'Usuários ativos', value: fmt.format(ga4Totals.activeUsers), accent: 'blue' },
+    { label: 'Sessões', value: fmt.format(ga4Totals.sessions), accent: 'orange' },
+    {
+      label: 'Taxa de engajamento',
+      value: ga4Totals.sessions ? fmtPct((ga4Totals.engagedSessions / ga4Totals.sessions) * 100, 0) : '0%',
+      accent: 'lightblue',
+    },
+    {
+      label: 'Tempo médio de engajamento',
+      value: ga4Totals.sessions ? fmtDuration(ga4Totals.engagementTimeTotal / ga4Totals.sessions) : '0s',
+      accent: 'green',
+    },
+    { label: 'Eventos', value: fmt.format(ga4Totals.eventCount), accent: 'blue' },
+  ];
+
+  const maxGa4Users = Math.max(...ga4Vehicles.map((v) => v.activeUsers), 1);
+  ga4Vehicles.forEach((v) => {
+    v.activeUsersShare = Math.round((v.activeUsers / maxGa4Users) * 100);
+  });
+
+  const ga4Report = { bigNumbers: ga4BigNumbers, vehicles: ga4Vehicles };
+
   console.log('Buscando CSV de mídia offline...');
   const offlineRows = await fetchCsvRows(OFFLINE_CSV_URL);
   const offlineHeader = offlineRows[0];
@@ -783,6 +957,7 @@ async function main() {
     vehicleOverview,
     socialNetworks,
     topCreativesByNetwork,
+    ga4Report,
     offlineBigNumbers,
     offlineChannelBreakdown,
     offlineTopVehicles,
