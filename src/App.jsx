@@ -22,6 +22,8 @@ import TikTokSection from './components/sections/TikTokSection.jsx';
 import TikTokCreativesSection from './components/sections/TikTokCreativesSection.jsx';
 import KwaiSection from './components/sections/KwaiSection.jsx';
 import KwaiCreativesSection from './components/sections/KwaiCreativesSection.jsx';
+import VideoQuartilesSection from './components/sections/VideoQuartilesSection.jsx';
+import KwaiQuartileNoteSection from './components/sections/KwaiQuartileNoteSection.jsx';
 import FormatSection from './components/sections/FormatSection.jsx';
 import StaticSection from './components/sections/StaticSection.jsx';
 import GA4Section from './components/sections/GA4Section.jsx';
@@ -31,6 +33,7 @@ import InsightsSection from './components/sections/InsightsSection.jsx';
 import OfflineIntroSection from './components/sections/OfflineIntroSection.jsx';
 import OfflineKpiSection from './components/sections/OfflineKpiSection.jsx';
 import OfflineChannelSection from './components/sections/OfflineChannelSection.jsx';
+import OfflineTvSection from './components/sections/OfflineTvSection.jsx';
 import ImpactIntroSection from './components/sections/ImpactIntroSection.jsx';
 import ImpactSection from './components/sections/ImpactSection.jsx';
 import ThankYouSection from './components/sections/ThankYouSection.jsx';
@@ -53,12 +56,15 @@ const SECTIONS = [
   { id: 'slide-tiktok-creatives', label: 'TikTok · Criativos', tone: 'light' },
   { id: 'slide-kwai', label: 'Kwai', tone: 'light' },
   { id: 'slide-kwai-creatives', label: 'Kwai · Criativos', tone: 'light' },
+  { id: 'slide-quartiles', label: 'Quartis de Vídeo', tone: 'light' },
+  { id: 'slide-kwai-quartile-note', label: 'Kwai · Limitação', tone: 'light' },
   { id: 'slide-format', label: 'Vídeos', tone: 'light' },
   { id: 'slide-static', label: 'Imagens', tone: 'light' },
   { id: 'slide-ga4', label: 'GA4 · Site', tone: 'light' },
   { id: 'slide-offline-intro', label: 'Mídia Offline', tone: 'dark' },
   { id: 'slide-offline-kpi', label: 'Offline · Resultados', tone: 'light' },
   { id: 'slide-offline-channel', label: 'Offline · Canais', tone: 'light' },
+  { id: 'slide-offline-tv', label: 'Offline · TV', tone: 'light' },
   { id: 'slide-impact-intro', label: 'Compilado Geral', tone: 'dark' },
   { id: 'slide-impact', label: 'Impacto Geral', tone: 'light' },
   { id: 'slide-insights', label: 'Aprendizados', tone: 'dark' },
@@ -104,12 +110,15 @@ function Report() {
       <TikTokCreativesSection />
       <KwaiSection />
       <KwaiCreativesSection />
+      <VideoQuartilesSection />
+      <KwaiQuartileNoteSection />
       <FormatSection />
       <StaticSection />
       <GA4Section />
       <OfflineIntroSection />
       <OfflineKpiSection />
       <OfflineChannelSection />
+      <OfflineTvSection />
       <ImpactIntroSection />
       <ImpactSection />
       <InsightsSection />

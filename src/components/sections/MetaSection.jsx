@@ -16,6 +16,7 @@ export default function MetaSection() {
       data={data}
       delivery={delivery}
       primaryMetric={{ label: 'Impressões totais', value: data.impressions }}
+      hideCpc
     />
   );
 }

@@ -86,7 +86,8 @@ const ICON_MAP = {
   'TV Aberta': TvIcon,
   'TV Fechada': SatelliteIcon,
   'DOOH Painel Digital': ScreenIcon,
-  'Minidoor + MUB': DoorIcon,
+  Minidoor: DoorIcon,
+  MUB: PinIcon,
   'DOOH Metrô + Aeroporto': SubwayIcon,
 };
 

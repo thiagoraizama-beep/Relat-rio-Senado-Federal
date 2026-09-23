@@ -23,6 +23,19 @@ const OFFLINE_CSV_URL =
 const GA4_CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vSuGav-1DJstc2rx_ZYuyAwmWXWAwn8Ql7Ag1eH7N8lBRqmz_aOLa4G40vDY40Ofqf1wJXpj3cPHTm0/pub?output=csv';
 
+// Export do Kwai Ads (nível dia/ad group) — fonte complementar só para os
+// "Counts of video played to its completion", que não vêm preenchidos na
+// base consolidada de mídia on. Os quartis 25/50/75% também estão vazios
+// aqui: confirma que a plataforma não disponibiliza esse dado por completo.
+const KWAI_VIDEO_CSV_URL =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vQNmjZtbEbQqxdnrxpWZKH1PFvmQNBGCGDHDga5pUU-i4ADtV-MdEOXqppdwljx9IkHu5R4eLNlyeM1/pub?gid=2015290889&single=true&output=csv';
+
+// Aba "Alcance - MÍDIA ONLINE" — alcance (usuários únicos) por veículo,
+// usado para calcular a frequência média (impressões ÷ alcance). Enquanto a
+// apuração não termina, linhas ainda não fechadas vêm como "Pendente".
+const REACH_CSV_URL =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vRroW7evqUBsumlR2O0flylsSjqjvlIyK2lUJqe2ggw_jhFx1JdpwK_guIs_jieUw58l24radb6lZ7h/pub?gid=1985209631&single=true&output=csv';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'src', 'data', 'sheetData.json');
 
@@ -145,11 +158,68 @@ async function fetchCsvRows(url) {
 const VEHICLE_NAME_MAP = {
   'globo.com': 'Globo.com',
   'Portal R7': 'R7 Portal',
-  'DiÃ¡rio dos Associados': 'Diário dos Associados',
+  'DiÃ¡rio dos Associados': 'Diário Associados',
+  'Diário dos Associados': 'Diário Associados',
 };
 
 function normalizeVehicleName(name) {
   return VEHICLE_NAME_MAP[name] || name;
+}
+
+// Nomes de veículo na aba de alcance que divergem da grafia usada no resto
+// do site (mesmos veículos, rótulos diferentes na planilha de origem).
+const REACH_VEHICLE_NAME_MAP = {
+  R7: 'R7 Portal',
+  TikTok: 'Tik Tok',
+};
+
+async function fetchReachByVehicle() {
+  console.log('Buscando CSV de alcance (mídia online)...');
+  const rows = await fetchCsvRows(REACH_CSV_URL);
+  const header = rows[0];
+  const idx = {
+    veiculo: header.findIndex((h) => h.includes('Ve') && h.includes('culo')),
+    quantitativo: header.indexOf('Quantitativo'),
+  };
+  const byVehicle = new Map(); // veiculo -> alcance (null se pendente)
+  for (const r of rows.slice(1)) {
+    const rawVeiculo = (r[idx.veiculo] || '').trim();
+    if (!rawVeiculo) continue;
+    const veiculo = REACH_VEHICLE_NAME_MAP[rawVeiculo] || normalizeVehicleName(rawVeiculo);
+    const rawValue = (r[idx.quantitativo] || '').trim();
+    byVehicle.set(veiculo, rawValue.toLowerCase() === 'pendente' ? null : toNumberBR(rawValue));
+  }
+  return byVehicle;
+}
+
+// Identifica o criativo institucional pelo "Ad Group Name" do export do Kwai
+// Ads, usando os mesmos nomes de exibição já usados no resto do site.
+const KWAI_AD_GROUP_PATTERNS = [
+  [/RENOVACAO-AUTOMATICA-DA-CNH/i, 'Renovação Automática da CNH'],
+  [/TORNOZELEIRA/i, 'Tornozeleira para Agressores'],
+  [/GAS-DO-POVO/i, 'Gás do Povo'],
+];
+
+function creativeNameFromKwaiAdGroup(adGroup) {
+  const match = KWAI_AD_GROUP_PATTERNS.find(([pattern]) => pattern.test(adGroup));
+  return match?.[1] || null;
+}
+
+async function fetchKwaiVideoCompletions() {
+  console.log('Buscando CSV de vídeo do Kwai (completions)...');
+  const rows = await fetchCsvRows(KWAI_VIDEO_CSV_URL);
+  const header = rows[0];
+  const idx = {
+    adGroup: header.indexOf('Ad Group Name'),
+    completion: header.indexOf('Counts of video played to its completion'),
+  };
+  const byCreative = new Map();
+  for (const r of rows.slice(1)) {
+    const name = creativeNameFromKwaiAdGroup((r[idx.adGroup] || '').trim());
+    if (!name) continue;
+    byCreative.set(name, (byCreative.get(name) || 0) + toNumberBR(r[idx.completion]));
+  }
+  return byCreative;
 }
 
 async function main() {
@@ -238,12 +308,24 @@ async function main() {
     byVehicleDelivery.set(veiculo, delivery);
 
     if (SOCIAL_CHANNELS.has(veiculo)) {
-      const nd = byNetworkDetail.get(veiculo) || { impressions: 0, clicks: 0, views: 0, completions: 0, cost: 0 };
+      const nd = byNetworkDetail.get(veiculo) || {
+        impressions: 0,
+        clicks: 0,
+        views: 0,
+        completions: 0,
+        cost: 0,
+        videoViews25: 0,
+        videoViews50: 0,
+        videoViews75: 0,
+      };
       nd.impressions += impressions;
       nd.clicks += clicks;
       nd.views += videoViews;
       nd.completions += videoCompletions;
       nd.cost += cost;
+      nd.videoViews25 += videoViews25;
+      nd.videoViews50 += videoViews50;
+      nd.videoViews75 += videoViews75;
       byNetworkDetail.set(veiculo, nd);
 
       const rawName = creativeName || genericFormatFromAdName(adName) || '';
@@ -261,6 +343,9 @@ async function main() {
           isVideo,
           orientations: new Map(),
           placements: new Map(),
+          videoViews25: 0,
+          videoViews50: 0,
+          videoViews75: 0,
         };
         nc.impressions += impressions;
         nc.clicks += clicks;
@@ -268,6 +353,9 @@ async function main() {
         nc.completions += videoCompletions;
         nc.cost += cost;
         nc.engagements += engagements;
+        nc.videoViews25 += videoViews25;
+        nc.videoViews50 += videoViews50;
+        nc.videoViews75 += videoViews75;
         const orientation = orientationFromAdName(adName);
         if (orientation) nc.orientations.set(orientation, (nc.orientations.get(orientation) || 0) + 1);
         if (posicionamento) nc.placements.set(posicionamento, (nc.placements.get(posicionamento) || 0) + 1);
@@ -397,10 +485,14 @@ async function main() {
         acc.views += nd.views;
         acc.completions += nd.completions;
         acc.cost += nd.cost;
+        acc.videoViews25 += nd.videoViews25 || 0;
+        acc.videoViews50 += nd.videoViews50 || 0;
+        acc.videoViews75 += nd.videoViews75 || 0;
         return acc;
       },
-      { impressions: 0, clicks: 0, views: 0, completions: 0, cost: 0 }
+      { impressions: 0, clicks: 0, views: 0, completions: 0, cost: 0, videoViews25: 0, videoViews50: 0, videoViews75: 0 }
     );
+    const quartilePct = (n) => (agg.views ? Math.round((n / agg.views) * 100) : 0);
     return {
       network,
       investment: fmtMoney(agg.cost),
@@ -413,8 +505,16 @@ async function main() {
       cpv: agg.views ? fmtMoney(agg.cost / agg.views) : 'R$ 0,00',
       ctr: agg.impressions ? fmtPct((agg.clicks / agg.impressions) * 100) : '0%',
       completionRate: agg.views ? fmtPct((agg.completions / agg.views) * 100, 0) : '0%',
+      quartiles: {
+        q25: quartilePct(agg.videoViews25),
+        q50: quartilePct(agg.videoViews50),
+        q75: quartilePct(agg.videoViews75),
+        q100: agg.views ? Math.round((agg.completions / agg.views) * 100) : 0,
+      },
     };
   });
+
+  const reachByVehicle = await fetchReachByVehicle();
 
   console.log('Buscando CSV de contratado por veículo...');
   const contractedRows = await fetchCsvRows(CONTRACTED_CSV_URL);
@@ -443,13 +543,16 @@ async function main() {
     .slice(1)
     .filter((r) => r.some((c) => c.trim() !== ''))
     .map((r) => {
-      const veiculo = (r[cIdx.veiculo] || '').trim();
+      const veiculo = normalizeVehicleName((r[cIdx.veiculo] || '').trim());
       const modelo = (r[cIdx.modelo] || '').trim().toUpperCase();
       const contracted = toNumberBR(r[cIdx.quantidade]);
       const metric = METRIC_BY_MODEL[modelo] || 'impressions';
       const sources = VEHICLE_DELIVERY_SOURCES[veiculo] || [veiculo];
       const delivered = sources.reduce((acc, src) => acc + (byVehicleDelivery.get(src)?.[metric] || 0), 0);
       const pct = contracted ? Math.round((delivered / contracted) * 100) : 0;
+      const impressions = sources.reduce((acc, src) => acc + (byVehicleDelivery.get(src)?.impressions || 0), 0);
+      const reach = reachByVehicle.get(veiculo);
+      const frequency = reach ? Math.round((impressions / reach) * 10) / 10 : null;
       return {
         veiculo,
         modelo,
@@ -460,6 +563,10 @@ async function main() {
         deliveredFmt: fmt.format(delivered),
         pct,
         pctDisplay: Math.min(pct, 100),
+        reach: reach ?? null,
+        reachFmt: reach ? fmt.format(reach) : 'Pendente',
+        frequency,
+        frequencyFmt: frequency ? `${fmt.format(frequency)}x` : 'Pendente',
       };
     })
     .sort((a, b) => b.contracted - a.contracted);
@@ -479,6 +586,8 @@ async function main() {
     'Gas Do Povo': 'Gás do Povo',
   };
 
+  const kwaiCompletions = await fetchKwaiVideoCompletions();
+
   const topEntry = (map) => [...map.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
 
   const videoCreatives = Array.from(byVideoCreative.entries())
@@ -486,20 +595,30 @@ async function main() {
       const orientation = topEntry(v.orientations);
       const placement = topEntry(v.placements);
       const veiculo = topEntry(v.veiculos);
+      const displayName = CREATIVE_LABELS[name] || name;
+      // Kwai não reporta completions/quartis na base consolidada — usa o
+      // completion real de um export complementar do Kwai Ads quando existe.
+      const completions = veiculo === 'Kwai' ? kwaiCompletions.get(displayName) ?? v.videoCompletions : v.videoCompletions;
       return {
-        name: CREATIVE_LABELS[name] || name,
+        name: displayName,
         format: [orientation, placement].filter(Boolean).join(' · ') || '—',
         veiculo: veiculo || '—',
         impressions: v.impressions,
         views: v.videoViews,
-        completions: v.videoCompletions,
+        completions,
         ctr: v.impressions ? fmtPct((v.clicks / v.impressions) * 100) : '0%',
-        completionRatePct: v.videoViews ? Math.round((v.videoCompletions / v.videoViews) * 100) : 0,
-        completionRate: v.videoViews ? fmtPct((v.videoCompletions / v.videoViews) * 100, 0) : '—',
+        completionRatePct: v.videoViews ? Math.round((completions / v.videoViews) * 100) : 0,
+        completionRate: v.videoViews ? fmtPct((completions / v.videoViews) * 100, 0) : '—',
         view75Rate: v.videoViews ? Math.round((v.videoViews75 / v.videoViews) * 100) : 0,
         reach: `${fmt.format(Number((v.impressions / 1_000_000).toFixed(2)))}M`,
         viewsFmt: fmt.format(v.videoViews),
-        completionsFmt: fmt.format(v.videoCompletions),
+        completionsFmt: fmt.format(completions),
+        quartiles: {
+          q25: v.videoViews ? Math.round((v.videoViews25 / v.videoViews) * 100) : 0,
+          q50: v.videoViews ? Math.round((v.videoViews50 / v.videoViews) * 100) : 0,
+          q75: v.videoViews ? Math.round((v.videoViews75 / v.videoViews) * 100) : 0,
+          q100: v.videoViews ? Math.round((completions / v.videoViews) * 100) : 0,
+        },
       };
     })
     .sort((a, b) => b.views - a.views);
@@ -548,6 +667,9 @@ async function main() {
           existing.completions += c.completions;
           existing.cost += c.cost;
           existing.engagements += c.engagements;
+          existing.videoViews25 += c.videoViews25;
+          existing.videoViews50 += c.videoViews50;
+          existing.videoViews75 += c.videoViews75;
           existing.isVideo = existing.isVideo || c.isVideo;
           existing.sourceKeys.push(ncKey);
           c.orientations.forEach((n, k) => existing.orientations.set(k, (existing.orientations.get(k) || 0) + n));
@@ -563,8 +685,13 @@ async function main() {
         return acc;
       }, [])
       .map((c) => {
+        const displayNameForCompletion = CREATIVE_LABELS[c.name] || c.name;
+        // Kwai não reporta completions/quartis na base consolidada — usa o
+        // completion real de um export complementar do Kwai Ads quando existe.
+        const completions =
+          network === 'Kwai' ? kwaiCompletions.get(displayNameForCompletion) ?? c.completions : c.completions;
         const ctrPct = c.impressions ? (c.clicks / c.impressions) * 100 : 0;
-        const completionPct = c.views ? (c.completions / c.views) * 100 : 0;
+        const completionPct = c.views ? (completions / c.views) * 100 : 0;
         const model = NETWORK_BUY_MODEL[network];
         const score = model === 'CPC' ? ctrPct : model === 'CPV' ? completionPct : c.impressions;
         const displayName = CREATIVE_LABELS[c.name] || c.name;
@@ -616,21 +743,53 @@ async function main() {
           impressionsFmt: fmt.format(c.impressions),
           clicksFmt: fmt.format(c.clicks),
           viewsFmt: fmt.format(c.views),
+          completionsFmt: fmt.format(completions),
           engagementsFmt: fmt.format(c.engagements),
           hasEngagements: c.engagements > 0,
           ctr: fmtPct(ctrPct),
           completionRate: fmtPct(completionPct, 0),
+          completionRateDetailed: fmtPct(completionPct, 1),
           cost: fmtMoney(c.cost),
           score,
           scoreLabel: model === 'CPC' ? 'CTR' : model === 'CPV' ? 'Taxa de conclusão' : 'Impressões',
           scoreDisplay: model === 'CPC' ? fmtPct(ctrPct) : model === 'CPV' ? fmtPct(completionPct, 0) : fmt.format(c.impressions),
           dailySeries,
+          quartiles: {
+            q25: c.views ? Math.round((c.videoViews25 / c.views) * 1000) / 10 : 0,
+            q50: c.views ? Math.round((c.videoViews50 / c.views) * 1000) / 10 : 0,
+            q75: c.views ? Math.round((c.videoViews75 / c.views) * 1000) / 10 : 0,
+            q100: c.views ? Math.round((completions / c.views) * 1000) / 10 : 0,
+          },
         };
       })
       .sort((a, b) => b.score - a.score);
 
     return { network, buyModel: NETWORK_BUY_MODEL[network], items };
   });
+
+  // Alcance consolidado só soma veículos com apuração fechada (sem
+  // "Pendente") — evita subestimar o alcance total. A frequência usa o total
+  // geral de impressões do digital (mesmo número do card "Impressões"),
+  // não só o dos veículos já apurados, então fica mais alta até os
+  // pendentes fecharem e o alcance capturar 100% das impressões.
+  let reachKnownTotal = 0;
+  let reachPending = false;
+  for (const [veiculo] of byVehicleDelivery.entries()) {
+    const reach = reachByVehicle.get(veiculo);
+    if (reach === undefined) continue;
+    if (reach === null) {
+      reachPending = true;
+      continue;
+    }
+    reachKnownTotal += reach;
+  }
+  const overallFrequency = reachKnownTotal ? Math.round((totalImpressions / reachKnownTotal) * 10) / 10 : null;
+  const reachSummary = {
+    reach: reachKnownTotal || null,
+    reachFmt: reachKnownTotal ? `${fmt.format(reachKnownTotal)}${reachPending ? '+' : ''}` : 'Pendente',
+    frequency: overallFrequency,
+    frequencyFmt: overallFrequency ? `${fmt.format(overallFrequency)}x` : 'Pendente',
+  };
 
   const bigNumbers = [
     { label: 'Investimento', value: fmtMoney(totalInvestment), accent: 'blue' },
@@ -825,8 +984,8 @@ async function main() {
     'Televisão Aberta': 'TV Aberta',
     'Televisão fechada': 'TV Fechada',
     'DOOH Painel Digital': 'DOOH Painel Digital',
-    MINIDOOR: 'Minidoor + MUB',
-    MUB: 'Minidoor + MUB',
+    MINIDOOR: 'Minidoor',
+    MUB: 'MUB',
     'DOOH Metro': 'DOOH Metrô + Aeroporto',
     'DOOH Aeroporto': 'DOOH Metrô + Aeroporto',
   };
@@ -849,7 +1008,7 @@ async function main() {
     offlineTotalInvestment += custo;
     offlineTotalInsercoes += insercoes;
     if (veiculo) offlineVehicles.add(veiculo);
-    if (praca) offlinePracas.add(praca);
+    if (praca && praca !== 'Nacional') offlinePracas.add(praca);
 
     const cat = byOfflineCategory.get(categoria) || { investment: 0, insercoes: 0 };
     cat.investment += custo;
@@ -869,32 +1028,86 @@ async function main() {
     { label: 'Praças/estados', value: fmt.format(offlinePracas.size), accent: 'green' },
   ];
 
+  // Impacto (Cobertura/Fluxo) vem de abas próprias da planilha de mídia
+  // exterior (uma aba por categoria: MUB, DOOH-METRO, DOOH-AEROPORTO,
+  // DOOH-PAINEL DIGITAL, MINIDOOR SOCIAL). DOOH-METRO e DOOH-AEROPORTO
+  // somam na categoria combinada "DOOH Metrô + Aeroporto". Rádio e TV
+  // (Aberta/Fechada) ainda não têm essa métrica — ficam sem campo `impact`
+  // e a página esconde essas barras na aba "Impacto".
+  const OFFLINE_IMPACT_BY_CATEGORY = {
+    MUB: 187_572_568,
+    'DOOH Metrô + Aeroporto': 103_001_275 + 34_613_604,
+    'DOOH Painel Digital': 397_445_206,
+    Minidoor: 118_863_120,
+  };
+
   const offlineChannelBreakdown = Array.from(byOfflineCategory.entries())
-    .map(([categoria, v]) => ({
-      categoria,
-      investment: Number(v.investment.toFixed(2)),
-      investmentFmt: fmtMoney(v.investment),
-      insercoes: v.insercoes,
-      insercoesFmt: fmt.format(v.insercoes),
-      investmentPct: offlineTotalInvestment ? Math.round((v.investment / offlineTotalInvestment) * 1000) / 10 : 0,
-      insercoesPct: offlineTotalInsercoes ? Math.round((v.insercoes / offlineTotalInsercoes) * 1000) / 10 : 0,
-    }))
+    .map(([categoria, v]) => {
+      const impact = OFFLINE_IMPACT_BY_CATEGORY[categoria];
+      return {
+        categoria,
+        investment: Number(v.investment.toFixed(2)),
+        investmentFmt: fmtMoney(v.investment),
+        insercoes: v.insercoes,
+        insercoesFmt: fmt.format(v.insercoes),
+        investmentPct: offlineTotalInvestment ? Math.round((v.investment / offlineTotalInvestment) * 1000) / 10 : 0,
+        insercoesPct: offlineTotalInsercoes ? Math.round((v.insercoes / offlineTotalInsercoes) * 1000) / 10 : 0,
+        ...(impact != null ? { impact, impactFmt: fmt.format(impact) } : {}),
+      };
+    })
     .sort((a, b) => b.investment - a.investment);
+
+  // Impacto (Cobertura/Fluxo) por veículo, somado a partir dos totais "TOTAL
+  // <veículo>" de cada aba da planilha de mídia exterior (MUB, DOOH-METRO,
+  // DOOH-AEROPORTO, DOOH-PAINEL DIGITAL, MINIDOOR SOCIAL). Um mesmo veículo
+  // (ex: JCDecaux em MUB e Metrô) soma o impacto das duas abas, do mesmo
+  // jeito que investimento/inserções já são somados por veículo global.
+  const OFFLINE_IMPACT_BY_VEHICLE = {
+    JCDecaux: 112_473_240 + 33_029_143 + (8_853_124 + 9_074_870) + 4_200_000,
+    ELETROMIDIA: 17_415_737,
+    'All Space': 24_241_612,
+    MOBTV: 78_000_000,
+    'Eletromídia': 2_873_281,
+    NEOOH: 34_613_604,
+    'WE SUPER OOH': 187_235_526,
+    'Bureau de Mídia': 154_951_680,
+    'WP MIDIA': 11_694_000,
+    Alumi: 33_912_000,
+    'LED ME': 5_700_000,
+    'Hocxx Smart Mídia': 3_952_000,
+    'COMUNIDADE DOOR': 42_109_590,
+    'WP MÍDIA': 44_134_200,
+    'REDE OPS': 32_619_330,
+  };
+
+  const offlineTotalImpact = Object.values(OFFLINE_IMPACT_BY_VEHICLE).reduce((acc, n) => acc + n, 0);
 
   const allOfflineVehicles = Array.from(byOfflineVehicle.entries())
-    .map(([veiculo, v]) => ({
-      veiculo,
-      categoria: v.categoria,
-      investment: Number(v.investment.toFixed(2)),
-      investmentFmt: fmtMoney(v.investment),
-      insercoes: v.insercoes,
-      insercoesFmt: fmt.format(v.insercoes),
-    }))
+    .map(([veiculo, v]) => {
+      const impact = OFFLINE_IMPACT_BY_VEHICLE[veiculo];
+      return {
+        veiculo,
+        categoria: v.categoria,
+        investment: Number(v.investment.toFixed(2)),
+        investmentFmt: fmtMoney(v.investment),
+        investmentPct: offlineTotalInvestment ? Math.round((v.investment / offlineTotalInvestment) * 1000) / 10 : 0,
+        insercoes: v.insercoes,
+        insercoesFmt: fmt.format(v.insercoes),
+        insercoesPct: offlineTotalInsercoes ? Math.round((v.insercoes / offlineTotalInsercoes) * 1000) / 10 : 0,
+        ...(impact != null
+          ? {
+              impact,
+              impactFmt: fmt.format(impact),
+              impactPct: offlineTotalImpact ? Math.round((impact / offlineTotalImpact) * 1000) / 10 : 0,
+            }
+          : {}),
+      };
+    })
     .sort((a, b) => b.investment - a.investment);
 
-  const withShare = (list) => {
-    const max = Math.max(...list.map((v) => v.investment), 1);
-    return list.map((v) => ({ ...v, investmentShare: Math.round((v.investment / max) * 100) }));
+  const withShare = (list, key = 'investment', shareKey = 'investmentShare') => {
+    const max = Math.max(...list.map((v) => v[key] ?? 0), 1);
+    return list.map((v) => ({ ...v, [shareKey]: Math.round(((v[key] ?? 0) / max) * 100) }));
   };
 
   const offlineTopVehicles = withShare(allOfflineVehicles.slice(0, 10));
@@ -911,19 +1124,16 @@ async function main() {
   // Impacto geral — compila mídia online (impressões/cliques/investimento) e
   // offline (inserções/investimento) num único conjunto de números, para a
   // página de fechamento "Impacto geral da campanha".
-  const BRAZIL_POPULATION = 213_000_000;
+  // "% da população impactada" e "Frequência média" removidos por enquanto —
+  // aguardando dados reais de alcance/frequência para substituir a estimativa
+  // baseada em impressões + inserções ÷ população (BRAZIL_POPULATION).
   const impactTotalInvestment = totalInvestment + offlineTotalInvestment;
-  const impactTotalImpacts = totalImpressions + offlineTotalInsercoes; // impressões (on) + inserções (off)
-  const impactPopulationPct = (impactTotalImpacts / BRAZIL_POPULATION) * 100;
-  // Frequência média = impactos totais ÷ população brasileira, ou seja,
-  // quantas vezes cada brasileiro teria sido impactado em média SE o
-  // alcance fosse a população inteira do país. É a mesma base de cálculo do
-  // "% da população impactada" (não é um alcance real/único medido).
-  const impactAvgFrequency = impactTotalImpacts / BRAZIL_POPULATION;
 
   const overallImpact = {
+    reach: reachSummary,
     bigNumbers: [
       { label: 'Investimento total (on + off)', value: fmtMoney(impactTotalInvestment), accent: 'blue' },
+      { label: 'Impacto (mídia exterior)', value: fmt.format(offlineTotalImpact), accent: 'green' },
       { label: 'Impressões online', value: fmt.format(totalImpressions), accent: 'orange' },
       { label: 'Inserções offline', value: fmt.format(offlineTotalInsercoes), accent: 'lightblue' },
       { label: 'Cliques totais', value: fmt.format(totalClicks), accent: 'green' },
@@ -933,21 +1143,14 @@ async function main() {
         value: totalImpressions ? fmtPct((totalClicks / totalImpressions) * 100) : '0%',
         accent: 'orange',
       },
-      {
-        label: 'Frequência média (base: população BR)',
-        value: `${new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(impactAvgFrequency)}x`,
-        accent: 'lightblue',
-      },
     ],
-    populationPct: fmtPct(impactPopulationPct, 1),
-    populationNote: `${fmt.format(impactTotalImpacts)} impactos (impressões online + inserções offline) ÷ ${fmt.format(BRAZIL_POPULATION)} habitantes (estimativa IBGE)`,
-    frequencyNote: `${fmt.format(impactTotalImpacts)} impactos ÷ ${fmt.format(BRAZIL_POPULATION)} habitantes (população brasileira, estimativa IBGE) — não é um alcance único medido, é a mesma base de cálculo do "% da população impactada"`,
   };
 
   const output = {
     generatedAt: new Date().toISOString(),
     rowCount: dataRows.length,
     bigNumbers,
+    reachSummary,
     dailySeries,
     channelSpend,
     videoCreatives,

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-17T19:13:47.087Z",
-  "rowCount": 1167,
+  "generatedAt": "2026-09-23T20:48:00.231Z",
+  "rowCount": 1248,
   "bigNumbers": [
     {
       "label": "Investimento",
@@ -9,7 +9,7 @@
     },
     {
       "label": "Impressões",
-      "value": "91.963.650",
+      "value": "91.985.658",
       "accent": "orange"
     },
     {
@@ -43,6 +43,12 @@
       "accent": "green"
     }
   ],
+  "reachSummary": {
+    "reach": 15986712,
+    "reachFmt": "15.986.712",
+    "frequency": 5.8,
+    "frequencyFmt": "5,8x"
+  },
   "dailySeries": [
     {
       "label": "15/06",
@@ -61,121 +67,121 @@
     {
       "label": "17/06",
       "impressions": 2519427,
-      "clicks": 3083,
+      "clicks": 3085,
       "views": 0,
-      "cost": 79851.04
+      "cost": 79852
     },
     {
       "label": "18/06",
       "impressions": 2448491,
-      "clicks": 2389,
+      "clicks": 2596,
       "views": 360264,
-      "cost": 436223.3
+      "cost": 436322.66
     },
     {
       "label": "19/06",
       "impressions": 4096734,
-      "clicks": 3182,
+      "clicks": 3239,
       "views": 354438,
-      "cost": 157016.31
+      "cost": 157043.67
     },
     {
       "label": "20/06",
       "impressions": 5170624,
-      "clicks": 4557,
+      "clicks": 4627,
       "views": 430851,
-      "cost": 136772.39
+      "cost": 136805.99
     },
     {
       "label": "21/06",
       "impressions": 4701727,
-      "clicks": 41787,
+      "clicks": 41775,
       "views": 238933,
-      "cost": 526374.07
+      "cost": 526368.31
     },
     {
       "label": "22/06",
       "impressions": 7069414,
-      "clicks": 13764,
+      "clicks": 13802,
       "views": 544679,
-      "cost": 229998.86
+      "cost": 230017.1
     },
     {
       "label": "23/06",
       "impressions": 7911127,
-      "clicks": 8575,
+      "clicks": 8577,
       "views": 911658,
-      "cost": 193650.74
+      "cost": 193651.7
     },
     {
       "label": "24/06",
       "impressions": 9822242,
-      "clicks": 9034,
+      "clicks": 8944,
       "views": 1580852,
-      "cost": 213029.18
+      "cost": 212985.98
     },
     {
       "label": "25/06",
       "impressions": 8155038,
-      "clicks": 7748,
+      "clicks": 7730,
       "views": 1205825,
-      "cost": 190777.84
+      "cost": 190769.2
     },
     {
       "label": "26/06",
       "impressions": 3785050,
-      "clicks": 2469,
+      "clicks": 2393,
       "views": 696531,
-      "cost": 105686.97
+      "cost": 105650.49
     },
     {
       "label": "27/06",
       "impressions": 3749207,
-      "clicks": 2935,
+      "clicks": 2889,
       "views": 613284,
-      "cost": 115796.5
+      "cost": 115774.42
     },
     {
       "label": "28/06",
       "impressions": 4557834,
-      "clicks": 2171,
+      "clicks": 2145,
       "views": 1026101,
-      "cost": 114407.38
+      "cost": 114394.9
     },
     {
       "label": "29/06",
-      "impressions": 6465425,
-      "clicks": 4910,
+      "impressions": 6465504,
+      "clicks": 4835,
       "views": 1261759,
-      "cost": 134517.49
+      "cost": 134481.49
     },
     {
       "label": "30/06",
-      "impressions": 9268418,
-      "clicks": 4783,
+      "impressions": 9268588,
+      "clicks": 4788,
       "views": 1510201,
-      "cost": 179230.99
+      "cost": 179233.39
     },
     {
       "label": "01/07",
-      "impressions": 2546503,
-      "clicks": 3150,
+      "impressions": 2563804,
+      "clicks": 3122,
       "views": 180699,
-      "cost": 88477.72
+      "cost": 88464.28
     },
     {
       "label": "02/07",
-      "impressions": 3351601,
-      "clicks": 4264,
+      "impressions": 3356059,
+      "clicks": 4261,
       "views": 198686,
-      "cost": 163774.45
+      "cost": 163773.01
     },
     {
       "label": "03/07",
       "impressions": 5033134,
-      "clicks": 8854,
+      "clicks": 8847,
       "views": 0,
-      "cost": 90198.11
+      "cost": 90194.75
     }
   ],
   "channelSpend": [
@@ -204,7 +210,7 @@
       "pct": 4.7
     },
     {
-      "label": "Diário dos Associados",
+      "label": "Diário Associados",
       "pct": 4.1
     },
     {
@@ -259,6 +265,12 @@
       "reach": "6,4M",
       "viewsFmt": "5.982.026",
       "completionsFmt": "308.298",
+      "quartiles": {
+        "q25": 7,
+        "q50": 6,
+        "q75": 5,
+        "q100": 5
+      },
       "viewsShare": 100
     },
     {
@@ -275,6 +287,12 @@
       "reach": "4,65M",
       "viewsFmt": "4.573.712",
       "completionsFmt": "1.511",
+      "quartiles": {
+        "q25": 0,
+        "q50": 0,
+        "q75": 0,
+        "q100": 0
+      },
       "viewsShare": 76
     },
     {
@@ -283,14 +301,20 @@
       "veiculo": "Kwai",
       "impressions": 1409319,
       "views": 161011,
-      "completions": 0,
+      "completions": 847,
       "ctr": "0,1%",
-      "completionRatePct": 0,
-      "completionRate": "0%",
+      "completionRatePct": 1,
+      "completionRate": "1%",
       "view75Rate": 0,
       "reach": "1,41M",
       "viewsFmt": "161.011",
-      "completionsFmt": "0",
+      "completionsFmt": "847",
+      "quartiles": {
+        "q25": 0,
+        "q50": 0,
+        "q75": 0,
+        "q100": 1
+      },
       "viewsShare": 3
     },
     {
@@ -299,14 +323,20 @@
       "veiculo": "Kwai",
       "impressions": 1392016,
       "views": 154999,
-      "completions": 0,
+      "completions": 1011,
       "ctr": "0,12%",
-      "completionRatePct": 0,
-      "completionRate": "0%",
+      "completionRatePct": 1,
+      "completionRate": "1%",
       "view75Rate": 0,
       "reach": "1,39M",
       "viewsFmt": "154.999",
-      "completionsFmt": "0",
+      "completionsFmt": "1.011",
+      "quartiles": {
+        "q25": 0,
+        "q50": 0,
+        "q75": 0,
+        "q100": 1
+      },
       "viewsShare": 3
     },
     {
@@ -323,6 +353,12 @@
       "reach": "0,15M",
       "viewsFmt": "148.300",
       "completionsFmt": "6.066",
+      "quartiles": {
+        "q25": 44,
+        "q50": 38,
+        "q75": 7,
+        "q100": 4
+      },
       "viewsShare": 2
     },
     {
@@ -331,14 +367,20 @@
       "veiculo": "Kwai",
       "impressions": 1426172,
       "views": 94712,
-      "completions": 0,
+      "completions": 1054,
       "ctr": "0,09%",
-      "completionRatePct": 0,
-      "completionRate": "0%",
+      "completionRatePct": 1,
+      "completionRate": "1%",
       "view75Rate": 0,
       "reach": "1,43M",
       "viewsFmt": "94.712",
-      "completionsFmt": "0",
+      "completionsFmt": "1.054",
+      "quartiles": {
+        "q25": 0,
+        "q50": 0,
+        "q75": 0,
+        "q100": 1
+      },
       "viewsShare": 2
     }
   ],
@@ -426,7 +468,11 @@
       "contractedFmt": "38.400.000",
       "deliveredFmt": "40.365.719",
       "pct": 105,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 15499752,
+      "reachFmt": "15.499.752",
+      "frequency": 2.6,
+      "frequencyFmt": "2,6x"
     },
     {
       "veiculo": "Spotify",
@@ -437,7 +483,11 @@
       "contractedFmt": "10.784.314",
       "deliveredFmt": "11.197.393",
       "pct": 104,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 2799348,
+      "reachFmt": "2.799.348",
+      "frequency": 4,
+      "frequencyFmt": "4x"
     },
     {
       "veiculo": "Globo.com",
@@ -448,7 +498,11 @@
       "contractedFmt": "9.244.432",
       "deliveredFmt": "6.405.250",
       "pct": 69,
-      "pctDisplay": 69
+      "pctDisplay": 69,
+      "reach": 1217283,
+      "reachFmt": "1.217.283",
+      "frequency": 5.3,
+      "frequencyFmt": "5,3x"
     },
     {
       "veiculo": "UOL",
@@ -459,7 +513,11 @@
       "contractedFmt": "8.210.000",
       "deliveredFmt": "7.374.507",
       "pct": 90,
-      "pctDisplay": 90
+      "pctDisplay": 90,
+      "reach": 1806981,
+      "reachFmt": "1.806.981",
+      "frequency": 4.1,
+      "frequencyFmt": "4,1x"
     },
     {
       "veiculo": "R7 Portal",
@@ -470,7 +528,11 @@
       "contractedFmt": "6.800.000",
       "deliveredFmt": "6.887.918",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 1947550,
+      "reachFmt": "1.947.550",
+      "frequency": 3.5,
+      "frequencyFmt": "3,5x"
     },
     {
       "veiculo": "Kwai",
@@ -481,7 +543,11 @@
       "contractedFmt": "4.227.507",
       "deliveredFmt": "4.227.507",
       "pct": 100,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 1565326,
+      "reachFmt": "1.565.326",
+      "frequency": 2.7,
+      "frequencyFmt": "2,7x"
     },
     {
       "veiculo": "AdMax",
@@ -492,7 +558,11 @@
       "contractedFmt": "4.000.000",
       "deliveredFmt": "4.168.589",
       "pct": 104,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 263889,
+      "reachFmt": "263.889",
+      "frequency": 15.8,
+      "frequencyFmt": "15,8x"
     },
     {
       "veiculo": "Netflix",
@@ -503,10 +573,14 @@
       "contractedFmt": "3.300.000",
       "deliveredFmt": "3.318.227",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 2419705,
+      "reachFmt": "2.419.705",
+      "frequency": 1.4,
+      "frequencyFmt": "1,4x"
     },
     {
-      "veiculo": "Diário dos Associados",
+      "veiculo": "Diário Associados",
       "modelo": "CPM",
       "metricLabel": "Impressões",
       "contracted": 3200000,
@@ -514,7 +588,11 @@
       "contractedFmt": "3.200.000",
       "deliveredFmt": "3.233.666",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 145806,
+      "reachFmt": "145.806",
+      "frequency": 22.2,
+      "frequencyFmt": "22,2x"
     },
     {
       "veiculo": "Deezer",
@@ -525,7 +603,11 @@
       "contractedFmt": "2.380.952",
       "deliveredFmt": "2.389.045",
       "pct": 100,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 2107587,
+      "reachFmt": "2.107.587",
+      "frequency": 1.1,
+      "frequencyFmt": "1,1x"
     },
     {
       "veiculo": "NewCom",
@@ -536,7 +618,11 @@
       "contractedFmt": "800.000",
       "deliveredFmt": "644.336",
       "pct": 81,
-      "pctDisplay": 81
+      "pctDisplay": 81,
+      "reach": 215584,
+      "reachFmt": "215.584",
+      "frequency": 3,
+      "frequencyFmt": "3x"
     },
     {
       "veiculo": "YouTube",
@@ -547,7 +633,11 @@
       "contractedFmt": "480.000",
       "deliveredFmt": "483.249",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 957670,
+      "reachFmt": "957.670",
+      "frequency": 0.8,
+      "frequencyFmt": "0,8x"
     },
     {
       "veiculo": "Tik Tok",
@@ -558,7 +648,11 @@
       "contractedFmt": "44.358",
       "deliveredFmt": "47.094",
       "pct": 106,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 32298,
+      "reachFmt": "32.298",
+      "frequency": 4.7,
+      "frequencyFmt": "4,7x"
     },
     {
       "veiculo": "Hands",
@@ -569,7 +663,11 @@
       "contractedFmt": "25.000",
       "deliveredFmt": "25.210",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 507685,
+      "reachFmt": "507.685",
+      "frequency": 1.7,
+      "frequencyFmt": "1,7x"
     }
   ],
   "vehicleDeliveryPortals": [
@@ -582,7 +680,11 @@
       "contractedFmt": "10.784.314",
       "deliveredFmt": "11.197.393",
       "pct": 104,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 2799348,
+      "reachFmt": "2.799.348",
+      "frequency": 4,
+      "frequencyFmt": "4x"
     },
     {
       "veiculo": "Globo.com",
@@ -593,7 +695,11 @@
       "contractedFmt": "9.244.432",
       "deliveredFmt": "6.405.250",
       "pct": 69,
-      "pctDisplay": 69
+      "pctDisplay": 69,
+      "reach": 1217283,
+      "reachFmt": "1.217.283",
+      "frequency": 5.3,
+      "frequencyFmt": "5,3x"
     },
     {
       "veiculo": "UOL",
@@ -604,7 +710,11 @@
       "contractedFmt": "8.210.000",
       "deliveredFmt": "7.374.507",
       "pct": 90,
-      "pctDisplay": 90
+      "pctDisplay": 90,
+      "reach": 1806981,
+      "reachFmt": "1.806.981",
+      "frequency": 4.1,
+      "frequencyFmt": "4,1x"
     },
     {
       "veiculo": "R7 Portal",
@@ -615,7 +725,11 @@
       "contractedFmt": "6.800.000",
       "deliveredFmt": "6.887.918",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 1947550,
+      "reachFmt": "1.947.550",
+      "frequency": 3.5,
+      "frequencyFmt": "3,5x"
     },
     {
       "veiculo": "AdMax",
@@ -626,7 +740,11 @@
       "contractedFmt": "4.000.000",
       "deliveredFmt": "4.168.589",
       "pct": 104,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 263889,
+      "reachFmt": "263.889",
+      "frequency": 15.8,
+      "frequencyFmt": "15,8x"
     },
     {
       "veiculo": "Netflix",
@@ -637,10 +755,14 @@
       "contractedFmt": "3.300.000",
       "deliveredFmt": "3.318.227",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 2419705,
+      "reachFmt": "2.419.705",
+      "frequency": 1.4,
+      "frequencyFmt": "1,4x"
     },
     {
-      "veiculo": "Diário dos Associados",
+      "veiculo": "Diário Associados",
       "modelo": "CPM",
       "metricLabel": "Impressões",
       "contracted": 3200000,
@@ -648,7 +770,11 @@
       "contractedFmt": "3.200.000",
       "deliveredFmt": "3.233.666",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 145806,
+      "reachFmt": "145.806",
+      "frequency": 22.2,
+      "frequencyFmt": "22,2x"
     },
     {
       "veiculo": "Deezer",
@@ -659,7 +785,11 @@
       "contractedFmt": "2.380.952",
       "deliveredFmt": "2.389.045",
       "pct": 100,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 2107587,
+      "reachFmt": "2.107.587",
+      "frequency": 1.1,
+      "frequencyFmt": "1,1x"
     },
     {
       "veiculo": "NewCom",
@@ -670,7 +800,11 @@
       "contractedFmt": "800.000",
       "deliveredFmt": "644.336",
       "pct": 81,
-      "pctDisplay": 81
+      "pctDisplay": 81,
+      "reach": 215584,
+      "reachFmt": "215.584",
+      "frequency": 3,
+      "frequencyFmt": "3x"
     },
     {
       "veiculo": "Hands",
@@ -681,7 +815,11 @@
       "contractedFmt": "25.000",
       "deliveredFmt": "25.210",
       "pct": 101,
-      "pctDisplay": 100
+      "pctDisplay": 100,
+      "reach": 507685,
+      "reachFmt": "507.685",
+      "frequency": 1.7,
+      "frequencyFmt": "1,7x"
     }
   ],
   "vehicleOverview": [
@@ -728,7 +866,7 @@
       "cost": 436015.04
     },
     {
-      "veiculo": "Diário dos Associados",
+      "veiculo": "Diário Associados",
       "impressions": 3233666,
       "clicks": 2720,
       "views": 0,
@@ -750,7 +888,7 @@
     },
     {
       "veiculo": "Hands",
-      "impressions": 828563,
+      "impressions": 850571,
       "clicks": 25210,
       "views": 0,
       "cost": 12100.8
@@ -768,7 +906,13 @@
       "cpc": "R$ 39,50",
       "cpv": "R$ 0,05",
       "ctr": "0,03%",
-      "completionRate": "0%"
+      "completionRate": "0%",
+      "quartiles": {
+        "q25": 1,
+        "q50": 0,
+        "q75": 0,
+        "q100": 0
+      }
     },
     {
       "network": "YouTube",
@@ -781,7 +925,13 @@
       "cpc": "R$ 6.998,78",
       "cpv": "R$ 1,26",
       "ctr": "0,01%",
-      "completionRate": "63%"
+      "completionRate": "63%",
+      "quartiles": {
+        "q25": 81,
+        "q50": 69,
+        "q75": 65,
+        "q100": 63
+      }
     },
     {
       "network": "Tik Tok",
@@ -794,7 +944,13 @@
       "cpc": "R$ 10,50",
       "cpv": "R$ 3,33",
       "ctr": "31,02%",
-      "completionRate": "4%"
+      "completionRate": "4%",
+      "quartiles": {
+        "q25": 44,
+        "q50": 38,
+        "q75": 7,
+        "q100": 4
+      }
     },
     {
       "network": "Kwai",
@@ -807,7 +963,13 @@
       "cpc": "R$ 12,80",
       "cpv": "R$ 0,14",
       "ctr": "0,1%",
-      "completionRate": "0%"
+      "completionRate": "0%",
+      "quartiles": {
+        "q25": 0,
+        "q50": 0,
+        "q75": 0,
+        "q100": 0
+      }
     }
   ],
   "topCreativesByNetwork": [
@@ -830,10 +992,12 @@
           "impressionsFmt": "6.797.230",
           "clicksFmt": "622",
           "viewsFmt": "0",
+          "completionsFmt": "0",
           "engagementsFmt": "1.557",
           "hasEngagements": true,
           "ctr": "0,01%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 90.403,17",
           "score": 6797230,
           "scoreLabel": "Impressões",
@@ -887,7 +1051,13 @@
               "clicks": 0,
               "views": 0
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0
+          }
         },
         {
           "name": "Vicariocídio Vira Crime Hediondo",
@@ -904,10 +1074,12 @@
           "impressionsFmt": "6.447.680",
           "clicksFmt": "3.633",
           "viewsFmt": "0",
+          "completionsFmt": "0",
           "engagementsFmt": "5.625",
           "hasEngagements": true,
           "ctr": "0,06%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 85.754,15",
           "score": 6447680,
           "scoreLabel": "Impressões",
@@ -961,7 +1133,13 @@
               "clicks": 905,
               "views": 0
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0
+          }
         },
         {
           "name": "Isenção de Imposto de Renda",
@@ -978,10 +1156,12 @@
           "impressionsFmt": "6.371.863",
           "clicksFmt": "3.970",
           "viewsFmt": "0",
+          "completionsFmt": "0",
           "engagementsFmt": "5.606",
           "hasEngagements": true,
           "ctr": "0,06%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 84.745,74",
           "score": 6371863,
           "scoreLabel": "Impressões",
@@ -1035,7 +1215,13 @@
               "clicks": 897,
               "views": 0
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0
+          }
         },
         {
           "name": "Institucional · 30s",
@@ -1052,10 +1238,12 @@
           "impressionsFmt": "5.624.585",
           "clicksFmt": "0",
           "viewsFmt": "5.498.777",
+          "completionsFmt": "4.284",
           "engagementsFmt": "126.988",
           "hasEngagements": true,
           "ctr": "0%",
           "completionRate": "0%",
+          "completionRateDetailed": "0,1%",
           "cost": "R$ 74.806,95",
           "score": 5624585,
           "scoreLabel": "Impressões",
@@ -1151,7 +1339,13 @@
               "clicks": 0,
               "views": 128261
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0.8,
+            "q50": 0.5,
+            "q75": 0.1,
+            "q100": 0.1
+          }
         },
         {
           "name": "Institucional · 60s",
@@ -1168,10 +1362,12 @@
           "impressionsFmt": "4.654.003",
           "clicksFmt": "0",
           "viewsFmt": "4.573.712",
+          "completionsFmt": "1.511",
           "engagementsFmt": "149.579",
           "hasEngagements": true,
           "ctr": "0%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 61.898,27",
           "score": 4654003,
           "scoreLabel": "Impressões",
@@ -1267,7 +1463,13 @@
               "clicks": 0,
               "views": 14582
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0.4,
+            "q50": 0.1,
+            "q75": 0,
+            "q100": 0
+          }
         },
         {
           "name": "Renovação Automática da CNH",
@@ -1284,10 +1486,12 @@
           "impressionsFmt": "3.846.980",
           "clicksFmt": "608",
           "viewsFmt": "0",
+          "completionsFmt": "0",
           "engagementsFmt": "1.160",
           "hasEngagements": true,
           "ctr": "0,02%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 51.164,83",
           "score": 3846980,
           "scoreLabel": "Impressões",
@@ -1341,7 +1545,13 @@
               "clicks": 0,
               "views": 0
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0
+          }
         },
         {
           "name": "Carrossel · 5 Leis que já Fazem Parte da Sua Vida",
@@ -1358,10 +1568,12 @@
           "impressionsFmt": "3.737.129",
           "clicksFmt": "4.101",
           "viewsFmt": "0",
+          "completionsFmt": "0",
           "engagementsFmt": "4.790",
           "hasEngagements": true,
           "ctr": "0,11%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 49.703,87",
           "score": 3737129,
           "scoreLabel": "Impressões",
@@ -1445,7 +1657,13 @@
               "clicks": 45,
               "views": 0
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0
+          }
         },
         {
           "name": "Gás do Povo",
@@ -1462,10 +1680,12 @@
           "impressionsFmt": "2.886.249",
           "clicksFmt": "657",
           "viewsFmt": "0",
+          "completionsFmt": "0",
           "engagementsFmt": "1.128",
           "hasEngagements": true,
           "ctr": "0,02%",
           "completionRate": "0%",
+          "completionRateDetailed": "0%",
           "cost": "R$ 38.387,10",
           "score": 2886249,
           "scoreLabel": "Impressões",
@@ -1519,7 +1739,13 @@
               "clicks": 0,
               "views": 0
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0
+          }
         }
       ]
     },
@@ -1542,10 +1768,12 @@
           "impressionsFmt": "771.104",
           "clicksFmt": "87",
           "viewsFmt": "483.249",
+          "completionsFmt": "304.014",
           "engagementsFmt": "573.444",
           "hasEngagements": true,
           "ctr": "0,01%",
           "completionRate": "63%",
+          "completionRateDetailed": "62,9%",
           "cost": "R$ 608.893,74",
           "score": 62.910425060372596,
           "scoreLabel": "Taxa de conclusão",
@@ -1635,7 +1863,13 @@
               "clicks": 14,
               "views": 55843
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 81.5,
+            "q50": 69.3,
+            "q75": 65.2,
+            "q100": 62.9
+          }
         }
       ]
     },
@@ -1658,10 +1892,12 @@
           "impressionsFmt": "151.826",
           "clicksFmt": "47.094",
           "viewsFmt": "148.300",
+          "completionsFmt": "6.066",
           "engagementsFmt": "0",
           "hasEngagements": false,
           "ctr": "31,02%",
           "completionRate": "4%",
+          "completionRateDetailed": "4,1%",
           "cost": "R$ 494.487,00",
           "score": 31.018402645133246,
           "scoreLabel": "CTR",
@@ -1697,7 +1933,13 @@
               "clicks": 969,
               "views": 3023
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 43.9,
+            "q50": 38.1,
+            "q75": 6.7,
+            "q100": 4.1
+          }
         }
       ]
     },
@@ -1720,10 +1962,12 @@
           "impressionsFmt": "1.426.172",
           "clicksFmt": "1.284",
           "viewsFmt": "94.712",
+          "completionsFmt": "1.054",
           "engagementsFmt": "0",
           "hasEngagements": false,
           "ctr": "0,09%",
-          "completionRate": "0%",
+          "completionRate": "1%",
+          "completionRateDetailed": "1,1%",
           "cost": "R$ 18.968,09",
           "score": 1426172,
           "scoreLabel": "Impressões",
@@ -1753,7 +1997,13 @@
               "clicks": 293,
               "views": 172
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 1.1
+          }
         },
         {
           "name": "Tornozeleira para Agressores",
@@ -1770,10 +2020,12 @@
           "impressionsFmt": "1.409.319",
           "clicksFmt": "1.450",
           "viewsFmt": "161.011",
+          "completionsFmt": "847",
           "engagementsFmt": "0",
           "hasEngagements": false,
           "ctr": "0,1%",
-          "completionRate": "0%",
+          "completionRate": "1%",
+          "completionRateDetailed": "0,5%",
           "cost": "R$ 18.743,95",
           "score": 1409319,
           "scoreLabel": "Impressões",
@@ -1803,7 +2055,13 @@
               "clicks": 326,
               "views": 136
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0.5
+          }
         },
         {
           "name": "Renovação Automática da CNH",
@@ -1820,10 +2078,12 @@
           "impressionsFmt": "1.392.016",
           "clicksFmt": "1.658",
           "viewsFmt": "154.999",
+          "completionsFmt": "1.011",
           "engagementsFmt": "0",
           "hasEngagements": false,
           "ctr": "0,12%",
-          "completionRate": "0%",
+          "completionRate": "1%",
+          "completionRateDetailed": "0,7%",
           "cost": "R$ 18.513,82",
           "score": 1392016,
           "scoreLabel": "Impressões",
@@ -1865,7 +2125,13 @@
               "clicks": 391,
               "views": 178
             }
-          ]
+          ],
+          "quartiles": {
+            "q25": 0,
+            "q50": 0,
+            "q75": 0,
+            "q100": 0.7
+          }
         }
       ]
     }
@@ -2208,7 +2474,7 @@
     },
     {
       "label": "Praças/estados",
-      "value": "28",
+      "value": "27",
       "accent": "green"
     }
   ],
@@ -2232,22 +2498,37 @@
       "insercoesPct": 0
     },
     {
-      "categoria": "Minidoor + MUB",
-      "investment": 1825926.3,
-      "investmentFmt": "R$ 1.825.926,30",
-      "insercoes": 124884828,
-      "insercoesFmt": "124.884.828",
-      "investmentPct": 12,
-      "insercoesPct": 98.8
-    },
-    {
       "categoria": "DOOH Painel Digital",
       "investment": 1673076.66,
       "investmentFmt": "R$ 1.673.076,66",
       "insercoes": 659657,
       "insercoesFmt": "659.657",
       "investmentPct": 11,
-      "insercoesPct": 0.5
+      "insercoesPct": 0.5,
+      "impact": 397445206,
+      "impactFmt": "397.445.206"
+    },
+    {
+      "categoria": "MUB",
+      "investment": 1060208.25,
+      "investmentFmt": "R$ 1.060.208,25",
+      "insercoes": 6021708,
+      "insercoesFmt": "6.021.708",
+      "investmentPct": 7,
+      "insercoesPct": 4.8,
+      "impact": 187572568,
+      "impactFmt": "187.572.568"
+    },
+    {
+      "categoria": "Minidoor",
+      "investment": 765718.05,
+      "investmentFmt": "R$ 765.718,05",
+      "insercoes": 118863120,
+      "insercoesFmt": "118.863.120",
+      "investmentPct": 5,
+      "insercoesPct": 94,
+      "impact": 118863120,
+      "impactFmt": "118.863.120"
     },
     {
       "categoria": "DOOH Metrô + Aeroporto",
@@ -2256,7 +2537,9 @@
       "insercoes": 846402,
       "insercoesFmt": "846.402",
       "investmentPct": 3.9,
-      "insercoesPct": 0.7
+      "insercoesPct": 0.7,
+      "impact": 137614879,
+      "impactFmt": "137.614.879"
     },
     {
       "categoria": "TV Fechada",
@@ -2274,8 +2557,10 @@
       "categoria": "TV Aberta",
       "investment": 3778385.6,
       "investmentFmt": "R$ 3.778.385,60",
+      "investmentPct": 24.9,
       "insercoes": 9,
       "insercoesFmt": "9",
+      "insercoesPct": 0,
       "investmentShare": 100
     },
     {
@@ -2283,8 +2568,10 @@
       "categoria": "TV Aberta",
       "investment": 2270401.2,
       "investmentFmt": "R$ 2.270.401,20",
+      "investmentPct": 15,
       "insercoes": 15,
       "insercoesFmt": "15",
+      "insercoesPct": 0,
       "investmentShare": 60
     },
     {
@@ -2292,17 +2579,24 @@
       "categoria": "TV Aberta",
       "investment": 1612480,
       "investmentFmt": "R$ 1.612.480,00",
+      "investmentPct": 10.6,
       "insercoes": 20,
       "insercoesFmt": "20",
+      "insercoesPct": 0,
       "investmentShare": 43
     },
     {
       "veiculo": "JCDecaux",
-      "categoria": "Minidoor + MUB",
+      "categoria": "MUB",
       "investment": 701262.57,
       "investmentFmt": "R$ 701.262,57",
+      "investmentPct": 4.6,
       "insercoes": 1031520,
       "insercoesFmt": "1.031.520",
+      "insercoesPct": 0.8,
+      "impact": 167630377,
+      "impactFmt": "167.630.377",
+      "impactPct": 19.9,
       "investmentShare": 19
     },
     {
@@ -2310,8 +2604,10 @@
       "categoria": "TV Aberta",
       "investment": 679345,
       "investmentFmt": "R$ 679.345,00",
+      "investmentPct": 4.5,
       "insercoes": 13,
       "insercoesFmt": "13",
+      "insercoesPct": 0,
       "investmentShare": 18
     },
     {
@@ -2319,17 +2615,27 @@
       "categoria": "DOOH Painel Digital",
       "investment": 507653.39,
       "investmentFmt": "R$ 507.653,39",
+      "investmentPct": 3.3,
       "insercoes": 219240,
       "insercoesFmt": "219.240",
+      "insercoesPct": 0.2,
+      "impact": 187235526,
+      "impactFmt": "187.235.526",
+      "impactPct": 22.3,
       "investmentShare": 13
     },
     {
       "veiculo": "ELETROMIDIA",
-      "categoria": "Minidoor + MUB",
+      "categoria": "MUB",
       "investment": 319864.91,
       "investmentFmt": "R$ 319.864,91",
+      "investmentPct": 2.1,
       "insercoes": 855708,
       "insercoesFmt": "855.708",
+      "insercoesPct": 0.7,
+      "impact": 17415737,
+      "impactFmt": "17.415.737",
+      "impactPct": 2.1,
       "investmentShare": 8
     },
     {
@@ -2337,8 +2643,10 @@
       "categoria": "TV Aberta",
       "investment": 313006.69,
       "investmentFmt": "R$ 313.006,69",
+      "investmentPct": 2.1,
       "insercoes": 16,
       "insercoesFmt": "16",
+      "insercoesPct": 0,
       "investmentShare": 8
     },
     {
@@ -2346,17 +2654,27 @@
       "categoria": "DOOH Painel Digital",
       "investment": 305471.32,
       "investmentFmt": "R$ 305.471,32",
+      "investmentPct": 2,
       "insercoes": 82386,
       "insercoesFmt": "82.386",
+      "insercoesPct": 0.1,
+      "impact": 154951680,
+      "impactFmt": "154.951.680",
+      "impactPct": 18.4,
       "investmentShare": 8
     },
     {
       "veiculo": "All Space",
-      "categoria": "Minidoor + MUB",
+      "categoria": "MUB",
       "investment": 299592,
       "investmentFmt": "R$ 299.592,00",
+      "investmentPct": 2,
       "insercoes": 4410000,
       "insercoesFmt": "4.410.000",
+      "insercoesPct": 3.5,
+      "impact": 24241612,
+      "impactFmt": "24.241.612",
+      "impactPct": 2.9,
       "investmentShare": 8
     }
   ],
@@ -2369,8 +2687,10 @@
           "categoria": "TV Aberta",
           "investment": 3778385.6,
           "investmentFmt": "R$ 3.778.385,60",
+          "investmentPct": 24.9,
           "insercoes": 9,
           "insercoesFmt": "9",
+          "insercoesPct": 0,
           "investmentShare": 100
         },
         {
@@ -2378,8 +2698,10 @@
           "categoria": "TV Aberta",
           "investment": 2270401.2,
           "investmentFmt": "R$ 2.270.401,20",
+          "investmentPct": 15,
           "insercoes": 15,
           "insercoesFmt": "15",
+          "insercoesPct": 0,
           "investmentShare": 60
         },
         {
@@ -2387,8 +2709,10 @@
           "categoria": "TV Aberta",
           "investment": 1612480,
           "investmentFmt": "R$ 1.612.480,00",
+          "investmentPct": 10.6,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 43
         },
         {
@@ -2396,8 +2720,10 @@
           "categoria": "TV Aberta",
           "investment": 679345,
           "investmentFmt": "R$ 679.345,00",
+          "investmentPct": 4.5,
           "insercoes": 13,
           "insercoesFmt": "13",
+          "insercoesPct": 0,
           "investmentShare": 18
         },
         {
@@ -2405,8 +2731,10 @@
           "categoria": "TV Aberta",
           "investment": 313006.69,
           "investmentFmt": "R$ 313.006,69",
+          "investmentPct": 2.1,
           "insercoes": 16,
           "insercoesFmt": "16",
+          "insercoesPct": 0,
           "investmentShare": 8
         }
       ]
@@ -2419,8 +2747,10 @@
           "categoria": "Rádio",
           "investment": 60520.7,
           "investmentFmt": "R$ 60.520,70",
+          "investmentPct": 0.4,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 100
         },
         {
@@ -2428,8 +2758,10 @@
           "categoria": "Rádio",
           "investment": 53383.54,
           "investmentFmt": "R$ 53.383,54",
+          "investmentPct": 0.4,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 88
         },
         {
@@ -2437,8 +2769,10 @@
           "categoria": "Rádio",
           "investment": 51984,
           "investmentFmt": "R$ 51.984,00",
+          "investmentPct": 0.3,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 86
         },
         {
@@ -2446,8 +2780,10 @@
           "categoria": "Rádio",
           "investment": 37939.2,
           "investmentFmt": "R$ 37.939,20",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 63
         },
         {
@@ -2455,8 +2791,10 @@
           "categoria": "Rádio",
           "investment": 36591.15,
           "investmentFmt": "R$ 36.591,15",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 60
         },
         {
@@ -2464,8 +2802,10 @@
           "categoria": "Rádio",
           "investment": 35202.44,
           "investmentFmt": "R$ 35.202,44",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 58
         },
         {
@@ -2473,8 +2813,10 @@
           "categoria": "Rádio",
           "investment": 34276,
           "investmentFmt": "R$ 34.276,00",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 57
         },
         {
@@ -2482,8 +2824,10 @@
           "categoria": "Rádio",
           "investment": 31350,
           "investmentFmt": "R$ 31.350,00",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 52
         },
         {
@@ -2491,8 +2835,10 @@
           "categoria": "Rádio",
           "investment": 31291.1,
           "investmentFmt": "R$ 31.291,10",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 52
         },
         {
@@ -2500,68 +2846,11 @@
           "categoria": "Rádio",
           "investment": 30628,
           "investmentFmt": "R$ 30.628,00",
+          "investmentPct": 0.2,
           "insercoes": 20,
           "insercoesFmt": "20",
+          "insercoesPct": 0,
           "investmentShare": 51
-        }
-      ]
-    },
-    {
-      "categoria": "Minidoor + MUB",
-      "vehicles": [
-        {
-          "veiculo": "JCDecaux",
-          "categoria": "Minidoor + MUB",
-          "investment": 701262.57,
-          "investmentFmt": "R$ 701.262,57",
-          "insercoes": 1031520,
-          "insercoesFmt": "1.031.520",
-          "investmentShare": 100
-        },
-        {
-          "veiculo": "ELETROMIDIA",
-          "categoria": "Minidoor + MUB",
-          "investment": 319864.91,
-          "investmentFmt": "R$ 319.864,91",
-          "insercoes": 855708,
-          "insercoesFmt": "855.708",
-          "investmentShare": 46
-        },
-        {
-          "veiculo": "All Space",
-          "categoria": "Minidoor + MUB",
-          "investment": 299592,
-          "investmentFmt": "R$ 299.592,00",
-          "insercoes": 4410000,
-          "insercoesFmt": "4.410.000",
-          "investmentShare": 43
-        },
-        {
-          "veiculo": "WP MÍDIA",
-          "categoria": "Minidoor + MUB",
-          "investment": 288796.2,
-          "investmentFmt": "R$ 288.796,20",
-          "insercoes": 44134200,
-          "insercoesFmt": "44.134.200",
-          "investmentShare": 41
-        },
-        {
-          "veiculo": "REDE OPS",
-          "categoria": "Minidoor + MUB",
-          "investment": 283691.85,
-          "investmentFmt": "R$ 283.691,85",
-          "insercoes": 32619330,
-          "insercoesFmt": "32.619.330",
-          "investmentShare": 40
-        },
-        {
-          "veiculo": "COMUNIDADE DOOR",
-          "categoria": "Minidoor + MUB",
-          "investment": 193230,
-          "investmentFmt": "R$ 193.230,00",
-          "insercoes": 42109590,
-          "insercoesFmt": "42.109.590",
-          "investmentShare": 28
         }
       ]
     },
@@ -2573,8 +2862,13 @@
           "categoria": "DOOH Painel Digital",
           "investment": 507653.39,
           "investmentFmt": "R$ 507.653,39",
+          "investmentPct": 3.3,
           "insercoes": 219240,
           "insercoesFmt": "219.240",
+          "insercoesPct": 0.2,
+          "impact": 187235526,
+          "impactFmt": "187.235.526",
+          "impactPct": 22.3,
           "investmentShare": 100
         },
         {
@@ -2582,8 +2876,13 @@
           "categoria": "DOOH Painel Digital",
           "investment": 305471.32,
           "investmentFmt": "R$ 305.471,32",
+          "investmentPct": 2,
           "insercoes": 82386,
           "insercoesFmt": "82.386",
+          "insercoesPct": 0.1,
+          "impact": 154951680,
+          "impactFmt": "154.951.680",
+          "impactPct": 18.4,
           "investmentShare": 60
         },
         {
@@ -2591,8 +2890,13 @@
           "categoria": "DOOH Painel Digital",
           "investment": 268909.09,
           "investmentFmt": "R$ 268.909,09",
+          "investmentPct": 1.8,
           "insercoes": 65429,
           "insercoesFmt": "65.429",
+          "insercoesPct": 0.1,
+          "impact": 11694000,
+          "impactFmt": "11.694.000",
+          "impactPct": 1.4,
           "investmentShare": 53
         },
         {
@@ -2600,8 +2904,13 @@
           "categoria": "DOOH Painel Digital",
           "investment": 136375.92,
           "investmentFmt": "R$ 136.375,92",
+          "investmentPct": 0.9,
           "insercoes": 169920,
           "insercoesFmt": "169.920",
+          "insercoesPct": 0.1,
+          "impact": 33912000,
+          "impactFmt": "33.912.000",
+          "impactPct": 4,
           "investmentShare": 27
         },
         {
@@ -2609,8 +2918,13 @@
           "categoria": "DOOH Painel Digital",
           "investment": 130173.75,
           "investmentFmt": "R$ 130.173,75",
+          "investmentPct": 0.9,
           "insercoes": 50025,
           "insercoesFmt": "50.025",
+          "insercoesPct": 0,
+          "impact": 3952000,
+          "impactFmt": "3.952.000",
+          "impactPct": 0.5,
           "investmentShare": 26
         },
         {
@@ -2618,8 +2932,13 @@
           "categoria": "DOOH Painel Digital",
           "investment": 127747.43,
           "investmentFmt": "R$ 127.747,43",
+          "investmentPct": 0.8,
           "insercoes": 19665,
           "insercoesFmt": "19.665",
+          "insercoesPct": 0,
+          "impact": 5700000,
+          "impactFmt": "5.700.000",
+          "impactPct": 0.7,
           "investmentShare": 25
         },
         {
@@ -2627,8 +2946,10 @@
           "categoria": "DOOH Painel Digital",
           "investment": 99234.72,
           "investmentFmt": "R$ 99.234,72",
+          "investmentPct": 0.7,
           "insercoes": 26496,
           "insercoesFmt": "26.496",
+          "insercoesPct": 0,
           "investmentShare": 20
         },
         {
@@ -2636,8 +2957,10 @@
           "categoria": "DOOH Painel Digital",
           "investment": 49248,
           "investmentFmt": "R$ 49.248,00",
+          "investmentPct": 0.3,
           "insercoes": 13248,
           "insercoesFmt": "13.248",
+          "insercoesPct": 0,
           "investmentShare": 10
         },
         {
@@ -2645,9 +2968,105 @@
           "categoria": "DOOH Painel Digital",
           "investment": 48263.04,
           "investmentFmt": "R$ 48.263,04",
+          "investmentPct": 0.3,
           "insercoes": 13248,
           "insercoesFmt": "13.248",
+          "insercoesPct": 0,
           "investmentShare": 10
+        }
+      ]
+    },
+    {
+      "categoria": "MUB",
+      "vehicles": [
+        {
+          "veiculo": "JCDecaux",
+          "categoria": "MUB",
+          "investment": 701262.57,
+          "investmentFmt": "R$ 701.262,57",
+          "investmentPct": 4.6,
+          "insercoes": 1031520,
+          "insercoesFmt": "1.031.520",
+          "insercoesPct": 0.8,
+          "impact": 167630377,
+          "impactFmt": "167.630.377",
+          "impactPct": 19.9,
+          "investmentShare": 100
+        },
+        {
+          "veiculo": "ELETROMIDIA",
+          "categoria": "MUB",
+          "investment": 319864.91,
+          "investmentFmt": "R$ 319.864,91",
+          "investmentPct": 2.1,
+          "insercoes": 855708,
+          "insercoesFmt": "855.708",
+          "insercoesPct": 0.7,
+          "impact": 17415737,
+          "impactFmt": "17.415.737",
+          "impactPct": 2.1,
+          "investmentShare": 46
+        },
+        {
+          "veiculo": "All Space",
+          "categoria": "MUB",
+          "investment": 299592,
+          "investmentFmt": "R$ 299.592,00",
+          "investmentPct": 2,
+          "insercoes": 4410000,
+          "insercoesFmt": "4.410.000",
+          "insercoesPct": 3.5,
+          "impact": 24241612,
+          "impactFmt": "24.241.612",
+          "impactPct": 2.9,
+          "investmentShare": 43
+        }
+      ]
+    },
+    {
+      "categoria": "Minidoor",
+      "vehicles": [
+        {
+          "veiculo": "WP MÍDIA",
+          "categoria": "Minidoor",
+          "investment": 288796.2,
+          "investmentFmt": "R$ 288.796,20",
+          "investmentPct": 1.9,
+          "insercoes": 44134200,
+          "insercoesFmt": "44.134.200",
+          "insercoesPct": 34.9,
+          "impact": 44134200,
+          "impactFmt": "44.134.200",
+          "impactPct": 5.2,
+          "investmentShare": 100
+        },
+        {
+          "veiculo": "REDE OPS",
+          "categoria": "Minidoor",
+          "investment": 283691.85,
+          "investmentFmt": "R$ 283.691,85",
+          "investmentPct": 1.9,
+          "insercoes": 32619330,
+          "insercoesFmt": "32.619.330",
+          "insercoesPct": 25.8,
+          "impact": 32619330,
+          "impactFmt": "32.619.330",
+          "impactPct": 3.9,
+          "investmentShare": 98
+        },
+        {
+          "veiculo": "COMUNIDADE DOOR",
+          "categoria": "Minidoor",
+          "investment": 193230,
+          "investmentFmt": "R$ 193.230,00",
+          "investmentPct": 1.3,
+          "insercoes": 42109590,
+          "insercoesFmt": "42.109.590",
+          "insercoesPct": 33.3,
+          "impact": 42109590,
+          "impactFmt": "42.109.590",
+          "impactPct": 5,
+          "investmentShare": 67
         }
       ]
     },
@@ -2659,8 +3078,13 @@
           "categoria": "DOOH Metrô + Aeroporto",
           "investment": 146571.42,
           "investmentFmt": "R$ 146.571,42",
+          "investmentPct": 1,
           "insercoes": 116640,
           "insercoesFmt": "116.640",
+          "insercoesPct": 0.1,
+          "impact": 34613604,
+          "impactFmt": "34.613.604",
+          "impactPct": 4.1,
           "investmentShare": 100
         },
         {
@@ -2668,8 +3092,13 @@
           "categoria": "DOOH Metrô + Aeroporto",
           "investment": 106989.28,
           "investmentFmt": "R$ 106.989,28",
+          "investmentPct": 0.7,
           "insercoes": 424242,
           "insercoesFmt": "424.242",
+          "insercoesPct": 0.3,
+          "impact": 2873281,
+          "impactFmt": "2.873.281",
+          "impactPct": 0.3,
           "investmentShare": 73
         },
         {
@@ -2677,8 +3106,13 @@
           "categoria": "DOOH Metrô + Aeroporto",
           "investment": 77520,
           "investmentFmt": "R$ 77.520,00",
+          "investmentPct": 0.5,
           "insercoes": 30000,
           "insercoesFmt": "30.000",
+          "insercoesPct": 0,
+          "impact": 78000000,
+          "impactFmt": "78.000.000",
+          "impactPct": 9.3,
           "investmentShare": 53
         }
       ]
@@ -2691,8 +3125,10 @@
           "categoria": "TV Fechada",
           "investment": 130113.43,
           "investmentFmt": "R$ 130.113,43",
+          "investmentPct": 0.9,
           "insercoes": 16,
           "insercoesFmt": "16",
+          "insercoesPct": 0,
           "investmentShare": 100
         },
         {
@@ -2700,8 +3136,10 @@
           "categoria": "TV Fechada",
           "investment": 102561.09,
           "investmentFmt": "R$ 102.561,09",
+          "investmentPct": 0.7,
           "insercoes": 11,
           "insercoesFmt": "11",
+          "insercoesPct": 0,
           "investmentShare": 79
         },
         {
@@ -2709,8 +3147,10 @@
           "categoria": "TV Fechada",
           "investment": 86695.73,
           "investmentFmt": "R$ 86.695,73",
+          "investmentPct": 0.6,
           "insercoes": 19,
           "insercoesFmt": "19",
+          "insercoesPct": 0,
           "investmentShare": 67
         },
         {
@@ -2718,8 +3158,10 @@
           "categoria": "TV Fechada",
           "investment": 72613.62,
           "investmentFmt": "R$ 72.613,62",
+          "investmentPct": 0.5,
           "insercoes": 25,
           "insercoesFmt": "25",
+          "insercoesPct": 0,
           "investmentShare": 56
         },
         {
@@ -2727,14 +3169,22 @@
           "categoria": "TV Fechada",
           "investment": 61843.1,
           "investmentFmt": "R$ 61.843,10",
+          "investmentPct": 0.4,
           "insercoes": 12,
           "insercoesFmt": "12",
+          "insercoesPct": 0,
           "investmentShare": 48
         }
       ]
     }
   ],
   "overallImpact": {
+    "reach": {
+      "reach": 15986712,
+      "reachFmt": "15.986.712",
+      "frequency": 5.8,
+      "frequencyFmt": "5,8x"
+    },
     "bigNumbers": [
       {
         "label": "Investimento total (on + off)",
@@ -2742,8 +3192,13 @@
         "accent": "blue"
       },
       {
+        "label": "Impacto (mídia exterior)",
+        "value": "841.082.937",
+        "accent": "green"
+      },
+      {
         "label": "Impressões online",
-        "value": "91.963.650",
+        "value": "91.985.658",
         "accent": "orange"
       },
       {
@@ -2765,15 +3220,7 @@
         "label": "CTR médio (online)",
         "value": "0,14%",
         "accent": "orange"
-      },
-      {
-        "label": "Frequência média (base: população BR)",
-        "value": "1,0x",
-        "accent": "lightblue"
       }
-    ],
-    "populationPct": "102,5%",
-    "populationNote": "218.368.690 impactos (impressões online + inserções offline) ÷ 213.000.000 habitantes (estimativa IBGE)",
-    "frequencyNote": "218.368.690 impactos ÷ 213.000.000 habitantes (população brasileira, estimativa IBGE) — não é um alcance único medido, é a mesma base de cálculo do \"% da população impactada\""
+    ]
   }
 }

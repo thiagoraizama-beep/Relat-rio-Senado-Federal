@@ -16,6 +16,8 @@ export default function YouTubeSection() {
       data={data}
       delivery={delivery}
       primaryMetric={{ label: 'Visualizações totais', value: data.views }}
+      hideCpm
+      useCpv
     />
   );
 }

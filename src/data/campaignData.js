@@ -21,6 +21,9 @@ export const campaignConcept = {
 // Big numbers estilo "cards de painel" — cada um com uma cor de identificação lateral.
 export const bigNumbers = sheetData.bigNumbers;
 
+// Alcance e frequência média consolidados (só veículos com apuração fechada).
+export const reachSummary = sheetData.reachSummary;
+
 // Série diária com 4 métricas (impressões, cliques, views, custo).
 export const dailySeries = sheetData.dailySeries;
 
@@ -86,6 +89,58 @@ export const offlineBigNumbers = sheetData.offlineBigNumbers;
 export const offlineChannelBreakdown = sheetData.offlineChannelBreakdown;
 export const offlineTopVehicles = sheetData.offlineTopVehicles;
 export const offlineVehiclesByCategory = sheetData.offlineVehiclesByCategory;
+
+// Simulação de audiência de TV (IBOPE/Instar), base "Brasil - 15 mercados"
+// (as 15 principais regiões metropolitanas monitoradas pelo Ibope: São
+// Paulo, Rio de Janeiro, Belo Horizonte, Recife, Salvador, Porto Alegre,
+// Curitiba, Brasília, Fortaleza etc.), 14/06 a 30/06/2026 — arquivos
+// public/SIMULAÇÃO OTV 2309.xlsx (TV aberta) e SIMULAÇÃO PAYTV 2309.xlsx
+// (TV por assinatura). Dados de uso restrito (IBOPE): não usar fora deste
+// relatório. "universe"/"universeHouseholds" = tamanho do público-alvo em
+// nº de pessoas/domicílios; "reach1plus" = % desse público que viu a
+// campanha pelo menos 1 vez; "reachPeople"/"reachHouseholdsPeople" = nº
+// absoluto de pessoas/domicílios alcançados (universe * reach%); "avgViews"
+// = quantas vezes, em média, cada pessoa alcançada viu; "grp" = pontos de
+// audiência acumulados (GRPs).
+export const tvAudienceSimulation = {
+  period: '14/06 a 30/06/2026',
+  universeLabel: '15 principais regiões metropolitanas do Brasil (base Ibope)',
+  source: 'Fonte: Ibope/Instar Analytics — dados de uso restrito, não divulgáveis fora deste relatório.',
+  open: {
+    label: 'TV Aberta',
+    target: 'Todo público adulto (18 anos ou mais)',
+    universe: 69_996_000,
+    universeHouseholds: 27_767_000,
+    reach1plus: 35.88,
+    reachHouseholds: 63.93,
+    avgViews: 3.21,
+    grp: 115.08,
+    insertions: 73,
+    channels: [
+      { name: 'Globo', share: 51.42, reach1plus: 27.85 },
+      { name: 'Record', share: 22.5, reach1plus: 12.82 },
+      { name: 'SBT', share: 18.53, reach1plus: 11.3 },
+      { name: 'Band', share: 4.94, reach1plus: 4.44 },
+      { name: 'RedeTV!', share: 2.61, reach1plus: 2.27 },
+    ],
+  },
+  closed: {
+    label: 'TV Fechada',
+    target: 'Adultos de classe A/B com TV por assinatura',
+    universe: 9_996_000,
+    reach1plus: 4.83,
+    avgViews: 1.84,
+    grp: 8.88,
+    insertions: 83,
+    channels: [
+      { name: 'GloboNews', share: 50.82, reach1plus: 2.25 },
+      { name: 'CNN Brasil', share: 15.23, reach1plus: 0.94 },
+      { name: 'Record News', share: 13.31, reach1plus: 0.84 },
+      { name: 'Jovem Pan News', share: 9.97, reach1plus: 0.68 },
+      { name: 'Band News', share: 10.67, reach1plus: 0.59 },
+    ],
+  },
+};
 
 // Tráfego do site institucional por origem/veículo (Google Analytics 4) —
 // vem do export manual "Origem da campanha manual da sessão". Origens do

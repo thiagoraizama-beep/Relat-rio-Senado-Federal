@@ -2,3 +2,6 @@ node_modules
 dist
 .DS_Store
 *.local
+~$*.xlsx
+public/SIMULAÇÃO OTV 2309.xlsx
+public/SIMULAÇÃO PAYTV 2309.xlsx

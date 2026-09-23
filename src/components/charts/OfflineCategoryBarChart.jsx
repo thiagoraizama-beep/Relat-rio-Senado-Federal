@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Cell, LabelList } from 'recharts';
 import MetricSwitch from '../MetricSwitch.jsx';
 
-const METRICS = [
+export const OFFLINE_METRICS = [
   { key: 'investment', label: 'Investimento', prefix: 'R$ ' },
   { key: 'insercoes', label: 'Inserções', prefix: '' },
+  { key: 'impact', label: 'Impacto', prefix: '' },
 ];
 
 const fmt = new Intl.NumberFormat('pt-BR');
@@ -24,23 +24,24 @@ function ChartTooltip({ active, payload, metric }) {
   );
 }
 
-// breakdown: [{ categoria, investment, insercoes }] — uma barra por categoria.
-export default function OfflineCategoryBarChart({ breakdown, colorMap }) {
-  const [metricKey, setMetricKey] = useState('investment');
-  const metric = METRICS.find((m) => m.key === metricKey);
-  const data = [...breakdown].sort((a, b) => b[metricKey] - a[metricKey]);
+// breakdown: [{ categoria, investment, insercoes, impact }] — uma barra por categoria.
+export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey, onMetricChange }) {
+  const metric = OFFLINE_METRICS.find((m) => m.key === metricKey);
+  const data = breakdown
+    .filter((row) => row[metricKey] != null)
+    .sort((a, b) => b[metricKey] - a[metricKey]);
 
   return (
     <div>
       <MetricSwitch
-        options={METRICS.map((m) => ({ key: m.key, label: m.label }))}
+        options={OFFLINE_METRICS.map((m) => ({ key: m.key, label: m.label }))}
         activeKey={metricKey}
-        onChange={setMetricKey}
+        onChange={onMetricChange}
         ariaLabel="Selecionar métrica"
       />
       <div className="rechart-wrap">
-        <ResponsiveContainer width="100%" height={280}>
-          <BarChart data={data} layout="vertical" margin={{ top: 8, right: 24, left: 8, bottom: 0 }}>
+        <ResponsiveContainer width="100%" height={190}>
+          <BarChart data={data} layout="vertical" margin={{ top: 4, right: 24, left: 8, bottom: 0 }}>
             <CartesianGrid horizontal={false} stroke="var(--line)" />
             <XAxis type="number" hide domain={[0, (max) => max * 1.18]} />
             <YAxis
@@ -48,11 +49,11 @@ export default function OfflineCategoryBarChart({ breakdown, colorMap }) {
               dataKey="categoria"
               axisLine={false}
               tickLine={false}
-              width={170}
-              tick={{ fill: 'var(--text-2)', fontSize: 12, fontFamily: 'var(--font-body)' }}
+              width={150}
+              tick={{ fill: 'var(--text-2)', fontSize: 11, fontFamily: 'var(--font-body)' }}
             />
             <Tooltip cursor={{ fill: 'var(--paper-2)' }} content={<ChartTooltip metric={metric} />} />
-            <Bar dataKey={metricKey} radius={[0, 6, 6, 0]} isAnimationActive={false} barSize={22}>
+            <Bar dataKey={metricKey} radius={[0, 5, 5, 0]} isAnimationActive={false} barSize={14}>
               {data.map((row) => (
                 <Cell key={row.categoria} fill={colorMap?.get(row.categoria) || 'var(--blue-700)'} />
               ))}

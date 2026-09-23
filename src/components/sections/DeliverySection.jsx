@@ -22,6 +22,11 @@ function DeliveryRow({ item, delay }) {
         <span>{item.contractedFmt} contratado</span>
         <span className="delivery-metric-label">{item.metricLabel}</span>
       </div>
+      <div className="delivery-reach">
+        <span>Alcance: {item.reachFmt}</span>
+        <span className="delivery-numbers-sep">·</span>
+        <span>Frequência: {item.frequencyFmt}</span>
+      </div>
     </div>
   );
 }

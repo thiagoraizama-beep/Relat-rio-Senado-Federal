@@ -17,6 +17,7 @@ export default function TikTokSection() {
       data={data}
       delivery={delivery}
       primaryMetric={{ label: 'Cliques totais', value: data.clicks }}
+      hideCpm
     />
   );
 }

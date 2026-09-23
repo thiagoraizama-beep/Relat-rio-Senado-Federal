@@ -1,7 +1,7 @@
 import Editable from '../Editable.jsx';
 import DailyMetricsChart from '../charts/DailyMetricsChart.jsx';
 import { useReveal } from '../../hooks/useReveal.js';
-import { bigNumbers, dailySeries } from '../../data/campaignData.js';
+import { bigNumbers, dailySeries, reachSummary } from '../../data/campaignData.js';
 
 function BigNumberCard({ item, delay }) {
   const ref = useReveal();
@@ -12,6 +12,11 @@ function BigNumberCard({ item, delay }) {
     </div>
   );
 }
+
+const reachCards = [
+  { label: 'Alcance', value: reachSummary.reachFmt, accent: 'lightblue' },
+  { label: 'Frequência média', value: reachSummary.frequencyFmt, accent: 'green' },
+];
 
 export default function KpiSection() {
   const headRef = useReveal();
@@ -26,9 +31,12 @@ export default function KpiSection() {
         <Editable id="kpi-sub" as="p" />
       </div>
 
-      <div className="bignum-grid">
+      <div className="bignum-grid bignum-grid-5">
         {bigNumbers.map((item, i) => (
-          <BigNumberCard item={item} delay={(i % 4) + 1} key={item.label} />
+          <BigNumberCard item={item} delay={(i % 5) + 1} key={item.label} />
+        ))}
+        {reachCards.map((item, i) => (
+          <BigNumberCard item={item} delay={((bigNumbers.length + i) % 5) + 1} key={item.label} />
         ))}
       </div>
 

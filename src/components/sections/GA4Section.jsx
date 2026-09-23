@@ -15,8 +15,8 @@ function BigNumberCard({ item, delay }) {
 function VehicleRow({ item, delay }) {
   const ref = useReveal();
   return (
-    <div className="offline-vehicle-row reveal" data-delay={delay} ref={ref}>
-      <div className="offline-vehicle-row-head">
+    <div className="delivery-row offline-vehicle-row reveal" data-delay={delay} ref={ref}>
+      <div className="delivery-row-head offline-vehicle-row-head">
         <h3>{item.veiculo}</h3>
         <span className="video-rank-tag">{item.engagementRate} engajamento</span>
         <span className="offline-vehicle-value">{item.activeUsersFmt}</span>

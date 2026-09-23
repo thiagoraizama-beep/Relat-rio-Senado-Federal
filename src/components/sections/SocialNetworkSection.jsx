@@ -5,7 +5,7 @@ import Editable from '../Editable.jsx';
 // logoSrc: caminho da imagem do logo (ex: "/meta.png"), em public/.
 // Seção full-bleed dividida em duas colunas de azul (identidade Senado),
 // ocupando 100% da tela — mesma lógica de composição do Hero.
-export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkName, logoSrc, logoClassName = '', data, primaryMetric, delivery, flip }) {
+export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkName, logoSrc, logoClassName = '', data, primaryMetric, delivery, flip, hideCpm, hideCpc, useCpv }) {
   const hasViews = Number((data.views || '0').replace(/\./g, '')) > 0;
 
   return (
@@ -59,14 +59,18 @@ export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkN
             <span className="k">CTR</span>
             <span className="v">{data.ctr}</span>
           </div>
-          <div className="social-metric">
-            <span className="k">CPM</span>
-            <span className="v">{data.cpm}</span>
-          </div>
-          <div className="social-metric">
-            <span className="k">CPC</span>
-            <span className="v">{data.cpc}</span>
-          </div>
+          {!hideCpm && (
+            <div className="social-metric">
+              <span className="k">CPM</span>
+              <span className="v">{data.cpm}</span>
+            </div>
+          )}
+          {!hideCpc && (
+            <div className="social-metric">
+              <span className="k">{useCpv ? 'CPV' : 'CPC'}</span>
+              <span className="v">{useCpv ? data.cpv : data.cpc}</span>
+            </div>
+          )}
           {hasViews && (
             <div className="social-metric">
               <span className="k">Views</span>
@@ -77,6 +81,18 @@ export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkN
             <div className="social-metric">
               <span className="k">VTR</span>
               <span className="v">{data.completionRate}</span>
+            </div>
+          )}
+          {delivery && (
+            <div className="social-metric">
+              <span className="k">Alcance</span>
+              <span className="v">{delivery.reachFmt}</span>
+            </div>
+          )}
+          {delivery && (
+            <div className="social-metric">
+              <span className="k">Frequência</span>
+              <span className="v">{delivery.frequencyFmt}</span>
             </div>
           )}
         </div>

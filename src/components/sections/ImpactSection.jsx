@@ -12,10 +12,14 @@ function BigNumberCard({ item, delay }) {
   );
 }
 
+const reachCards = [
+  { label: 'Alcance (mídia online)', value: overallImpact.reach.reachFmt, accent: 'lightblue' },
+  { label: 'Frequência média', value: overallImpact.reach.frequencyFmt, accent: 'green' },
+];
+
 export default function ImpactSection() {
   const headRef = useReveal();
   const bignumRef = useReveal();
-  const populationRef = useReveal();
   const ga4Ref = useReveal();
   const insightRef = useReveal();
 
@@ -27,19 +31,13 @@ export default function ImpactSection() {
         <Editable id="impact-sub" as="p" />
       </div>
 
-      <div className="bignum-grid" ref={bignumRef}>
+      <div className="bignum-grid bignum-grid-5" ref={bignumRef}>
         {overallImpact.bigNumbers.map((item, i) => (
-          <BigNumberCard item={item} delay={(i % 4) + 1} key={item.label} />
+          <BigNumberCard item={item} delay={(i % 5) + 1} key={item.label} />
         ))}
-      </div>
-      <span className="impact-frequency-note">{overallImpact.frequencyNote}</span>
-
-      <div className="impact-population reveal" data-delay="2" ref={populationRef}>
-        <span className="impact-population-value">{overallImpact.populationPct}</span>
-        <div className="impact-population-text">
-          <span className="impact-population-label">da população brasileira impactada</span>
-          <span className="impact-population-note">{overallImpact.populationNote}</span>
-        </div>
+        {reachCards.map((item, i) => (
+          <BigNumberCard item={item} delay={((overallImpact.bigNumbers.length + i) % 5) + 1} key={item.label} />
+        ))}
       </div>
 
       <div className="impact-ga4-grid reveal" data-delay="3" ref={ga4Ref}>

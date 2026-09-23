@@ -16,6 +16,16 @@ export const defaultTexts = {
     'Números agregados de todas as peças da campanha institucional no período, somando redes sociais, portais e mídia programática.',
   'kpi-insight':
     'No período consolidado, a campanha atingiu 91,9 milhões de impressões e 129,5 mil cliques (CTR médio de 0,14%), com 11,1 milhões de video views e 3,5 milhões de completions. O CPM médio de R$ 34,86 reflete a combinação de canais com propósitos distintos, alcance em redes sociais, autoridade editorial em portais e programática qualificada. A curva diária de investimento mostra concentração de veiculação entre 22/06 e 30/06, coincidindo com os maiores volumes de impressões do período, o que indica uma estratégia de flighting concentrado em vez de distribuição linear.',
+  'quartiles-title': 'Quartis de vídeo por plataforma e criativo',
+  'quartiles-sub':
+    'Percentual de visualizações que atingiram cada quartil (25%, 50%, 75% e 100%) em cada criativo, agrupados por rede social, só redes sociais (Meta, YouTube, TikTok e Kwai).',
+  'quartiles-insight':
+    'O YouTube apresenta a maior retenção entre as redes: o institucional de 30s mantém 63% das visualizações até a conclusão, reflexo do modelo CPV que remunera a rede pela visualização completa. O TikTok também sustenta boa retenção nos quartis iniciais, mas cai bastante depois dos 50%. Já Meta tem retenção baixa em quase todos os quartis, indicativo de visualizações no modelo CPM sem foco em conclusão do vídeo.',
+  'kwai-quartile-note-title': 'Kwai não reporta quartis de retenção',
+  'kwai-quartile-note-sub':
+    'Os três criativos em vídeo veiculados no Kwai (Gás do Povo, Tornozeleira para Agressores e Renovação Automática da CNH) não têm dado de retenção por quartil (25%, 50%, 75%) disponível.',
+  'kwai-quartile-note-body':
+    'A exportação de dados do Kwai não disponibiliza os eventos intermediários de retenção de vídeo (25%, 50% e 75% assistidos): a plataforma só reporta "3-second video play" (início da visualização) e "vídeo completado" (conclusão total), sem os pontos intermediários que Meta, YouTube e TikTok fornecem. Por isso os criativos do Kwai não aparecem na grade de quartis: não é ausência de retenção, é uma métrica que a própria plataforma não disponibiliza para exportação.',
   'format-title': 'Performance por vídeo',
   'format-sub':
     'Desempenho individual de cada criativo em vídeo, comparando formatos e durações diferentes lado a lado.',
@@ -51,7 +61,7 @@ export const defaultTexts = {
   'kwai-sub':
     'Desempenho do Kwai na campanha institucional, com foco em impressões e alcance.',
   'kwai-insight':
-    'Sob modelo CPM, o Kwai entregou 4,2 milhões de impressões com CPM de R$ 13,30, no mesmo patamar de eficiência do Meta, com o menor investimento absoluto entre as redes sociais da campanha (R$ 56,2 mil). A entrega bateu exatamente 100% do volume contratado, resultado que evidencia precisão no planejamento de pacing e controle rigoroso de orçamento ao longo de todo o período de veiculação.',
+    'Sob modelo CPM, o Kwai entregou 4,2 milhões de impressões com CPM de R$ 13,30, no mesmo patamar de eficiência do Meta, com o menor investimento absoluto entre as redes sociais da campanha (R$ 56,2 mil). Do volume originalmente contratado de 31,2 milhões de impressões, a rede entregou 14%, resultado abaixo do pactuado que evidencia a necessidade de ajuste no pacing e acompanhamento mais próximo do ritmo de veiculação nos próximos ciclos.',
   'meta-creatives-title': 'Melhores criativos',
   'meta-creatives-sub':
     'Ranking dos criativos no Meta por impressões. O critério de compra é CPM.',
@@ -94,6 +104,15 @@ export const defaultTexts = {
     'Investimento e inserções comparados entre rádio, TV e mídia exterior da campanha.',
   'offline-channel-insight':
     'TV Aberta concentra o maior investimento entre as categorias offline (R$ 8,6 milhões, 56,8% do total), seguida por Rádio (R$ 2 milhões, 13,1%) e Minidoor + MUB (R$ 1,8 milhão, 12,1%). Entre os veículos individuais, a GLOBO lidera o investimento em TV Aberta com R$ 3,8 milhões em apenas 9 inserções, refletindo o valor de espaços em rede nacional, enquanto a JCDecaux se destaca em mídia exterior com mais de 1 milhão de inserções, evidenciando a escala de frequência característica desse formato.',
+  'offline-tv-title': 'Quem viu a campanha na TV',
+  'offline-tv-sub':
+    'Audiência da campanha (Ibope/Instar) nas 15 principais regiões metropolitanas do Brasil, comparando TV aberta e TV por assinatura no período de 14/06 a 30/06/2026.',
+  'offline-tv-open-note':
+    'De cada 100 pessoas que assistem TV aberta, cerca de 36 viram a campanha do Senado pelo menos uma vez, o equivalente a 25,1 milhões de pessoas, de um público de quase 70 milhões. Quem viu, viu em média 3 vezes ao longo do período.',
+  'offline-tv-closed-note':
+    'Na TV por assinatura, o público é bem menor e mais segmentado: de cada 100 adultos de classe A/B com TV por assinatura, cerca de 5 viram a campanha, cerca de 483 mil pessoas, de um público de aproximadamente 10 milhões, concentrados principalmente em canais de notícia.',
+  'offline-tv-insight':
+    'A TV aberta entregou alcance muito superior ao da TV fechada (25,1 milhões contra 483 mil pessoas), o que já era esperado dado o tamanho de audiência de cada meio: a Globo concentrou mais da metade do investimento e da cobertura em TV aberta, enquanto na TV por assinatura a GloboNews teve papel equivalente entre os canais de notícia.',
   'impact-intro-title-1': 'Duas frentes,',
   'impact-intro-title-2': 'um só resultado.',
   'impact-intro-body':
@@ -112,17 +131,18 @@ export const defaultTexts = {
 
 export const defaultLists = {
   'insights-learnings': [
-    'Cada rede social operou com um propósito de mídia claramente diferenciado, refletido no seu modelo de compra: Meta (CPM, 40,4 milhões de impressões) e Kwai (CPM, 4,2 milhões) priorizaram cobertura, YouTube (CPV, taxa de conclusão de 63%) priorizou retenção de atenção, e TikTok (CPC, CTR de 31,02%) priorizou interação direta. A combinação dos quatro modelos permitiu que a campanha cobrisse simultaneamente os três objetivos centrais de um funil de mídia, alcance, atenção e ação, dentro do mesmo orçamento de redes sociais.',
-    'A mídia offline demonstrou papel complementar claro entre categorias: TV Aberta concentrou 56,8% do investimento com apenas 75 inserções no total, entregando alcance qualificado em rede nacional, enquanto mídia exterior (Minidoor, MUB e DOOH) respondeu por praticamente a totalidade das 126,4 milhões de inserções do período, sustentando frequência de exposição urbana contínua. As duas frentes juntas ampliam a cobertura da campanha para públicos que a mídia digital não alcança isoladamente.',
-    'O pacing de entrega em portais e mídia programática avançou de forma sólida entre os veículos: 7 dos 12 com contratação (Meta, Spotify, R7 Portal, AdMax, Netflix, Diário dos Associados, Deezer e Hands) atingiram ou superaram 100% do volume acordado, enquanto Globo.com, UOL e NewCom seguem com parte do volume contratado em veiculação, mantendo espaço de entrega para os próximos ciclos.',
-    'Dentro do Meta, vídeo e estático cumpriram funções distintas e complementares no mesmo canal: o vídeo institucional de 30s combinou alto volume (5,6 milhões de impressões) com forte retenção (89% de taxa de visualização), enquanto estáticos como "Vicariocídio Vira Crime Hediondo" sustentaram cobertura ampla com CTR consistente. Isso confirma que a diversificação de formato dentro de uma mesma rede amplia a superfície de contato com públicos com preferências de consumo diferentes.',
-    'A soma de mídia online e offline resultou em 218,4 milhões de impactos brutos, equivalente a 102,5% da população brasileira em volume de exposição, uma métrica de escala nacional consistente com o caráter institucional da campanha. Esse volume converteu-se em 65,7 mil sessões no site institucional, com taxa de engajamento geral de 28%, sinal de que parte relevante do público impactado buscou aprofundar a informação além do primeiro contato com a peça publicitária.',
+    'A combinação de diferentes modelos de compra em redes sociais (CPM, CPV e CPC) permitiu que a campanha trabalhasse simultaneamente os três objetivos centrais de um funil de mídia, alcance, atenção e ação, dentro do mesmo orçamento, em vez de concentrar tudo numa única lógica de veiculação.',
+    'A combinação de mídia offline com categorias de propósitos diferentes mostrou-se eficiente: canais de alcance amplo em rede nacional convivem bem com mídia exterior de alta frequência em centros urbanos, ampliando a cobertura para públicos que a mídia digital não alcança isoladamente.',
+    'O acompanhamento do contratado versus entregue ao longo da campanha se mostrou uma ferramenta útil de gestão, permitindo identificar cedo os veículos com espaço de entrega ainda disponível e redistribuir atenção conforme o ritmo real de veiculação.',
+    'A diversificação de formato dentro de uma mesma rede social (vídeo e estático) ampliou a superfície de contato com públicos de preferências de consumo diferentes, reforçando a mensagem por mais de um caminho dentro do mesmo canal.',
+    'A soma de mídia online e offline resultou em um volume de impactos de escala nacional, consistente com o caráter institucional da campanha, e parte relevante do público impactado buscou aprofundar a informação no site institucional além do primeiro contato com a peça publicitária.',
   ],
   'insights-next-steps': [
-    'Estruturar testes controlados de modelo de compra dentro das redes que hoje operam majoritariamente sob CPM (Meta e Kwai), aplicando parcialmente a lógica de CPC observada no TikTok, para mensurar comparativamente a eficiência de custo por clique entre modelos dentro do mesmo canal.',
-    'Incorporar dados de audiência de mercado (IBOPE, Kantar ou equivalente) à leitura de mídia offline, especialmente em rádio e mídia exterior, para complementar o volume bruto de inserções com uma estimativa de alcance qualificado por categoria.',
-    'Acompanhar com Globo.com, UOL e NewCom a conclusão do volume contratado, para aproveitar ao máximo o espaço de entrega já negociado com esses veículos.',
-    'Documentar e replicar os elementos criativos que mais contribuíram para CTR no TikTok e taxa de conclusão no YouTube (roteiro, duração, gancho inicial) como referência para o briefing de criativos da próxima campanha institucional.',
+    'Ampliar o orçamento do próximo ciclo para reforçar os canais e formatos que já demonstraram melhor equilíbrio entre custo e resultado neste período, escalando o investimento onde a campanha comprovou maior retorno e ampliando ainda mais o alcance e a frequência de exposição do público.',
+    'Estruturar testes controlados entre modelos de compra (CPM, CPV, CPC) dentro de uma mesma rede, para mensurar de forma comparativa a eficiência de cada modelo antes de decidir a alocação de orçamento do próximo ciclo.',
+    'Estender a leitura de audiência de mercado também para rádio e mídia exterior, complementando o volume bruto de inserções dessas categorias com uma estimativa de alcance qualificado, no mesmo padrão já aplicado a TV aberta e TV fechada neste relatório.',
+    'Acompanhar de perto o ritmo de entrega do volume contratado ao longo de toda a campanha, para garantir o melhor aproveitamento do espaço de mídia já negociado em cada veículo.',
+    'Documentar os elementos criativos (roteiro, duração, gancho inicial) que mais contribuíram para engajamento e retenção neste ciclo, como referência para o briefing de criativos da próxima campanha institucional.',
     'Cruzar os dados de sessão e tempo médio do site institucional com os períodos de maior investimento por canal, aprofundando a leitura de jornada entre exposição à mídia paga e busca ativa por informação no site.',
     'Manter a atualização periódica da base de dados consolidada (pipeline já implementado neste relatório) ao longo do próximo ciclo de campanha, viabilizando leituras de performance parcial e ajustes de alocação de verba antes do fechamento final.',
   ],

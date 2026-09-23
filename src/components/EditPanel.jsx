@@ -11,7 +11,7 @@ export default function EditPanel() {
       </header>
       <div className="body">
         <p>
-          Os textos com contorno tracejado são editáveis. Clique em qualquer um deles e digite —
+          Os textos com contorno tracejado são editáveis. Clique em qualquer um deles e digite,
           as alterações salvam automaticamente neste navegador.
         </p>
         <p>
