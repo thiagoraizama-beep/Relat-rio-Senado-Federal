@@ -40,7 +40,7 @@ export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey
         ariaLabel="Selecionar métrica"
       />
       <div className="rechart-wrap">
-        <ResponsiveContainer width="100%" height={190}>
+        <ResponsiveContainer width="100%" height={Math.max(190, data.length * 26)}>
           <BarChart data={data} layout="vertical" margin={{ top: 4, right: 24, left: 8, bottom: 0 }}>
             <CartesianGrid horizontal={false} stroke="var(--line)" />
             <XAxis type="number" hide domain={[0, (max) => max * 1.18]} />

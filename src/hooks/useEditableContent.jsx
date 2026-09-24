@@ -30,7 +30,7 @@ export const defaultTexts = {
   'format-sub':
     'Desempenho individual de cada criativo em vídeo, comparando formatos e durações diferentes lado a lado.',
   'format-insight':
-    'Os vídeos institucionais de 30s e 60s veiculados no Meta lideraram o ranking consolidado de vídeo, somando 10,6 milhões de views, com a versão de 30s alcançando taxa de visualização de 89% sobre as impressões entregues (5,98 milhões de views em 6,4 milhões de impressões). Os três criativos do Kwai (Gás do Povo, Tornozeleira para Agressores e Renovação Automática da CNH) apresentaram volumes de impressões próximos entre si, na faixa de 1,4 milhão cada, formato consistente com o modelo CPM da rede, priorizando cobertura ampla e uniforme entre os temas.',
+    'Os vídeos institucionais de 30s e 60s veiculados no Meta lideraram o ranking consolidado de vídeo, somando 10,6 milhões de views, com a versão de 30s alcançando taxa de visualização de 94% sobre as impressões entregues (5,98 milhões de views em 6,4 milhões de impressões). Os três criativos do Kwai (Gás do Povo, Tornozeleira para Agressores e Renovação Automática da CNH) apresentaram volumes de impressões próximos entre si, na faixa de 1,4 milhão cada, formato consistente com o modelo CPM da rede, priorizando cobertura ampla e uniforme entre os temas.',
   'static-title': 'Performance por imagem',
   'static-insight':
     'O criativo "Tornozeleira Eletrônica para Agressores" lidera o ranking de estáticos com 6,8 milhões de impressões, seguido por "Vicariocídio Vira Crime Hediondo" (6,4 milhões) e "Isenção de Imposto de Renda" (6,4 milhões). Em engajamento direto, o carrossel "5 Leis que já Fazem Parte da Sua Vida" se destaca com o maior CTR do grupo (0,11%), sugerindo que o formato carrossel favorece a interação mesmo operando com um volume de impressões inferior ao dos líderes de alcance.',
@@ -61,7 +61,7 @@ export const defaultTexts = {
   'kwai-sub':
     'Desempenho do Kwai na campanha institucional, com foco em impressões e alcance.',
   'kwai-insight':
-    'Sob modelo CPM, o Kwai entregou 4,2 milhões de impressões com CPM de R$ 13,30, no mesmo patamar de eficiência do Meta, com o menor investimento absoluto entre as redes sociais da campanha (R$ 56,2 mil). Do volume originalmente contratado de 31,2 milhões de impressões, a rede entregou 14%, resultado abaixo do pactuado que evidencia a necessidade de ajuste no pacing e acompanhamento mais próximo do ritmo de veiculação nos próximos ciclos.',
+    'Sob modelo CPM, o Kwai entregou 4,2 milhões de impressões com CPM de R$ 13,30, no mesmo patamar de eficiência do Meta, com o menor investimento absoluto entre as redes sociais da campanha (R$ 56,2 mil). Do volume originalmente contratado de 31,2 milhões de impressões, a rede entregou 14%, resultado da realocação de parte da verba planejada para o Kwai em favor de outros meios ao longo da campanha, mantendo ainda assim eficiência de custo por mil equivalente à do Meta no volume efetivamente veiculado.',
   'meta-creatives-title': 'Melhores criativos',
   'meta-creatives-sub':
     'Ranking dos criativos no Meta por impressões. O critério de compra é CPM.',
@@ -98,12 +98,12 @@ export const defaultTexts = {
   'offline-kpi-sub':
     'Números agregados de rádio, TV e mídia exterior no período, somando investimento e inserções por categoria.',
   'offline-kpi-insight':
-    'A mídia offline somou R$ 15,1 milhões em investimento e 126,4 milhões de inserções, distribuídos entre 723 veículos ativos em 28 praças e estados, capilaridade que amplia o alcance geográfico da campanha para além da cobertura digital. A composição de investimento é liderada por TV Aberta (56,8%), consistente com seu papel de qualificação de alcance em rede nacional, enquanto o volume de inserções é dominado pela mídia exterior, reflexo da natureza de alta frequência e exposição contínua desse formato ao longo do dia.',
+    'A mídia offline somou R$ 15,9 milhões em investimento e 8 milhões de inserções, distribuídos entre 724 veículos ativos em 27 praças e estados, capilaridade que amplia o alcance geográfico da campanha para além da cobertura digital. A composição de investimento é liderada por TV Aberta (54,5%), consistente com seu papel de qualificação de alcance em rede nacional, enquanto o volume de inserções é dominado pelo MUB (mobiliário urbano), responsável por 75% do total, reflexo da natureza de alta frequência e exposição contínua desse formato ao longo do dia.',
   'offline-channel-title': 'Visão geral por categoria',
   'offline-channel-sub':
     'Investimento e inserções comparados entre rádio, TV e mídia exterior da campanha.',
   'offline-channel-insight':
-    'TV Aberta concentra o maior investimento entre as categorias offline (R$ 8,6 milhões, 56,8% do total), seguida por Rádio (R$ 2 milhões, 13,1%) e Minidoor + MUB (R$ 1,8 milhão, 12,1%). Entre os veículos individuais, a GLOBO lidera o investimento em TV Aberta com R$ 3,8 milhões em apenas 9 inserções, refletindo o valor de espaços em rede nacional, enquanto a JCDecaux se destaca em mídia exterior com mais de 1 milhão de inserções, evidenciando a escala de frequência característica desse formato.',
+    'TV Aberta concentra o maior investimento entre as categorias offline (R$ 8,7 milhões, 54,5% do total), seguida por Rádio (R$ 2 milhões, 12,5%) e DOOH Painel Digital (R$ 1,8 milhão, 11,1%). Minidoor e MUB, agora reportados como categorias distintas, somam juntos R$ 1,9 milhão (11,8%), enquanto DOOH Metrô e DOOH Aeroporto, também separados nesta apuração, respondem por R$ 445 mil (2,8%) e R$ 719 mil (4,5%) respectivamente. Entre os veículos individuais, a GLOBO lidera o investimento em TV Aberta com R$ 3,8 milhões em apenas 9 inserções, refletindo o valor de espaços em rede nacional, enquanto a JCDecaux se destaca em MUB com mais de 1 milhão de inserções, evidenciando a escala de frequência característica desse formato.',
   'offline-tv-title': 'Quem viu a campanha na TV',
   'offline-tv-sub':
     'Audiência da campanha (Ibope/Instar) nas 15 principais regiões metropolitanas do Brasil, comparando TV aberta e TV por assinatura no período de 14/06 a 30/06/2026.',
@@ -121,7 +121,7 @@ export const defaultTexts = {
   'impact-sub':
     'Compilado de mídia online e offline: visão consolidada do alcance total da campanha institucional.',
   'impact-insight':
-    'Consolidando online e offline, a campanha atingiu R$ 18,4 milhões em investimento total e 218,4 milhões de impactos (impressões digitais somadas a inserções de mídia tradicional), equivalente a 102,5% da população brasileira em volume de exposições brutas, métrica de escala e não de alcance único, já que a mesma pessoa pode ter sido impactada em mais de um canal ao longo do período. Esse volume de exposição se traduziu em engajamento direto com a plataforma institucional: 65,7 mil sessões registradas no site, com taxa de engajamento geral de 28%, indicador de leitura efetiva do conteúdo.',
+    'Consolidando online e offline, a campanha atingiu R$ 19,1 milhões em investimento total, com 91,9 milhões de impressões digitais, 8 milhões de inserções em rádio e TV e um impacto estimado de mais de 1 bilhão de exposições em mídia exterior (painéis digitais, MUB, minidoor e DOOH), métrica de escala e não de alcance único, já que a mesma pessoa pode ter sido impactada em mais de um canal ao longo do período. Esse volume de exposição se traduziu em engajamento direto com a plataforma institucional: 65,7 mil sessões registradas no site, com taxa de engajamento geral de 28%, indicador de leitura efetiva do conteúdo.',
   'impact-ga4-sessions': '65.673',
   'impact-ga4-time': '21s',
   'impact-ga4-cost': 'R$ 280,05',
@@ -133,7 +133,7 @@ export const defaultLists = {
   'insights-learnings': [
     'A combinação de diferentes modelos de compra em redes sociais (CPM, CPV e CPC) permitiu que a campanha trabalhasse simultaneamente os três objetivos centrais de um funil de mídia, alcance, atenção e ação, dentro do mesmo orçamento, em vez de concentrar tudo numa única lógica de veiculação.',
     'A combinação de mídia offline com categorias de propósitos diferentes mostrou-se eficiente: canais de alcance amplo em rede nacional convivem bem com mídia exterior de alta frequência em centros urbanos, ampliando a cobertura para públicos que a mídia digital não alcança isoladamente.',
-    'O acompanhamento do contratado versus entregue ao longo da campanha se mostrou uma ferramenta útil de gestão, permitindo identificar cedo os veículos com espaço de entrega ainda disponível e redistribuir atenção conforme o ritmo real de veiculação.',
+    'O acompanhamento do contratado versus entregue ao longo da campanha, feito por meio de um dashboard com atualização diária dos dados, se mostrou uma ferramenta útil de gestão, permitindo identificar cedo os veículos com espaço de entrega ainda disponível e redistribuir atenção conforme o ritmo real de veiculação.',
     'A diversificação de formato dentro de uma mesma rede social (vídeo e estático) ampliou a superfície de contato com públicos de preferências de consumo diferentes, reforçando a mensagem por mais de um caminho dentro do mesmo canal.',
     'A soma de mídia online e offline resultou em um volume de impactos de escala nacional, consistente com o caráter institucional da campanha, e parte relevante do público impactado buscou aprofundar a informação no site institucional além do primeiro contato com a peça publicitária.',
   ],

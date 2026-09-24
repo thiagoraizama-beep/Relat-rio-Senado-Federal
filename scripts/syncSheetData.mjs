@@ -995,7 +995,11 @@ async function main() {
   const offlineVehicles = new Set();
   const offlinePracas = new Set();
   const byOfflineCategory = new Map(); // grupo -> { investment, insercoes }
-  const byOfflineVehicle = new Map(); // veiculo -> { investment, insercoes, categoria }
+  // Chave "veiculo||categoria" (não só veiculo): um mesmo veículo pode
+  // aparecer em mais de uma categoria (ex: JCDecaux em MUB, DOOH Aeroporto e
+  // DOOH Aeroporto Complementar) e cada uma vira sua própria linha na tabela,
+  // em vez de somar tudo numa linha só por nome de veículo.
+  const byOfflineVehicle = new Map(); // "veiculo||categoria" -> { veiculo, categoria, investment, insercoes }
 
   for (const r of offlineDataRows) {
     const veiculo = (r[oIdx.veiculo] || '').trim();
@@ -1015,10 +1019,11 @@ async function main() {
     cat.insercoes += insercoes;
     byOfflineCategory.set(categoria, cat);
 
-    const veh = byOfflineVehicle.get(veiculo) || { investment: 0, insercoes: 0, categoria };
+    const vehKey = `${veiculo}||${categoria}`;
+    const veh = byOfflineVehicle.get(vehKey) || { veiculo, investment: 0, insercoes: 0, categoria };
     veh.investment += custo;
     veh.insercoes += insercoes;
-    byOfflineVehicle.set(veiculo, veh);
+    byOfflineVehicle.set(vehKey, veh);
   }
 
   const offlineBigNumbers = [
@@ -1037,8 +1042,12 @@ async function main() {
   const OFFLINE_IMPACT_BY_CATEGORY = {
     MUB: 187_572_568,
     'DOOH Metrô': 103_001_275,
-    'DOOH Aeroporto': 264_300_894,
-    'DOOH Painel Digital': 399_245_206,
+    // Total antigo de Aeroporto (264.300.894) já incluía a Complementar —
+    // NEOOH (normal) = total - complementar.
+    'DOOH Aeroporto': 264_300_894 - 229_687_290,
+    'DOOH Aeroporto Complementar': 229_687_290,
+    'DOOH Painel Digital': 397_445_206,
+    'DOOH Painel Digital Complementar': 1_800_000,
     Minidoor: 118_863_120,
   };
 
@@ -1063,17 +1072,28 @@ async function main() {
   // DOOH-AEROPORTO, DOOH-PAINEL DIGITAL, MINIDOOR SOCIAL). Um mesmo veículo
   // (ex: JCDecaux em MUB, Metrô e Aeroporto) soma o impacto das abas em que
   // aparece, do mesmo jeito que investimento/inserções já são somados por
-  // veículo global.
+  // veículo global. Quando um veículo tem mais de uma linha na mesma
+  // categoria (ex: "JCDecaux||DOOH Aeroporto" vs. compra complementar
+  // "JCDecaux||DOOH Aeroporto Complementar"), use a chave "veiculo||categoria"
+  // aqui para não duplicar o mesmo número de impacto nas duas linhas — a
+  // chave só pelo nome (fallback abaixo) é para veículos sem duplicidade.
   const OFFLINE_IMPACT_BY_VEHICLE = {
-    JCDecaux: 112_473_240 + 33_029_143 + (8_853_124 + 9_074_870) + 4_200_000,
+    // JCDECAUX, NEOOH e WP MIDIA agora exigem chave composta
+    // "veiculo||categoria" (ver OFFLINE_VEHICLES_REQUIRING_COMPOSITE_KEY
+    // abaixo) porque passaram a ter linha "Complementar" separada na
+    // planilha. Pendente: impacto de NEOOH na categoria "DOOH Aeroporto"
+    'JCDECAUX||DOOH Aeroporto Complementar': 229_687_290,
+    'WP MIDIA||DOOH Painel Digital Complementar': 1_800_000,
+    'WP MIDIA||DOOH Painel Digital': 11_694_000,
+    // Total antigo (264.300.894) já incluía a Complementar — NEOOH (normal)
+    // = total - complementar.
+    'NEOOH||DOOH Aeroporto': 264_300_894 - 229_687_290,
     ELETROMIDIA: 17_415_737,
     'All Space': 24_241_612,
     MOBTV: 78_000_000,
     'Eletromídia': 2_873_281,
-    NEOOH: 264_300_894,
     'WE SUPER OOH': 187_235_526,
     'Bureau de Mídia': 154_951_680,
-    'WP MIDIA': 11_694_000,
     Alumi: 33_912_000,
     'LED ME': 5_700_000,
     'Hocxx Smart Mídia': 3_952_000,
@@ -1084,11 +1104,20 @@ async function main() {
 
   const offlineTotalImpact = Object.values(OFFLINE_IMPACT_BY_VEHICLE).reduce((acc, n) => acc + n, 0);
 
-  const allOfflineVehicles = Array.from(byOfflineVehicle.entries())
-    .map(([veiculo, v]) => {
-      const impact = OFFLINE_IMPACT_BY_VEHICLE[veiculo];
+  // Veículos com mais de uma linha na mesma planilha (ex: JCDecaux/NEOOH em
+  // categoria normal + categoria "Complementar") só usam a chave composta
+  // "veiculo||categoria" acima — NUNCA o fallback pelo nome puro, que
+  // somaria o mesmo impacto nas duas linhas. Adicione aqui o nome assim que
+  // uma categoria "Complementar" for criada para ele.
+  const OFFLINE_VEHICLES_REQUIRING_COMPOSITE_KEY = new Set(['JCDecaux', 'JCDECAUX', 'NEOOH', 'WP MIDIA']);
+
+  const allOfflineVehicles = Array.from(byOfflineVehicle.values())
+    .map((v) => {
+      const impact = OFFLINE_VEHICLES_REQUIRING_COMPOSITE_KEY.has(v.veiculo)
+        ? OFFLINE_IMPACT_BY_VEHICLE[`${v.veiculo}||${v.categoria}`]
+        : (OFFLINE_IMPACT_BY_VEHICLE[`${v.veiculo}||${v.categoria}`] ?? OFFLINE_IMPACT_BY_VEHICLE[v.veiculo]);
       return {
-        veiculo,
+        veiculo: v.veiculo,
         categoria: v.categoria,
         investment: Number(v.investment.toFixed(2)),
         investmentFmt: fmtMoney(v.investment),

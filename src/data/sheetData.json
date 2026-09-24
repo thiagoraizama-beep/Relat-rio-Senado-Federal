@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T14:21:15.703Z",
+  "generatedAt": "2026-09-24T14:59:47.551Z",
   "rowCount": 1248,
   "bigNumbers": [
     {
@@ -2499,14 +2499,14 @@
     },
     {
       "categoria": "DOOH Painel Digital",
-      "investment": 1758513.11,
-      "investmentFmt": "R$ 1.758.513,11",
-      "insercoes": 654526,
-      "insercoesFmt": "654.526",
-      "investmentPct": 11.1,
+      "investment": 1741162.12,
+      "investmentFmt": "R$ 1.741.162,12",
+      "insercoes": 651377,
+      "insercoesFmt": "651.377",
+      "investmentPct": 11,
       "insercoesPct": 8.1,
-      "impact": 399245206,
-      "impactFmt": "399.245.206"
+      "impact": 397445206,
+      "impactFmt": "397.445.206"
     },
     {
       "categoria": "MUB",
@@ -2531,15 +2531,15 @@
       "impactFmt": "118.863.120"
     },
     {
-      "categoria": "DOOH Aeroporto",
-      "investment": 719345.12,
-      "investmentFmt": "R$ 719.345,12",
-      "insercoes": 612300,
-      "insercoesFmt": "612.300",
-      "investmentPct": 4.5,
-      "insercoesPct": 7.6,
-      "impact": 264300894,
-      "impactFmt": "264.300.894"
+      "categoria": "DOOH Aeroporto Complementar",
+      "investment": 572773.7,
+      "investmentFmt": "R$ 572.773,70",
+      "insercoes": 495660,
+      "insercoesFmt": "495.660",
+      "investmentPct": 3.6,
+      "insercoesPct": 6.2,
+      "impact": 229687290,
+      "impactFmt": "229.687.290"
     },
     {
       "categoria": "TV Fechada",
@@ -2560,6 +2560,28 @@
       "insercoesPct": 9.1,
       "impact": 103001275,
       "impactFmt": "103.001.275"
+    },
+    {
+      "categoria": "DOOH Aeroporto",
+      "investment": 146571.42,
+      "investmentFmt": "R$ 146.571,42",
+      "insercoes": 116640,
+      "insercoesFmt": "116.640",
+      "investmentPct": 0.9,
+      "insercoesPct": 1.5,
+      "impact": 34613604,
+      "impactFmt": "34.613.604"
+    },
+    {
+      "categoria": "DOOH Painel Digital Complementar",
+      "investment": 17350.99,
+      "investmentFmt": "R$ 17.350,99",
+      "insercoes": 3149,
+      "insercoesFmt": "3.149",
+      "investmentPct": 0.1,
+      "insercoesPct": 0,
+      "impact": 1800000,
+      "impactFmt": "1.800.000"
     }
   ],
   "offlineTopVehicles": [
@@ -2597,20 +2619,6 @@
       "investmentShare": 43
     },
     {
-      "veiculo": "JCDecaux",
-      "categoria": "MUB",
-      "investment": 701262.57,
-      "investmentFmt": "R$ 701.262,57",
-      "investmentPct": 4.4,
-      "insercoes": 1031520,
-      "insercoesFmt": "1.031.520",
-      "insercoesPct": 12.8,
-      "impact": 167630377,
-      "impactFmt": "167.630.377",
-      "impactPct": 15.7,
-      "investmentShare": 19
-    },
-    {
       "veiculo": "BAND",
       "categoria": "TV Aberta",
       "investment": 679345,
@@ -2623,13 +2631,16 @@
     },
     {
       "veiculo": "JCDECAUX",
-      "categoria": "DOOH Aeroporto",
+      "categoria": "DOOH Aeroporto Complementar",
       "investment": 572773.7,
       "investmentFmt": "R$ 572.773,70",
       "investmentPct": 3.6,
       "insercoes": 495660,
       "insercoesFmt": "495.660",
       "insercoesPct": 6.2,
+      "impact": 229687290,
+      "impactFmt": "229.687.290",
+      "impactPct": 25.4,
       "investmentShare": 15
     },
     {
@@ -2643,8 +2654,19 @@
       "insercoesPct": 2.6,
       "impact": 187235526,
       "impactFmt": "187.235.526",
-      "impactPct": 17.5,
+      "impactPct": 20.7,
       "investmentShare": 14
+    },
+    {
+      "veiculo": "JCDecaux",
+      "categoria": "MUB",
+      "investment": 440751.34,
+      "investmentFmt": "R$ 440.751,34",
+      "investmentPct": 2.8,
+      "insercoes": 756000,
+      "insercoesFmt": "756.000",
+      "insercoesPct": 9.4,
+      "investmentShare": 12
     },
     {
       "veiculo": "Bureau de Mídia",
@@ -2657,7 +2679,7 @@
       "insercoesPct": 1,
       "impact": 154951680,
       "impactFmt": "154.951.680",
-      "impactPct": 14.5,
+      "impactPct": 17.1,
       "investmentShare": 9
     },
     {
@@ -2671,7 +2693,7 @@
       "insercoesPct": 10.7,
       "impact": 17415737,
       "impactFmt": "17.415.737",
-      "impactPct": 1.6,
+      "impactPct": 1.9,
       "investmentShare": 8
     },
     {
@@ -2876,7 +2898,7 @@
           "insercoesPct": 2.6,
           "impact": 187235526,
           "impactFmt": "187.235.526",
-          "impactPct": 17.5,
+          "impactPct": 20.7,
           "investmentShare": 100
         },
         {
@@ -2890,22 +2912,22 @@
           "insercoesPct": 1,
           "impact": 154951680,
           "impactFmt": "154.951.680",
-          "impactPct": 14.5,
+          "impactPct": 17.1,
           "investmentShare": 63
         },
         {
           "veiculo": "WP MIDIA",
           "categoria": "DOOH Painel Digital",
-          "investment": 300413.18,
-          "investmentFmt": "R$ 300.413,18",
-          "investmentPct": 1.9,
-          "insercoes": 68578,
-          "insercoesFmt": "68.578",
-          "insercoesPct": 0.9,
+          "investment": 283062.19,
+          "investmentFmt": "R$ 283.062,19",
+          "investmentPct": 1.8,
+          "insercoes": 65429,
+          "insercoesFmt": "65.429",
+          "insercoesPct": 0.8,
           "impact": 11694000,
           "impactFmt": "11.694.000",
-          "impactPct": 1.1,
-          "investmentShare": 58
+          "impactPct": 1.3,
+          "investmentShare": 55
         },
         {
           "veiculo": "Alumi",
@@ -2918,7 +2940,7 @@
           "insercoesPct": 2.1,
           "impact": 33912000,
           "impactFmt": "33.912.000",
-          "impactPct": 3.2,
+          "impactPct": 3.7,
           "investmentShare": 28
         },
         {
@@ -2946,7 +2968,7 @@
           "insercoesPct": 0.2,
           "impact": 5700000,
           "impactFmt": "5.700.000",
-          "impactPct": 0.5,
+          "impactPct": 0.6,
           "investmentShare": 26
         },
         {
@@ -2990,15 +3012,12 @@
         {
           "veiculo": "JCDecaux",
           "categoria": "MUB",
-          "investment": 701262.57,
-          "investmentFmt": "R$ 701.262,57",
-          "investmentPct": 4.4,
-          "insercoes": 1031520,
-          "insercoesFmt": "1.031.520",
-          "insercoesPct": 12.8,
-          "impact": 167630377,
-          "impactFmt": "167.630.377",
-          "impactPct": 15.7,
+          "investment": 440751.34,
+          "investmentFmt": "R$ 440.751,34",
+          "investmentPct": 2.8,
+          "insercoes": 756000,
+          "insercoesFmt": "756.000",
+          "insercoesPct": 9.4,
           "investmentShare": 100
         },
         {
@@ -3012,8 +3031,8 @@
           "insercoesPct": 10.7,
           "impact": 17415737,
           "impactFmt": "17.415.737",
-          "impactPct": 1.6,
-          "investmentShare": 46
+          "impactPct": 1.9,
+          "investmentShare": 73
         },
         {
           "veiculo": "All Space",
@@ -3026,8 +3045,8 @@
           "insercoesPct": 54.9,
           "impact": 24241612,
           "impactFmt": "24.241.612",
-          "impactPct": 2.3,
-          "investmentShare": 43
+          "impactPct": 2.7,
+          "investmentShare": 68
         }
       ]
     },
@@ -3045,7 +3064,7 @@
           "insercoesPct": 0,
           "impact": 44134200,
           "impactFmt": "44.134.200",
-          "impactPct": 4.1,
+          "impactPct": 4.9,
           "investmentShare": 100
         },
         {
@@ -3059,7 +3078,7 @@
           "insercoesPct": 0,
           "impact": 32619330,
           "impactFmt": "32.619.330",
-          "impactPct": 3,
+          "impactPct": 3.6,
           "investmentShare": 98
         },
         {
@@ -3073,38 +3092,27 @@
           "insercoesPct": 0,
           "impact": 42109590,
           "impactFmt": "42.109.590",
-          "impactPct": 3.9,
+          "impactPct": 4.7,
           "investmentShare": 67
         }
       ]
     },
     {
-      "categoria": "DOOH Aeroporto",
+      "categoria": "DOOH Aeroporto Complementar",
       "vehicles": [
         {
           "veiculo": "JCDECAUX",
-          "categoria": "DOOH Aeroporto",
+          "categoria": "DOOH Aeroporto Complementar",
           "investment": 572773.7,
           "investmentFmt": "R$ 572.773,70",
           "investmentPct": 3.6,
           "insercoes": 495660,
           "insercoesFmt": "495.660",
           "insercoesPct": 6.2,
+          "impact": 229687290,
+          "impactFmt": "229.687.290",
+          "impactPct": 25.4,
           "investmentShare": 100
-        },
-        {
-          "veiculo": "NEOOH",
-          "categoria": "DOOH Aeroporto",
-          "investment": 146571.42,
-          "investmentFmt": "R$ 146.571,42",
-          "investmentPct": 0.9,
-          "insercoes": 116640,
-          "insercoesFmt": "116.640",
-          "insercoesPct": 1.5,
-          "impact": 264300894,
-          "impactFmt": "264.300.894",
-          "impactPct": 24.7,
-          "investmentShare": 26
         }
       ]
     },
@@ -3172,6 +3180,17 @@
       "categoria": "DOOH Metrô",
       "vehicles": [
         {
+          "veiculo": "JCDecaux",
+          "categoria": "DOOH Metrô",
+          "investment": 260511.23,
+          "investmentFmt": "R$ 260.511,23",
+          "investmentPct": 1.6,
+          "insercoes": 275520,
+          "insercoesFmt": "275.520",
+          "insercoesPct": 3.4,
+          "investmentShare": 100
+        },
+        {
           "veiculo": "Eletromídia",
           "categoria": "DOOH Metrô",
           "investment": 106989.28,
@@ -3183,7 +3202,7 @@
           "impact": 2873281,
           "impactFmt": "2.873.281",
           "impactPct": 0.3,
-          "investmentShare": 100
+          "investmentShare": 41
         },
         {
           "veiculo": "MOBTV",
@@ -3196,8 +3215,46 @@
           "insercoesPct": 0.4,
           "impact": 78000000,
           "impactFmt": "78.000.000",
-          "impactPct": 7.3,
-          "investmentShare": 72
+          "impactPct": 8.6,
+          "investmentShare": 30
+        }
+      ]
+    },
+    {
+      "categoria": "DOOH Aeroporto",
+      "vehicles": [
+        {
+          "veiculo": "NEOOH",
+          "categoria": "DOOH Aeroporto",
+          "investment": 146571.42,
+          "investmentFmt": "R$ 146.571,42",
+          "investmentPct": 0.9,
+          "insercoes": 116640,
+          "insercoesFmt": "116.640",
+          "insercoesPct": 1.5,
+          "impact": 34613604,
+          "impactFmt": "34.613.604",
+          "impactPct": 3.8,
+          "investmentShare": 100
+        }
+      ]
+    },
+    {
+      "categoria": "DOOH Painel Digital Complementar",
+      "vehicles": [
+        {
+          "veiculo": "WP MIDIA",
+          "categoria": "DOOH Painel Digital Complementar",
+          "investment": 17350.99,
+          "investmentFmt": "R$ 17.350,99",
+          "investmentPct": 0.1,
+          "insercoes": 3149,
+          "insercoesFmt": "3.149",
+          "insercoesPct": 0,
+          "impact": 1800000,
+          "impactFmt": "1.800.000",
+          "impactPct": 0.2,
+          "investmentShare": 100
         }
       ]
     }
@@ -3217,7 +3274,7 @@
       },
       {
         "label": "Impacto (mídia exterior)",
-        "value": "1.070.770.227",
+        "value": "904.939.850",
         "accent": "green"
       },
       {
