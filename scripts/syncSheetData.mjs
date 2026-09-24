@@ -986,8 +986,8 @@ async function main() {
     'DOOH Painel Digital': 'DOOH Painel Digital',
     MINIDOOR: 'Minidoor',
     MUB: 'MUB',
-    'DOOH Metro': 'DOOH Metrô + Aeroporto',
-    'DOOH Aeroporto': 'DOOH Metrô + Aeroporto',
+    'DOOH Metro': 'DOOH Metrô',
+    'DOOH Aeroporto': 'DOOH Aeroporto',
   };
 
   let offlineTotalInvestment = 0;
@@ -1030,14 +1030,15 @@ async function main() {
 
   // Impacto (Cobertura/Fluxo) vem de abas próprias da planilha de mídia
   // exterior (uma aba por categoria: MUB, DOOH-METRO, DOOH-AEROPORTO,
-  // DOOH-PAINEL DIGITAL, MINIDOOR SOCIAL). DOOH-METRO e DOOH-AEROPORTO
-  // somam na categoria combinada "DOOH Metrô + Aeroporto". Rádio e TV
+  // DOOH-PAINEL DIGITAL, MINIDOOR SOCIAL). Metrô e Aeroporto têm categorias
+  // próprias (antes eram somadas em "DOOH Metrô + Aeroporto"). Rádio e TV
   // (Aberta/Fechada) ainda não têm essa métrica — ficam sem campo `impact`
   // e a página esconde essas barras na aba "Impacto".
   const OFFLINE_IMPACT_BY_CATEGORY = {
     MUB: 187_572_568,
-    'DOOH Metrô + Aeroporto': 103_001_275 + 34_613_604,
-    'DOOH Painel Digital': 397_445_206,
+    'DOOH Metrô': 103_001_275,
+    'DOOH Aeroporto': 264_300_894,
+    'DOOH Painel Digital': 399_245_206,
     Minidoor: 118_863_120,
   };
 
@@ -1060,15 +1061,16 @@ async function main() {
   // Impacto (Cobertura/Fluxo) por veículo, somado a partir dos totais "TOTAL
   // <veículo>" de cada aba da planilha de mídia exterior (MUB, DOOH-METRO,
   // DOOH-AEROPORTO, DOOH-PAINEL DIGITAL, MINIDOOR SOCIAL). Um mesmo veículo
-  // (ex: JCDecaux em MUB e Metrô) soma o impacto das duas abas, do mesmo
-  // jeito que investimento/inserções já são somados por veículo global.
+  // (ex: JCDecaux em MUB, Metrô e Aeroporto) soma o impacto das abas em que
+  // aparece, do mesmo jeito que investimento/inserções já são somados por
+  // veículo global.
   const OFFLINE_IMPACT_BY_VEHICLE = {
     JCDecaux: 112_473_240 + 33_029_143 + (8_853_124 + 9_074_870) + 4_200_000,
     ELETROMIDIA: 17_415_737,
     'All Space': 24_241_612,
     MOBTV: 78_000_000,
     'Eletromídia': 2_873_281,
-    NEOOH: 34_613_604,
+    NEOOH: 264_300_894,
     'WE SUPER OOH': 187_235_526,
     'Bureau de Mídia': 154_951_680,
     'WP MIDIA': 11_694_000,

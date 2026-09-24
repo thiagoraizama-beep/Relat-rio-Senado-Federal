@@ -1,14 +1,41 @@
 import Editable from '../Editable.jsx';
 import DailyMetricsChart from '../charts/DailyMetricsChart.jsx';
 import { useReveal } from '../../hooks/useReveal.js';
-import { bigNumbers, dailySeries, reachSummary } from '../../data/campaignData.js';
+import { bigNumbers, dailySeries, reachSummary, vehicleDelivery } from '../../data/campaignData.js';
+
+const fmt = new Intl.NumberFormat('pt-BR');
+
+// Contratado vs. entregue, somado só dentro do mesmo modelo de compra (CPM =
+// impressões, CPV = views, CPC = cliques) — evita misturar unidades
+// diferentes (ex: impressões do Meta com cliques do Hands).
+function sumByModel(model) {
+  return vehicleDelivery
+    .filter((v) => v.modelo === model)
+    .reduce((acc, v) => ({ contracted: acc.contracted + v.contracted, delivered: acc.delivered + v.delivered }), {
+      contracted: 0,
+      delivered: 0,
+    });
+}
+
+const DELIVERY_BY_LABEL = {
+  Impressões: sumByModel('CPM'),
+  Cliques: sumByModel('CPC'),
+  'Video views': sumByModel('CPV'),
+};
 
 function BigNumberCard({ item, delay }) {
   const ref = useReveal();
+  const delivery = DELIVERY_BY_LABEL[item.label];
   return (
     <div className={`bignum-card bignum-${item.accent} reveal`} data-delay={delay} ref={ref}>
       <span className="bignum-value">{item.value}</span>
       <span className="bignum-label">{item.label}</span>
+      {delivery && (
+        <span className="bignum-delivery">
+          {fmt.format(delivery.delivered)} entregue / {fmt.format(delivery.contracted)} contratado (
+          {delivery.contracted ? Math.round((delivery.delivered / delivery.contracted) * 100) : 0}%)
+        </span>
+      )}
     </div>
   );
 }

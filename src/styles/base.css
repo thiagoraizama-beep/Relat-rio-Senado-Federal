@@ -809,6 +809,11 @@ section.slide:has(> .section-head) {
   color: var(--text-3);
   font-weight: 700;
 }
+.bignum-delivery {
+  font-size: 0.66rem;
+  color: var(--text-3);
+  line-height: 1.3;
+}
 .bignum-blue { --accent-color: var(--blue-700); }
 .bignum-lightblue { --accent-color: var(--blue-accent); }
 .bignum-orange { --accent-color: #d68a1e; }
@@ -1935,6 +1940,20 @@ section.slide.social-slide.social-slide-flip { flex-direction: row-reverse; }
   width: var(--w);
 }
 .social-delivery-caption { font-size: 0.78rem; color: rgba(255, 255, 255, 0.65); }
+.social-delivery-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 176, 32, 0.12);
+  border: 1px solid rgba(255, 176, 32, 0.35);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+.social-delivery-note-icon { flex-shrink: 0; line-height: 1.4; }
 
 .social-col-metrics {
   flex: 1;

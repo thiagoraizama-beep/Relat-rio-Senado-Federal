@@ -30,6 +30,7 @@ export default function KwaiSection() {
       logoClassName="social-logo-kwai"
       data={data}
       delivery={delivery}
+      deliveryNote="Parte da verba prevista para o Kwai foi remanejada para outros meios de comunicação após a solicitação, o que explica o underdelivery frente ao contratado original."
       primaryMetric={{ label: 'Impressões totais', value: data.impressions }}
       hideCpc
     />

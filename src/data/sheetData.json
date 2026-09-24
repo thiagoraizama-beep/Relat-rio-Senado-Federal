@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-09-23T20:48:00.231Z",
+  "generatedAt": "2026-09-24T14:21:15.703Z",
   "rowCount": 1248,
   "bigNumbers": [
     {
       "label": "Investimento",
-      "value": "R$ 3.206.248,53",
+      "value": "R$ 3.206.219,03",
       "accent": "blue"
     },
     {
       "label": "Impressões",
-      "value": "91.985.658",
+      "value": "91.983.904",
       "accent": "orange"
     },
     {
       "label": "Cliques",
-      "value": "129.540",
+      "value": "129.537",
       "accent": "lightblue"
     },
     {
@@ -67,9 +67,9 @@
     {
       "label": "17/06",
       "impressions": 2519427,
-      "clicks": 3085,
+      "clicks": 3082,
       "views": 0,
-      "cost": 79852
+      "cost": 79850.56
     },
     {
       "label": "18/06",
@@ -157,10 +157,10 @@
     },
     {
       "label": "30/06",
-      "impressions": 9268588,
+      "impressions": 9266834,
       "clicks": 4788,
       "views": 1510201,
-      "cost": 179233.39
+      "cost": 179205.33
     },
     {
       "label": "01/07",
@@ -475,6 +475,21 @@
       "frequencyFmt": "2,6x"
     },
     {
+      "veiculo": "Kwai",
+      "modelo": "CPM",
+      "metricLabel": "Impressões",
+      "contracted": 31200000,
+      "delivered": 4227507,
+      "contractedFmt": "31.200.000",
+      "deliveredFmt": "4.227.507",
+      "pct": 14,
+      "pctDisplay": 14,
+      "reach": 1565326,
+      "reachFmt": "1.565.326",
+      "frequency": 2.7,
+      "frequencyFmt": "2,7x"
+    },
+    {
       "veiculo": "Spotify",
       "modelo": "CPM",
       "metricLabel": "Impressões",
@@ -493,12 +508,12 @@
       "veiculo": "Globo.com",
       "modelo": "CPM",
       "metricLabel": "Impressões",
-      "contracted": 9244432,
-      "delivered": 6405250,
-      "contractedFmt": "9.244.432",
-      "deliveredFmt": "6.405.250",
-      "pct": 69,
-      "pctDisplay": 69,
+      "contracted": 9500000,
+      "delivered": 6403496,
+      "contractedFmt": "9.500.000",
+      "deliveredFmt": "6.403.496",
+      "pct": 67,
+      "pctDisplay": 67,
       "reach": 1217283,
       "reachFmt": "1.217.283",
       "frequency": 5.3,
@@ -533,21 +548,6 @@
       "reachFmt": "1.947.550",
       "frequency": 3.5,
       "frequencyFmt": "3,5x"
-    },
-    {
-      "veiculo": "Kwai",
-      "modelo": "CPM",
-      "metricLabel": "Impressões",
-      "contracted": 4227507,
-      "delivered": 4227507,
-      "contractedFmt": "4.227.507",
-      "deliveredFmt": "4.227.507",
-      "pct": 100,
-      "pctDisplay": 100,
-      "reach": 1565326,
-      "reachFmt": "1.565.326",
-      "frequency": 2.7,
-      "frequencyFmt": "2,7x"
     },
     {
       "veiculo": "AdMax",
@@ -659,9 +659,9 @@
       "modelo": "CPC",
       "metricLabel": "Cliques",
       "contracted": 25000,
-      "delivered": 25210,
+      "delivered": 25207,
       "contractedFmt": "25.000",
-      "deliveredFmt": "25.210",
+      "deliveredFmt": "25.207",
       "pct": 101,
       "pctDisplay": 100,
       "reach": 507685,
@@ -690,12 +690,12 @@
       "veiculo": "Globo.com",
       "modelo": "CPM",
       "metricLabel": "Impressões",
-      "contracted": 9244432,
-      "delivered": 6405250,
-      "contractedFmt": "9.244.432",
-      "deliveredFmt": "6.405.250",
-      "pct": 69,
-      "pctDisplay": 69,
+      "contracted": 9500000,
+      "delivered": 6403496,
+      "contractedFmt": "9.500.000",
+      "deliveredFmt": "6.403.496",
+      "pct": 67,
+      "pctDisplay": 67,
       "reach": 1217283,
       "reachFmt": "1.217.283",
       "frequency": 5.3,
@@ -811,9 +811,9 @@
       "modelo": "CPC",
       "metricLabel": "Cliques",
       "contracted": 25000,
-      "delivered": 25210,
+      "delivered": 25207,
       "contractedFmt": "25.000",
-      "deliveredFmt": "25.210",
+      "deliveredFmt": "25.207",
       "pct": 101,
       "pctDisplay": 100,
       "reach": 507685,
@@ -846,10 +846,10 @@
     },
     {
       "veiculo": "Globo.com",
-      "impressions": 6405250,
+      "impressions": 6403496,
       "clicks": 1024,
       "views": 0,
-      "cost": 102483.99
+      "cost": 102455.93
     },
     {
       "veiculo": "R7 Portal",
@@ -889,9 +889,9 @@
     {
       "veiculo": "Hands",
       "impressions": 850571,
-      "clicks": 25210,
+      "clicks": 25207,
       "views": 0,
-      "cost": 12100.8
+      "cost": 12099.36
     }
   ],
   "socialNetworks": [
@@ -2459,17 +2459,17 @@
   "offlineBigNumbers": [
     {
       "label": "Investimento offline",
-      "value": "R$ 15.183.957,61",
+      "value": "R$ 15.882.468,71",
       "accent": "blue"
     },
     {
       "label": "Inserções",
-      "value": "126.405.040",
+      "value": "8.032.794",
       "accent": "orange"
     },
     {
       "label": "Veículos",
-      "value": "723",
+      "value": "724",
       "accent": "lightblue"
     },
     {
@@ -2485,7 +2485,7 @@
       "investmentFmt": "R$ 8.653.618,49",
       "insercoes": 73,
       "insercoesFmt": "73",
-      "investmentPct": 57,
+      "investmentPct": 54.5,
       "insercoesPct": 0
     },
     {
@@ -2494,19 +2494,19 @@
       "investmentFmt": "R$ 1.985.917,26",
       "insercoes": 13997,
       "insercoesFmt": "13.997",
-      "investmentPct": 13.1,
-      "insercoesPct": 0
+      "investmentPct": 12.5,
+      "insercoesPct": 0.2
     },
     {
       "categoria": "DOOH Painel Digital",
-      "investment": 1673076.66,
-      "investmentFmt": "R$ 1.673.076,66",
-      "insercoes": 659657,
-      "insercoesFmt": "659.657",
-      "investmentPct": 11,
-      "insercoesPct": 0.5,
-      "impact": 397445206,
-      "impactFmt": "397.445.206"
+      "investment": 1758513.11,
+      "investmentFmt": "R$ 1.758.513,11",
+      "insercoes": 654526,
+      "insercoesFmt": "654.526",
+      "investmentPct": 11.1,
+      "insercoesPct": 8.1,
+      "impact": 399245206,
+      "impactFmt": "399.245.206"
     },
     {
       "categoria": "MUB",
@@ -2514,32 +2514,32 @@
       "investmentFmt": "R$ 1.060.208,25",
       "insercoes": 6021708,
       "insercoesFmt": "6.021.708",
-      "investmentPct": 7,
-      "insercoesPct": 4.8,
+      "investmentPct": 6.7,
+      "insercoesPct": 75,
       "impact": 187572568,
       "impactFmt": "187.572.568"
     },
     {
       "categoria": "Minidoor",
-      "investment": 765718.05,
-      "investmentFmt": "R$ 765.718,05",
-      "insercoes": 118863120,
-      "insercoesFmt": "118.863.120",
-      "investmentPct": 5,
-      "insercoesPct": 94,
+      "investment": 806019,
+      "investmentFmt": "R$ 806.019,00",
+      "insercoes": 345,
+      "insercoesFmt": "345",
+      "investmentPct": 5.1,
+      "insercoesPct": 0,
       "impact": 118863120,
       "impactFmt": "118.863.120"
     },
     {
-      "categoria": "DOOH Metrô + Aeroporto",
-      "investment": 591591.93,
-      "investmentFmt": "R$ 591.591,93",
-      "insercoes": 846402,
-      "insercoesFmt": "846.402",
-      "investmentPct": 3.9,
-      "insercoesPct": 0.7,
-      "impact": 137614879,
-      "impactFmt": "137.614.879"
+      "categoria": "DOOH Aeroporto",
+      "investment": 719345.12,
+      "investmentFmt": "R$ 719.345,12",
+      "insercoes": 612300,
+      "insercoesFmt": "612.300",
+      "investmentPct": 4.5,
+      "insercoesPct": 7.6,
+      "impact": 264300894,
+      "impactFmt": "264.300.894"
     },
     {
       "categoria": "TV Fechada",
@@ -2547,8 +2547,19 @@
       "investmentFmt": "R$ 453.826,97",
       "insercoes": 83,
       "insercoesFmt": "83",
-      "investmentPct": 3,
+      "investmentPct": 2.9,
       "insercoesPct": 0
+    },
+    {
+      "categoria": "DOOH Metrô",
+      "investment": 445020.51,
+      "investmentFmt": "R$ 445.020,51",
+      "insercoes": 729762,
+      "insercoesFmt": "729.762",
+      "investmentPct": 2.8,
+      "insercoesPct": 9.1,
+      "impact": 103001275,
+      "impactFmt": "103.001.275"
     }
   ],
   "offlineTopVehicles": [
@@ -2557,7 +2568,7 @@
       "categoria": "TV Aberta",
       "investment": 3778385.6,
       "investmentFmt": "R$ 3.778.385,60",
-      "investmentPct": 24.9,
+      "investmentPct": 23.8,
       "insercoes": 9,
       "insercoesFmt": "9",
       "insercoesPct": 0,
@@ -2568,7 +2579,7 @@
       "categoria": "TV Aberta",
       "investment": 2270401.2,
       "investmentFmt": "R$ 2.270.401,20",
-      "investmentPct": 15,
+      "investmentPct": 14.3,
       "insercoes": 15,
       "insercoesFmt": "15",
       "insercoesPct": 0,
@@ -2579,7 +2590,7 @@
       "categoria": "TV Aberta",
       "investment": 1612480,
       "investmentFmt": "R$ 1.612.480,00",
-      "investmentPct": 10.6,
+      "investmentPct": 10.2,
       "insercoes": 20,
       "insercoesFmt": "20",
       "insercoesPct": 0,
@@ -2590,13 +2601,13 @@
       "categoria": "MUB",
       "investment": 701262.57,
       "investmentFmt": "R$ 701.262,57",
-      "investmentPct": 4.6,
+      "investmentPct": 4.4,
       "insercoes": 1031520,
       "insercoesFmt": "1.031.520",
-      "insercoesPct": 0.8,
+      "insercoesPct": 12.8,
       "impact": 167630377,
       "impactFmt": "167.630.377",
-      "impactPct": 19.9,
+      "impactPct": 15.7,
       "investmentShare": 19
     },
     {
@@ -2604,38 +2615,63 @@
       "categoria": "TV Aberta",
       "investment": 679345,
       "investmentFmt": "R$ 679.345,00",
-      "investmentPct": 4.5,
+      "investmentPct": 4.3,
       "insercoes": 13,
       "insercoesFmt": "13",
       "insercoesPct": 0,
       "investmentShare": 18
     },
     {
+      "veiculo": "JCDECAUX",
+      "categoria": "DOOH Aeroporto",
+      "investment": 572773.7,
+      "investmentFmt": "R$ 572.773,70",
+      "investmentPct": 3.6,
+      "insercoes": 495660,
+      "insercoesFmt": "495.660",
+      "insercoesPct": 6.2,
+      "investmentShare": 15
+    },
+    {
       "veiculo": "WE SUPER OOH",
       "categoria": "DOOH Painel Digital",
-      "investment": 507653.39,
-      "investmentFmt": "R$ 507.653,39",
-      "investmentPct": 3.3,
-      "insercoes": 219240,
-      "insercoesFmt": "219.240",
-      "insercoesPct": 0.2,
+      "investment": 514400.79,
+      "investmentFmt": "R$ 514.400,79",
+      "investmentPct": 3.2,
+      "insercoes": 210960,
+      "insercoesFmt": "210.960",
+      "insercoesPct": 2.6,
       "impact": 187235526,
       "impactFmt": "187.235.526",
-      "impactPct": 22.3,
-      "investmentShare": 13
+      "impactPct": 17.5,
+      "investmentShare": 14
+    },
+    {
+      "veiculo": "Bureau de Mídia",
+      "categoria": "DOOH Painel Digital",
+      "investment": 321548.76,
+      "investmentFmt": "R$ 321.548,76",
+      "investmentPct": 2,
+      "insercoes": 82386,
+      "insercoesFmt": "82.386",
+      "insercoesPct": 1,
+      "impact": 154951680,
+      "impactFmt": "154.951.680",
+      "impactPct": 14.5,
+      "investmentShare": 9
     },
     {
       "veiculo": "ELETROMIDIA",
       "categoria": "MUB",
       "investment": 319864.91,
       "investmentFmt": "R$ 319.864,91",
-      "investmentPct": 2.1,
+      "investmentPct": 2,
       "insercoes": 855708,
       "insercoesFmt": "855.708",
-      "insercoesPct": 0.7,
+      "insercoesPct": 10.7,
       "impact": 17415737,
       "impactFmt": "17.415.737",
-      "impactPct": 2.1,
+      "impactPct": 1.6,
       "investmentShare": 8
     },
     {
@@ -2643,38 +2679,10 @@
       "categoria": "TV Aberta",
       "investment": 313006.69,
       "investmentFmt": "R$ 313.006,69",
-      "investmentPct": 2.1,
+      "investmentPct": 2,
       "insercoes": 16,
       "insercoesFmt": "16",
       "insercoesPct": 0,
-      "investmentShare": 8
-    },
-    {
-      "veiculo": "Bureau de Mídia",
-      "categoria": "DOOH Painel Digital",
-      "investment": 305471.32,
-      "investmentFmt": "R$ 305.471,32",
-      "investmentPct": 2,
-      "insercoes": 82386,
-      "insercoesFmt": "82.386",
-      "insercoesPct": 0.1,
-      "impact": 154951680,
-      "impactFmt": "154.951.680",
-      "impactPct": 18.4,
-      "investmentShare": 8
-    },
-    {
-      "veiculo": "All Space",
-      "categoria": "MUB",
-      "investment": 299592,
-      "investmentFmt": "R$ 299.592,00",
-      "investmentPct": 2,
-      "insercoes": 4410000,
-      "insercoesFmt": "4.410.000",
-      "insercoesPct": 3.5,
-      "impact": 24241612,
-      "impactFmt": "24.241.612",
-      "impactPct": 2.9,
       "investmentShare": 8
     }
   ],
@@ -2687,7 +2695,7 @@
           "categoria": "TV Aberta",
           "investment": 3778385.6,
           "investmentFmt": "R$ 3.778.385,60",
-          "investmentPct": 24.9,
+          "investmentPct": 23.8,
           "insercoes": 9,
           "insercoesFmt": "9",
           "insercoesPct": 0,
@@ -2698,7 +2706,7 @@
           "categoria": "TV Aberta",
           "investment": 2270401.2,
           "investmentFmt": "R$ 2.270.401,20",
-          "investmentPct": 15,
+          "investmentPct": 14.3,
           "insercoes": 15,
           "insercoesFmt": "15",
           "insercoesPct": 0,
@@ -2709,7 +2717,7 @@
           "categoria": "TV Aberta",
           "investment": 1612480,
           "investmentFmt": "R$ 1.612.480,00",
-          "investmentPct": 10.6,
+          "investmentPct": 10.2,
           "insercoes": 20,
           "insercoesFmt": "20",
           "insercoesPct": 0,
@@ -2720,7 +2728,7 @@
           "categoria": "TV Aberta",
           "investment": 679345,
           "investmentFmt": "R$ 679.345,00",
-          "investmentPct": 4.5,
+          "investmentPct": 4.3,
           "insercoes": 13,
           "insercoesFmt": "13",
           "insercoesPct": 0,
@@ -2731,7 +2739,7 @@
           "categoria": "TV Aberta",
           "investment": 313006.69,
           "investmentFmt": "R$ 313.006,69",
-          "investmentPct": 2.1,
+          "investmentPct": 2,
           "insercoes": 16,
           "insercoesFmt": "16",
           "insercoesPct": 0,
@@ -2758,7 +2766,7 @@
           "categoria": "Rádio",
           "investment": 53383.54,
           "investmentFmt": "R$ 53.383,54",
-          "investmentPct": 0.4,
+          "investmentPct": 0.3,
           "insercoes": 20,
           "insercoesFmt": "20",
           "insercoesPct": 0,
@@ -2860,118 +2868,118 @@
         {
           "veiculo": "WE SUPER OOH",
           "categoria": "DOOH Painel Digital",
-          "investment": 507653.39,
-          "investmentFmt": "R$ 507.653,39",
-          "investmentPct": 3.3,
-          "insercoes": 219240,
-          "insercoesFmt": "219.240",
-          "insercoesPct": 0.2,
+          "investment": 514400.79,
+          "investmentFmt": "R$ 514.400,79",
+          "investmentPct": 3.2,
+          "insercoes": 210960,
+          "insercoesFmt": "210.960",
+          "insercoesPct": 2.6,
           "impact": 187235526,
           "impactFmt": "187.235.526",
-          "impactPct": 22.3,
+          "impactPct": 17.5,
           "investmentShare": 100
         },
         {
           "veiculo": "Bureau de Mídia",
           "categoria": "DOOH Painel Digital",
-          "investment": 305471.32,
-          "investmentFmt": "R$ 305.471,32",
+          "investment": 321548.76,
+          "investmentFmt": "R$ 321.548,76",
           "investmentPct": 2,
           "insercoes": 82386,
           "insercoesFmt": "82.386",
-          "insercoesPct": 0.1,
+          "insercoesPct": 1,
           "impact": 154951680,
           "impactFmt": "154.951.680",
-          "impactPct": 18.4,
-          "investmentShare": 60
+          "impactPct": 14.5,
+          "investmentShare": 63
         },
         {
           "veiculo": "WP MIDIA",
           "categoria": "DOOH Painel Digital",
-          "investment": 268909.09,
-          "investmentFmt": "R$ 268.909,09",
-          "investmentPct": 1.8,
-          "insercoes": 65429,
-          "insercoesFmt": "65.429",
-          "insercoesPct": 0.1,
+          "investment": 300413.18,
+          "investmentFmt": "R$ 300.413,18",
+          "investmentPct": 1.9,
+          "insercoes": 68578,
+          "insercoesFmt": "68.578",
+          "insercoesPct": 0.9,
           "impact": 11694000,
           "impactFmt": "11.694.000",
-          "impactPct": 1.4,
-          "investmentShare": 53
+          "impactPct": 1.1,
+          "investmentShare": 58
         },
         {
           "veiculo": "Alumi",
           "categoria": "DOOH Painel Digital",
-          "investment": 136375.92,
-          "investmentFmt": "R$ 136.375,92",
+          "investment": 143553.6,
+          "investmentFmt": "R$ 143.553,60",
           "investmentPct": 0.9,
           "insercoes": 169920,
           "insercoesFmt": "169.920",
-          "insercoesPct": 0.1,
+          "insercoesPct": 2.1,
           "impact": 33912000,
           "impactFmt": "33.912.000",
-          "impactPct": 4,
-          "investmentShare": 27
+          "impactPct": 3.2,
+          "investmentShare": 28
         },
         {
           "veiculo": "Hocxx Smart Mídia",
           "categoria": "DOOH Painel Digital",
-          "investment": 130173.75,
-          "investmentFmt": "R$ 130.173,75",
+          "investment": 137025,
+          "investmentFmt": "R$ 137.025,00",
           "investmentPct": 0.9,
           "insercoes": 50025,
           "insercoesFmt": "50.025",
-          "insercoesPct": 0,
+          "insercoesPct": 0.6,
           "impact": 3952000,
           "impactFmt": "3.952.000",
-          "impactPct": 0.5,
-          "investmentShare": 26
+          "impactPct": 0.4,
+          "investmentShare": 27
         },
         {
           "veiculo": "LED ME",
           "categoria": "DOOH Painel Digital",
-          "investment": 127747.43,
-          "investmentFmt": "R$ 127.747,43",
+          "investment": 134470.98,
+          "investmentFmt": "R$ 134.470,98",
           "investmentPct": 0.8,
           "insercoes": 19665,
           "insercoesFmt": "19.665",
-          "insercoesPct": 0,
+          "insercoesPct": 0.2,
           "impact": 5700000,
           "impactFmt": "5.700.000",
-          "impactPct": 0.7,
-          "investmentShare": 25
+          "impactPct": 0.5,
+          "investmentShare": 26
         },
         {
           "veiculo": "Doors Painéis",
           "categoria": "DOOH Painel Digital",
-          "investment": 99234.72,
-          "investmentFmt": "R$ 99.234,72",
+          "investment": 104457.6,
+          "investmentFmt": "R$ 104.457,60",
           "investmentPct": 0.7,
           "insercoes": 26496,
           "insercoesFmt": "26.496",
-          "insercoesPct": 0,
+          "insercoesPct": 0.3,
           "investmentShare": 20
         },
         {
           "veiculo": "Na Rua",
           "categoria": "DOOH Painel Digital",
-          "investment": 49248,
-          "investmentFmt": "R$ 49.248,00",
+          "investment": 51840,
+          "investmentFmt": "R$ 51.840,00",
           "investmentPct": 0.3,
           "insercoes": 13248,
           "insercoesFmt": "13.248",
-          "insercoesPct": 0,
+          "insercoesPct": 0.2,
           "investmentShare": 10
         },
         {
           "veiculo": "Via Direta",
           "categoria": "DOOH Painel Digital",
-          "investment": 48263.04,
-          "investmentFmt": "R$ 48.263,04",
+          "investment": 50803.2,
+          "investmentFmt": "R$ 50.803,20",
           "investmentPct": 0.3,
           "insercoes": 13248,
           "insercoesFmt": "13.248",
-          "insercoesPct": 0,
+          "insercoesPct": 0.2,
           "investmentShare": 10
         }
       ]
@@ -2984,13 +2992,13 @@
           "categoria": "MUB",
           "investment": 701262.57,
           "investmentFmt": "R$ 701.262,57",
-          "investmentPct": 4.6,
+          "investmentPct": 4.4,
           "insercoes": 1031520,
           "insercoesFmt": "1.031.520",
-          "insercoesPct": 0.8,
+          "insercoesPct": 12.8,
           "impact": 167630377,
           "impactFmt": "167.630.377",
-          "impactPct": 19.9,
+          "impactPct": 15.7,
           "investmentShare": 100
         },
         {
@@ -2998,13 +3006,13 @@
           "categoria": "MUB",
           "investment": 319864.91,
           "investmentFmt": "R$ 319.864,91",
-          "investmentPct": 2.1,
+          "investmentPct": 2,
           "insercoes": 855708,
           "insercoesFmt": "855.708",
-          "insercoesPct": 0.7,
+          "insercoesPct": 10.7,
           "impact": 17415737,
           "impactFmt": "17.415.737",
-          "impactPct": 2.1,
+          "impactPct": 1.6,
           "investmentShare": 46
         },
         {
@@ -3012,13 +3020,13 @@
           "categoria": "MUB",
           "investment": 299592,
           "investmentFmt": "R$ 299.592,00",
-          "investmentPct": 2,
+          "investmentPct": 1.9,
           "insercoes": 4410000,
           "insercoesFmt": "4.410.000",
-          "insercoesPct": 3.5,
+          "insercoesPct": 54.9,
           "impact": 24241612,
           "impactFmt": "24.241.612",
-          "impactPct": 2.9,
+          "impactPct": 2.3,
           "investmentShare": 43
         }
       ]
@@ -3029,91 +3037,74 @@
         {
           "veiculo": "WP MÍDIA",
           "categoria": "Minidoor",
-          "investment": 288796.2,
-          "investmentFmt": "R$ 288.796,20",
+          "investment": 303996,
+          "investmentFmt": "R$ 303.996,00",
           "investmentPct": 1.9,
-          "insercoes": 44134200,
-          "insercoesFmt": "44.134.200",
-          "insercoesPct": 34.9,
+          "insercoes": 113,
+          "insercoesFmt": "113",
+          "insercoesPct": 0,
           "impact": 44134200,
           "impactFmt": "44.134.200",
-          "impactPct": 5.2,
+          "impactPct": 4.1,
           "investmentShare": 100
         },
         {
           "veiculo": "REDE OPS",
           "categoria": "Minidoor",
-          "investment": 283691.85,
-          "investmentFmt": "R$ 283.691,85",
+          "investment": 298623,
+          "investmentFmt": "R$ 298.623,00",
           "investmentPct": 1.9,
-          "insercoes": 32619330,
-          "insercoesFmt": "32.619.330",
-          "insercoesPct": 25.8,
+          "insercoes": 108,
+          "insercoesFmt": "108",
+          "insercoesPct": 0,
           "impact": 32619330,
           "impactFmt": "32.619.330",
-          "impactPct": 3.9,
+          "impactPct": 3,
           "investmentShare": 98
         },
         {
           "veiculo": "COMUNIDADE DOOR",
           "categoria": "Minidoor",
-          "investment": 193230,
-          "investmentFmt": "R$ 193.230,00",
+          "investment": 203400,
+          "investmentFmt": "R$ 203.400,00",
           "investmentPct": 1.3,
-          "insercoes": 42109590,
-          "insercoesFmt": "42.109.590",
-          "insercoesPct": 33.3,
+          "insercoes": 124,
+          "insercoesFmt": "124",
+          "insercoesPct": 0,
           "impact": 42109590,
           "impactFmt": "42.109.590",
-          "impactPct": 5,
+          "impactPct": 3.9,
           "investmentShare": 67
         }
       ]
     },
     {
-      "categoria": "DOOH Metrô + Aeroporto",
+      "categoria": "DOOH Aeroporto",
       "vehicles": [
         {
-          "veiculo": "NEOOH",
-          "categoria": "DOOH Metrô + Aeroporto",
-          "investment": 146571.42,
-          "investmentFmt": "R$ 146.571,42",
-          "investmentPct": 1,
-          "insercoes": 116640,
-          "insercoesFmt": "116.640",
-          "insercoesPct": 0.1,
-          "impact": 34613604,
-          "impactFmt": "34.613.604",
-          "impactPct": 4.1,
+          "veiculo": "JCDECAUX",
+          "categoria": "DOOH Aeroporto",
+          "investment": 572773.7,
+          "investmentFmt": "R$ 572.773,70",
+          "investmentPct": 3.6,
+          "insercoes": 495660,
+          "insercoesFmt": "495.660",
+          "insercoesPct": 6.2,
           "investmentShare": 100
         },
         {
-          "veiculo": "Eletromídia",
-          "categoria": "DOOH Metrô + Aeroporto",
-          "investment": 106989.28,
-          "investmentFmt": "R$ 106.989,28",
-          "investmentPct": 0.7,
-          "insercoes": 424242,
-          "insercoesFmt": "424.242",
-          "insercoesPct": 0.3,
-          "impact": 2873281,
-          "impactFmt": "2.873.281",
-          "impactPct": 0.3,
-          "investmentShare": 73
-        },
-        {
-          "veiculo": "MOBTV",
-          "categoria": "DOOH Metrô + Aeroporto",
-          "investment": 77520,
-          "investmentFmt": "R$ 77.520,00",
-          "investmentPct": 0.5,
-          "insercoes": 30000,
-          "insercoesFmt": "30.000",
-          "insercoesPct": 0,
-          "impact": 78000000,
-          "impactFmt": "78.000.000",
-          "impactPct": 9.3,
-          "investmentShare": 53
+          "veiculo": "NEOOH",
+          "categoria": "DOOH Aeroporto",
+          "investment": 146571.42,
+          "investmentFmt": "R$ 146.571,42",
+          "investmentPct": 0.9,
+          "insercoes": 116640,
+          "insercoesFmt": "116.640",
+          "insercoesPct": 1.5,
+          "impact": 264300894,
+          "impactFmt": "264.300.894",
+          "impactPct": 24.7,
+          "investmentShare": 26
         }
       ]
     },
@@ -3125,7 +3116,7 @@
           "categoria": "TV Fechada",
           "investment": 130113.43,
           "investmentFmt": "R$ 130.113,43",
-          "investmentPct": 0.9,
+          "investmentPct": 0.8,
           "insercoes": 16,
           "insercoesFmt": "16",
           "insercoesPct": 0,
@@ -3136,7 +3127,7 @@
           "categoria": "TV Fechada",
           "investment": 102561.09,
           "investmentFmt": "R$ 102.561,09",
-          "investmentPct": 0.7,
+          "investmentPct": 0.6,
           "insercoes": 11,
           "insercoesFmt": "11",
           "insercoesPct": 0,
@@ -3147,7 +3138,7 @@
           "categoria": "TV Fechada",
           "investment": 86695.73,
           "investmentFmt": "R$ 86.695,73",
-          "investmentPct": 0.6,
+          "investmentPct": 0.5,
           "insercoes": 19,
           "insercoesFmt": "19",
           "insercoesPct": 0,
@@ -3176,6 +3167,39 @@
           "investmentShare": 48
         }
       ]
+    },
+    {
+      "categoria": "DOOH Metrô",
+      "vehicles": [
+        {
+          "veiculo": "Eletromídia",
+          "categoria": "DOOH Metrô",
+          "investment": 106989.28,
+          "investmentFmt": "R$ 106.989,28",
+          "investmentPct": 0.7,
+          "insercoes": 424242,
+          "insercoesFmt": "424.242",
+          "insercoesPct": 5.3,
+          "impact": 2873281,
+          "impactFmt": "2.873.281",
+          "impactPct": 0.3,
+          "investmentShare": 100
+        },
+        {
+          "veiculo": "MOBTV",
+          "categoria": "DOOH Metrô",
+          "investment": 77520,
+          "investmentFmt": "R$ 77.520,00",
+          "investmentPct": 0.5,
+          "insercoes": 30000,
+          "insercoesFmt": "30.000",
+          "insercoesPct": 0.4,
+          "impact": 78000000,
+          "impactFmt": "78.000.000",
+          "impactPct": 7.3,
+          "investmentShare": 72
+        }
+      ]
     }
   ],
   "overallImpact": {
@@ -3188,27 +3212,27 @@
     "bigNumbers": [
       {
         "label": "Investimento total (on + off)",
-        "value": "R$ 18.390.206,14",
+        "value": "R$ 19.088.687,74",
         "accent": "blue"
       },
       {
         "label": "Impacto (mídia exterior)",
-        "value": "841.082.937",
+        "value": "1.070.770.227",
         "accent": "green"
       },
       {
         "label": "Impressões online",
-        "value": "91.985.658",
+        "value": "91.983.904",
         "accent": "orange"
       },
       {
         "label": "Inserções offline",
-        "value": "126.405.040",
+        "value": "8.032.794",
         "accent": "lightblue"
       },
       {
         "label": "Cliques totais",
-        "value": "129.540",
+        "value": "129.537",
         "accent": "green"
       },
       {

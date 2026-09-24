@@ -5,7 +5,7 @@ import Editable from '../Editable.jsx';
 // logoSrc: caminho da imagem do logo (ex: "/meta.png"), em public/.
 // Seção full-bleed dividida em duas colunas de azul (identidade Senado),
 // ocupando 100% da tela — mesma lógica de composição do Hero.
-export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkName, logoSrc, logoClassName = '', data, primaryMetric, delivery, flip, hideCpm, hideCpc, useCpv }) {
+export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkName, logoSrc, logoClassName = '', data, primaryMetric, delivery, deliveryNote, flip, hideCpm, hideCpc, useCpv }) {
   const hasViews = Number((data.views || '0').replace(/\./g, '')) > 0;
 
   return (
@@ -35,6 +35,12 @@ export default function SocialNetworkSection({ id, eyebrow, editPrefix, networkN
               <span className="social-delivery-caption">
                 {delivery.deliveredFmt} entregue de {delivery.contractedFmt} contratado · {delivery.metricLabel}
               </span>
+              {deliveryNote && (
+                <div className="social-delivery-note">
+                  <span className="social-delivery-note-icon">⚠️</span>
+                  <span>{deliveryNote}</span>
+                </div>
+              )}
             </div>
           )}
         </div>
