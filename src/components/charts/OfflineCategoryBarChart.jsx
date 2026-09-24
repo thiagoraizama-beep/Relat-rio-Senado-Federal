@@ -24,12 +24,26 @@ function ChartTooltip({ active, payload, metric }) {
   );
 }
 
+// Tick em linha única: o tick padrão do Recharts quebra nomes longos em até
+// 3 linhas, que vazam da faixa da barra e são cortadas no fim do SVG.
+function CategoryTick({ x, y, payload }) {
+  return (
+    <text x={x} y={y} dy="0.35em" textAnchor="end" fill="var(--text-2)" fontSize={11} fontFamily="var(--font-body)">
+      {payload.value}
+    </text>
+  );
+}
+
+const ROW_HEIGHT = 28;
+
 // breakdown: [{ categoria, investment, insercoes, impact }] — uma barra por categoria.
 export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey, onMetricChange }) {
   const metric = OFFLINE_METRICS.find((m) => m.key === metricKey);
   const data = breakdown
     .filter((row) => row[metricKey] != null)
     .sort((a, b) => b[metricKey] - a[metricKey]);
+  // Largura do eixo proporcional ao maior nome (~6px por caractere a 11px).
+  const axisWidth = Math.max(90, ...data.map((row) => row.categoria.length * 6 + 12));
 
   return (
     <div>
@@ -40,8 +54,8 @@ export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey
         ariaLabel="Selecionar métrica"
       />
       <div className="rechart-wrap">
-        <ResponsiveContainer width="100%" height={Math.max(190, data.length * 26)}>
-          <BarChart data={data} layout="vertical" margin={{ top: 4, right: 24, left: 8, bottom: 0 }}>
+        <ResponsiveContainer width="100%" height={Math.max(190, data.length * ROW_HEIGHT + 16)}>
+          <BarChart data={data} layout="vertical" margin={{ top: 8, right: 24, left: 8, bottom: 8 }}>
             <CartesianGrid horizontal={false} stroke="var(--line)" />
             <XAxis type="number" hide domain={[0, (max) => max * 1.18]} />
             <YAxis
@@ -49,8 +63,9 @@ export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey
               dataKey="categoria"
               axisLine={false}
               tickLine={false}
-              width={150}
-              tick={{ fill: 'var(--text-2)', fontSize: 11, fontFamily: 'var(--font-body)' }}
+              width={axisWidth}
+              interval={0}
+              tick={<CategoryTick />}
             />
             <Tooltip cursor={{ fill: 'var(--paper-2)' }} content={<ChartTooltip metric={metric} />} />
             <Bar dataKey={metricKey} radius={[0, 5, 5, 0]} isAnimationActive={false} barSize={14}>
