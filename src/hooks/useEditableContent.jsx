@@ -108,7 +108,7 @@ export const defaultTexts = {
   'offline-complementar-sub':
     'Investimento, inserções e impacto das ações complementares em DOOH aeroporto e painel digital.',
   'offline-complementar-insight':
-    'As ações complementares somaram R$ 590 mil (3,7% do investimento offline). A maior parte veio de DOOH Aeroporto Complementar com a JCDECAUX: R$ 572,8 mil, 495.660 inserções e 229,7 milhões de impactos. DOOH Painel Digital Complementar, com a WP MIDIA, respondeu por R$ 17,4 mil, 3.149 inserções e 1,8 milhão de impactos.',
+    'O plano complementar foi criado para realocar a verba abatida do Kwai e de algumas emissoras de rádio ao longo da campanha. Em vez de ficar sem uso, esse valor foi direcionado para mídia exterior digital. As ações complementares somaram R$ 590 mil (3,7% do investimento offline). A maior parte veio de DOOH Aeroporto Complementar com a JCDECAUX: R$ 572,8 mil, 495.660 inserções e 229,7 milhões de impactos. DOOH Painel Digital Complementar, com a WP MIDIA, respondeu por R$ 17,4 mil, 3.149 inserções e 1,8 milhão de impactos.',
   'offline-tv-title': 'Quem viu a campanha na TV',
   'offline-tv-sub':
     'Audiência da campanha (Ibope/Instar) nas 15 principais regiões metropolitanas do Brasil, comparando TV aberta e TV por assinatura no período de 14/06 a 30/06/2026.',
