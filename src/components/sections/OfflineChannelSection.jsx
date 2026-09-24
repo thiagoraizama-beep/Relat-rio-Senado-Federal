@@ -21,7 +21,26 @@ function withMetricShare(list, metricKey) {
 
 const canonicalCategories = [...offlineChannelBreakdown].sort((a, b) => b.investment - a.investment).map((c) => c.categoria);
 
-const CATEGORY_TABS = [{ categoria: 'Todos', vehicles: offlineTopVehicles }, ...offlineVehiclesByCategory];
+// Linhas "Complementar" têm slide próprio (OfflineComplementarSection),
+// fora da visão geral por categoria.
+const isComplementar = (row) => row.categoria.endsWith('Complementar');
+
+function buildSlideData(complementar) {
+  const keep = (row) => isComplementar(row) === complementar;
+  const categoryTabs = offlineVehiclesByCategory.filter(keep);
+  const allVehicles = complementar ? categoryTabs.flatMap((tab) => tab.vehicles) : offlineTopVehicles.filter(keep);
+  return {
+    breakdown: offlineChannelBreakdown.filter(keep),
+    tabs: [{ categoria: 'Todos', vehicles: allVehicles }, ...categoryTabs],
+  };
+}
+
+const SLIDE_DATA = { main: buildSlideData(false), complementar: buildSlideData(true) };
+
+const SLIDE_CONFIG = {
+  main: { id: 'slide-offline-channel', eyebrow: 'Mídia offline · Canais', editPrefix: 'offline-channel' },
+  complementar: { id: 'slide-offline-complementar', eyebrow: 'Mídia offline · Complementar', editPrefix: 'offline-complementar' },
+};
 
 const VALUE_FIELD_BY_METRIC = {
   investment: 'investmentFmt',
@@ -63,7 +82,9 @@ function VehicleTableRow({ item, metricKey }) {
 
 const METRIC_LABEL = { investment: 'investimento', insercoes: 'inserções', impact: 'impacto' };
 
-export default function OfflineChannelSection() {
+function OfflineCategorySlide({ variant }) {
+  const { id, eyebrow, editPrefix } = SLIDE_CONFIG[variant];
+  const { breakdown, tabs } = SLIDE_DATA[variant];
   const headRef = useReveal();
   const chartRef = useReveal();
   const vehiclesRef = useReveal();
@@ -75,7 +96,7 @@ export default function OfflineChannelSection() {
   // Só mostra no filtro categorias que têm ao menos um veículo com a métrica
   // ativa (ex: Rádio/TV Aberta/TV Fechada somem quando "Impacto" é escolhido,
   // já que ainda não temos essa métrica para elas).
-  const visibleTabs = CATEGORY_TABS.filter(
+  const visibleTabs = tabs.filter(
     (tab) => tab.categoria === 'Todos' || tab.vehicles.some((v) => v[metricKey] != null)
   );
 
@@ -90,24 +111,30 @@ export default function OfflineChannelSection() {
   );
 
   return (
-    <section className="slide channel-slide" id="slide-offline-channel">
+    <section className="slide channel-slide" id={id}>
       <div className="section-head reveal" ref={headRef}>
-        <div className="eyebrow">Mídia offline · Canais</div>
-        <h2><Editable id="offline-channel-title" as="span" /></h2>
-        <Editable id="offline-channel-sub" as="p" />
+        <div className="eyebrow">{eyebrow}</div>
+        <h2><Editable id={`${editPrefix}-title`} as="span" /></h2>
+        <Editable id={`${editPrefix}-sub`} as="p" />
       </div>
 
       <div className="panel reveal" data-delay="1" ref={chartRef}>
         <h3>Visão por categoria</h3>
         <OfflineCategoryBarChart
-          breakdown={offlineChannelBreakdown}
+          breakdown={breakdown}
           colorMap={colorMap}
           metricKey={metricKey}
           onMetricChange={setMetricKey}
+          minHeight={variant === 'complementar' ? 0 : 190}
         />
       </div>
 
-      <div className="offline-vehicles-split reveal" data-delay="2" ref={vehiclesRef}>
+      {/* Complementar tem poucos veículos: a análise vai abaixo da tabela, não ao lado. */}
+      <div
+        className={`offline-vehicles-split reveal${variant === 'complementar' ? ' offline-vehicles-split--stacked' : ''}`}
+        data-delay="2"
+        ref={vehiclesRef}
+      >
         <div className="offline-vehicles">
           <div className="offline-vehicles-head">
             <h3 className="panel-title-sm">Top veículos por {METRIC_LABEL[metricKey]}</h3>
@@ -134,10 +161,19 @@ export default function OfflineChannelSection() {
           <span className="insight-icon">💡</span>
           <div className="insight-editable">
             <span className="insight-editable-label">Análise</span>
-            <Editable id="offline-channel-insight" as="p" className="insight-body" />
+            <Editable id={`${editPrefix}-insight`} as="p" className="insight-body" />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+export default function OfflineChannelSection() {
+  return <OfflineCategorySlide variant="main" />;
+}
+
+export function OfflineComplementarSection() {
+  return <OfflineCategorySlide variant="complementar" />;
+}
+

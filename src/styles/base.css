@@ -1504,6 +1504,8 @@ section.slide:has(> .section-head) {
 @media (max-width: 900px) {
   .offline-vehicles-split { grid-template-columns: 1fr; }
 }
+.offline-vehicles-split--stacked { grid-template-columns: 1fr; }
+.offline-vehicles-split--stacked .offline-vehicles-insight { max-height: none; }
 .offline-vehicles-insight {
   margin-top: 0;
   max-height: calc(22vh + 54px);

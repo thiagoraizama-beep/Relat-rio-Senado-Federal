@@ -37,7 +37,7 @@ function CategoryTick({ x, y, payload }) {
 const ROW_HEIGHT = 28;
 
 // breakdown: [{ categoria, investment, insercoes, impact }] — uma barra por categoria.
-export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey, onMetricChange }) {
+export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey, onMetricChange, showMetricSwitch = true, minHeight = 190 }) {
   const metric = OFFLINE_METRICS.find((m) => m.key === metricKey);
   const data = breakdown
     .filter((row) => row[metricKey] != null)
@@ -47,14 +47,16 @@ export default function OfflineCategoryBarChart({ breakdown, colorMap, metricKey
 
   return (
     <div>
-      <MetricSwitch
-        options={OFFLINE_METRICS.map((m) => ({ key: m.key, label: m.label }))}
-        activeKey={metricKey}
-        onChange={onMetricChange}
-        ariaLabel="Selecionar métrica"
-      />
+      {showMetricSwitch && (
+        <MetricSwitch
+          options={OFFLINE_METRICS.map((m) => ({ key: m.key, label: m.label }))}
+          activeKey={metricKey}
+          onChange={onMetricChange}
+          ariaLabel="Selecionar métrica"
+        />
+      )}
       <div className="rechart-wrap">
-        <ResponsiveContainer width="100%" height={Math.max(190, data.length * ROW_HEIGHT + 16)}>
+        <ResponsiveContainer width="100%" height={Math.max(minHeight, data.length * ROW_HEIGHT + 16)}>
           <BarChart data={data} layout="vertical" margin={{ top: 8, right: 24, left: 8, bottom: 8 }}>
             <CartesianGrid horizontal={false} stroke="var(--line)" />
             <XAxis type="number" hide domain={[0, (max) => max * 1.18]} />

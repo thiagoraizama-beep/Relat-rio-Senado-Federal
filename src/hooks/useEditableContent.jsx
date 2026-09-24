@@ -104,6 +104,11 @@ export const defaultTexts = {
     'Investimento e inserções comparados entre rádio, TV e mídia exterior da campanha.',
   'offline-channel-insight':
     'TV Aberta concentra o maior investimento entre as categorias offline (R$ 8,7 milhões, 54,5% do total), seguida por Rádio (R$ 2 milhões, 12,5%) e DOOH Painel Digital (R$ 1,8 milhão, 11,1%). Minidoor e MUB, agora reportados como categorias distintas, somam juntos R$ 1,9 milhão (11,8%), enquanto DOOH Metrô e DOOH Aeroporto, também separados nesta apuração, respondem por R$ 445 mil (2,8%) e R$ 719 mil (4,5%) respectivamente. Entre os veículos individuais, a GLOBO lidera o investimento em TV Aberta com R$ 3,8 milhões em apenas 9 inserções, refletindo o valor de espaços em rede nacional, enquanto a JCDecaux se destaca em MUB com mais de 1 milhão de inserções, evidenciando a escala de frequência característica desse formato.',
+  'offline-complementar-title': 'Mídia complementar',
+  'offline-complementar-sub':
+    'Investimento, inserções e impacto das ações complementares em DOOH aeroporto e painel digital.',
+  'offline-complementar-insight':
+    'As ações complementares somaram R$ 590 mil (3,7% do investimento offline). A maior parte veio de DOOH Aeroporto Complementar com a JCDECAUX: R$ 572,8 mil, 495.660 inserções e 229,7 milhões de impactos. DOOH Painel Digital Complementar, com a WP MIDIA, respondeu por R$ 17,4 mil, 3.149 inserções e 1,8 milhão de impactos.',
   'offline-tv-title': 'Quem viu a campanha na TV',
   'offline-tv-sub':
     'Audiência da campanha (Ibope/Instar) nas 15 principais regiões metropolitanas do Brasil, comparando TV aberta e TV por assinatura no período de 14/06 a 30/06/2026.',

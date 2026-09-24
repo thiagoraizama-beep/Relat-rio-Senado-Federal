@@ -32,7 +32,7 @@ import SocialIntroSection from './components/sections/SocialIntroSection.jsx';
 import InsightsSection from './components/sections/InsightsSection.jsx';
 import OfflineIntroSection from './components/sections/OfflineIntroSection.jsx';
 import OfflineKpiSection from './components/sections/OfflineKpiSection.jsx';
-import OfflineChannelSection from './components/sections/OfflineChannelSection.jsx';
+import OfflineChannelSection, { OfflineComplementarSection } from './components/sections/OfflineChannelSection.jsx';
 import OfflineTvSection from './components/sections/OfflineTvSection.jsx';
 import ImpactIntroSection from './components/sections/ImpactIntroSection.jsx';
 import ImpactSection from './components/sections/ImpactSection.jsx';
@@ -64,6 +64,7 @@ const SECTIONS = [
   { id: 'slide-offline-intro', label: 'Mídia Offline', tone: 'dark' },
   { id: 'slide-offline-kpi', label: 'Offline · Resultados', tone: 'light' },
   { id: 'slide-offline-channel', label: 'Offline · Canais', tone: 'light' },
+  { id: 'slide-offline-complementar', label: 'Offline · Complementar', tone: 'light' },
   { id: 'slide-offline-tv', label: 'Offline · TV', tone: 'light' },
   { id: 'slide-impact-intro', label: 'Compilado Geral', tone: 'dark' },
   { id: 'slide-impact', label: 'Impacto Geral', tone: 'light' },
@@ -118,6 +119,7 @@ function Report() {
       <OfflineIntroSection />
       <OfflineKpiSection />
       <OfflineChannelSection />
+      <OfflineComplementarSection />
       <OfflineTvSection />
       <ImpactIntroSection />
       <ImpactSection />
